@@ -1,0 +1,91 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /*For the lulz
+    font-family: Comic Sans, Comic Sans MS !important;*/
+}
+@font-face {
+    font-family: "bbva-book-normal";
+    src: url(../data/FontsBBVA/bbvaoffice-book.ttf) format("truetype");
+}
+@font-face {
+    font-family: "bbva-light-normal";
+    src: url(../data/FontsBBVA/bbvaoffice-light.ttf) format("truetype");
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+html> body .content {
+    height: auto;
+}
+.content {
+    height: 100%;
+    min-height: 100%;
+    /*for mozilla*/
+}
+
+/* ===== Flex-Box ===== */
+
+.flex-div {
+    display: flex !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox;
+    -webkit-flex-flow: row;
+    -webkit-flex-direction: row;
+    flex-flow: row;
+    flex-direction: row;
+    /* Fix blurring
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d; */
+}
+
+.flex-div section {
+	flex: 3 1 80%;
+	-webkit-flex: 3 1 80%;
+	order: 2;
+	/*padding: 5px;*/
+}
+
+.flex-div nav {
+	flex: 1 6 10%;
+	-webkit-flex: 1 6 10%;
+	order: 1;
+}
+
+.flex-div aside {
+	flex: 1 6 10%;
+	-webkit-flex: 1 6 10%;
+	order: 3;
+}
+
+.flex-div article {
+	flex: 1 6 20%;
+	display: -webkit-flex;
+	order: 3;
+}
+
+/* Divs Structure */
+#main-section header {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+}
+#main-section article {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+}
+#menu-section {
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column;
+}
+
+.mainContent {
+    height: 100%;
+}

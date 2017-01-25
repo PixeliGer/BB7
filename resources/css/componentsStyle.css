@@ -1,0 +1,459 @@
+/*= Bancomer Components =*/
+
+.bbva-content {
+    width: 80%;
+    max-width: 1200px;
+    display: inline-block;
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
+
+.bbva-content-fluid {
+    width: 100%;
+    max-width: 1200px;
+    display: inline-block;
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 900px) {
+    .bbva-content {
+        width: 95%;
+    }
+}
+
+
+/*== Buttons ==*/
+
+.bbva-button {
+    height: 60px;
+    display: inline-block;
+    padding: 0.5 em;
+}
+
+.blue-bbva-button {
+    background-color: rgb(52, 185, 235);
+    border: 1px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+    width: 50%;
+    min-width: 250px;
+    max-width: 500px;
+    height: 60px;
+    padding: 0;
+    text-shadow: none;
+}
+
+.blue-bbva-button:hover {
+    background-color: #182c69;
+}
+
+.blue-bbva-button:active {
+    position: relative;
+    top: 1px;
+}
+
+.bbva-close-button {
+    width: 100% !important;
+    min-width: 100%;
+    max-width: 100%;
+    height: 100% !important;
+    font-size: 38px;
+    font-family: "bbva-book-normal", sans-serif;
+}
+
+/*=== Inputs ===*/
+
+.bbva-input {
+    height: 70px;
+    font-size: 36px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-family: "bbva-book-normal", sans-serif;
+    text-align: center;
+    float: right;
+    display: inline-block;
+    border: 1px solid #FFF;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.bbva-output {
+    height: 50px;
+    display: inline-block;
+    width: 100%;
+    font-family: "bbva-book-normal", sans-serif;
+    font-size: 1.4em;
+    color: #fff;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 1) !important;
+    -moz-box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 1);
+    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 1);
+}
+
+.bbva-output-alfa {
+    border: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/*Non-Editable element */
+
+.bbva-dnt {
+    pointer-events: none;
+}
+
+.bbva-opaque {
+    opacity: .5 !important;
+}
+
+.bbva-separator {
+    width: 80%;
+    max-width: 1200px;
+    border-top: 2px solid #fff !important;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.bbva-separator-medium {
+    width: 90%;
+    max-width: 1400px;
+    border-top: 2px solid #fff !important;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.bbva-separator-full {
+    border-top: 2px solid #fff !important;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.wireframe-cnt {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.lit-row {
+    width: 100%;
+    display: inline-block;
+}
+.mic-row {
+    width: 100%;
+}
+
+
+/*=== BBVA FONTS ===*/
+
+.bbva-font-light {
+    font-family: "bbva-light-normal", sans-serif;
+}
+
+.bbva-font-book {
+    font-family: "bbva-book-normal", sans-serif;
+}
+
+
+/*=== BBVA Colors ===*/
+
+
+/*->For Backgrounds*/
+
+.bbva-blue-lghtr {
+    background-color: rgb(190, 231, 250);
+}
+
+.bbva-blue-lght {
+    background-color: rgb(137, 208, 243);
+}
+
+.bbva-blue-nrml {
+    background-color: rgb(52, 185, 235);
+}
+
+.bbva-blue-mdm {
+    background-color: rgb(0, 167, 231);
+}
+
+.bbva-blue-hrd {
+    background-color: rgb(0, 125, 197);
+}
+
+.bbva-blue-hrdr {
+    background-color: rgb(0, 86, 151);
+}
+
+.bbva-wht-alfa {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.bbva-blck-alfa {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+
+/*-> For Text*/
+
+.bbva-wht-txt {
+    color: #fff;
+}
+
+.bbva-blue-hrdr-txt {
+    color: rgb(0, 86, 151);
+}
+
+
+/* === Backgrounds === */
+
+.bbva-bkgr {
+    background: url('../../resources/images/backgrounds/normal.jpg') center top fixed no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bbva-bkgr-blur {
+    background: url('../../resources/images/backgrounds/blur.jpg') center top fixed no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* === Navigation Arrows === */
+.btn-scroll-arrowDown {
+    width: 8vw;
+    height: 8vw;
+    top: 85%;
+    left: 90%;
+    position: fixed;
+    /**/
+    background: url('../../resources/images/Elementos_Actividad_ahorro/Icono_bajar.png') no-repeat center;
+    background-size: 99% auto;
+}
+
+.btn-scroll-arrowUp {
+    width: 8vw;
+    height: 8vw;
+    top: 5%;
+    left: 90%;
+    position: fixed;
+    display: none;
+    /**/
+    background: url('../../resources/images/Elementos_Actividad_ahorro/Icono_subir.png') no-repeat center;
+    background-size: 99% auto;
+}
+
+/* ===== Global Style Fixers ===== */
+
+.center-stuff {
+    text-align: center;
+}
+
+.center-stuff-now {
+    text-align: center !important;
+}
+
+.left-stuff {
+    text-align: left;
+}
+
+.left-stuff-now {
+    text-align: left !important;
+}
+
+.right-stuff {
+    text-align: right;
+}
+
+.right-stuff-now {
+    text-align: right !important;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.vertical-align {
+    /* For vertical align */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.absolute-center {
+    margin: auto;
+    /*! position: absolute; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+/*
+* Prevents Blurring
+* ¡ CAUTION !
+* Use only for specific elements
+* may cause DOM issues
+*/
+
+.3d-fixer {
+    -webkit-transform-style: preserve-3d !important;
+    -moz-transform-style: preserve-3d !important;
+    transform-style: preserve-3d !important;
+}
+
+.topMargin10 {
+    margin-top: 10px;
+}
+
+.topMargin20 {
+    margin-top: 20px;
+}
+
+.topMargin30 {
+    margin-top: 30px;
+}
+
+.topMargin40 {
+    margin-top: 40px;
+}
+
+.topMargin50 {
+    margin-top: 50px;
+}
+
+.topMargin60 {
+    margin-top: 60px;
+}
+
+.topMargin70 {
+    margin-top: 70px;
+}
+
+.topMargin80 {
+    margin-top: 80px;
+}
+
+.topMargin90 {
+    margin-top: 90px;
+}
+
+.topMargin100 {
+    margin-top: 100px;
+}
+
+
+/*Container height fixers*/
+
+.cnt-h40 {
+    height: 40px;
+}
+.cnt-h50 {
+    height: 50px;
+}
+.cnt-h60 {
+    height: 60px;
+}
+.cnt-h80 {
+    height: 80px;
+}
+.cnt-h100 {
+    height: 100px;
+}
+.cnt-h200 {
+    height: 200px;
+}
+.cnt-h300 {
+    height: 300px;
+}
+.cnt-h500 {
+    height: 500px;
+}
+.cnt-h600 {
+    height: 600px;
+}
+.cnt-h700 {
+    height: 700px;
+}
+.cnt-h700-now {
+    height: 700px !important;
+}
+.cnt-h1000 {
+    height: 1000px;
+}
+.cnt-hFull {
+    height: 100% !important;
+}
+.cnt-expand {
+    height: 100%;
+    width: 100%;
+}
+
+/*Container width fixer*/
+.cnt-w800 {
+    width: 800px;
+}
+.cnt-wFull {
+    width: 100%;
+}
+/*Container max-width fixer*/
+
+.cnt-mw1000 {
+    max-width: 1000px;
+}
+
+/*Container padding fixers*/
+
+.cnt-p10 {
+    padding: 10px;
+}
+
+.cnt-p20 {
+    padding: 20px;
+}
+
+.cnt-p10-left {
+    padding-left: 70px;
+}
+
+
+/*Container Position Fixers*/
+
+.cnt-relative {
+    position: relative;
+}
+
+.cnt-absolute {
+    position: absolute;
+}
+
+.cnt-inline-block {
+    display: inline-block;
+}
