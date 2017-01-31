@@ -13,64 +13,55 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode;
 
 $(document).ready(function() {
 
-    var btnHanoi = $('#viajaTiempo');
-    var btnPitagras = $('#resuelveMisterio');
-    var btnGauss = $('#construyeSue');
-    var btnMoebius = $('#armaFiesta');
-    var btnElemComp = $('#navegaEspacio');
+    var btnHanoi = $('#btnHanoi');
+    var btnPitagras = $('#btnPitagoras');
+    var btnGauss = $('#btnGauss');
+    var btnMoebius = $('#btnMoebius');
+    var btnElemComp = $('#btnElemComp');
     var mainSection = $('#main-section');
-    var sectionArticle = $('#section-article-I'); one
+    var sectionArticle = $('#section-article-I');
 
     $('#arrow-down').click(function(event) {
         $('html, body').animate({ scrollTop: $("#two").offset().top }, 500);
     });
-    $('#arrow-arriba').click(function (event) {
-        $('html, body').animate({ scrollTop: "0px" });
-    });
-    $('#arrow-arribaActividades').click(function (event) {
-        $('html, body').animate({ scrollTop: $("#two").offset().top }, 500);
-    });
-    $('#viajaTiempo').click(function (event) {
-        $('html, body').animate({ scrollTop: "2100px" });
-    });
 
-    btnHanoi.mouseover(function (event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Maquina_Tiempo_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#1F80DC');
+    btnHanoi.mouseover(function(event) {
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_1_on.svg');
+        $(this).find('.txt-Button-Container').css('color', '#332414');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Maquina_Tiempo.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_1.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
     btnPitagras.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Misterio_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#1F80DC');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_2_on.svg');
+        $(this).find('.txt-Button-Container').css('color', '#332414');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Misterio.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_2.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
     btnGauss.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Construye_Suenos_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#1F80DC');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_3_on.svg');
+        $(this).find('.txt-Button-Container').css('color', '#332414');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Construye_Suenos.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_3.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
     btnMoebius.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Fiesta_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#1F80DC');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_4_on.svg');
+        $(this).find('.txt-Button-Container').css('color', '#332414');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Fiesta.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_4.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
     btnElemComp.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Navega_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#1F80DC');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_5_on.svg');
+        $(this).find('.txt-Button-Container').css('color', '#332414');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'Resources/Images/Home/Botones_Menu/Ico_Menu_Navega.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_5.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
     mainHeight = mainSection.outerHeight();
@@ -87,5 +78,28 @@ $(document).ready(function() {
     //
     var newSize = menuHeight*.42;
     //
+    $(".row1").css('height', newSize);
+});
+
+$(window).resize(function() {
+    var mainSection = $('#main-section');
+
+    var sectionArticle = $('#section-article-I');
+
+    mainHeight = mainSection.outerHeight();
+    //
+    percentHeight = (mainHeight - (mainHeight *.20));
+    //
+    divHeight = percentHeight;
+    //
+    if(isFirefox){
+        $("div.inner-column").css('height', '100%');
+    } else{
+        sectionArticle.css('height', divHeight);
+        $("div.inner-column").css('height', divHeight);
+    }
+    //
+    var menuHeight = $("#menu-section").outerHeight();
+    var newSize = menuHeight*.42;
     $(".row1").css('height', newSize);
 });

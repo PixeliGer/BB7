@@ -1,0 +1,149 @@
+.bbva-back{
+    background: url('../img/backgrounds/Back_home.jpg') no-repeat top fixed;
+    background-size: cover;
+}
+#one {
+    background-size: 100% auto;
+}
+
+#two {
+    background-size: 100% auto;
+}
+
+@media screen and (orientation:portrait){
+    .content {
+      height:50% !important;
+      min-height:50% !important;
+    }
+}
+
+#main-section{
+    display: -webkit-flex;
+	display:         flex;
+	flex-flow: column;
+}
+
+#main-section header{
+	min-height: 10%;
+	flex: 1 6 %;
+	order: 1;
+}
+#main-section article{
+	flex: 1 6 %;
+	order: 2;
+}
+#main-section footer{
+	flex: 1 6 %;
+	order: 3;
+    text-align: center;
+}
+#menu-section{
+    display: -webkit-flex;
+	display:         flex;
+	flex-flow: column;
+}
+#menu-section .row1{
+    flex: 1 6 %;
+	order: 1;
+    height: 18vh;
+    min-block-size: 33%;
+}
+
+#menu-section .row2{
+    flex: 1 6 %;
+	order: 2;
+}
+#menu-section .row3{
+    flex: 1 6 %;
+	order: 3;
+    height: 25%;
+}
+
+.row-content{
+    text-align: center;
+    display: inline-block;
+}
+.btn-Activity{
+    width: 20%;
+    float: left;
+    height: 100%;
+}
+.img-Button-Container{
+    width: 70%;
+    height: 55%;
+    display: inline-block;
+    cursor: pointer;
+    max-width: 185px;
+}
+.txt-Button-Container{
+    font-family: 'Marvel', sans-serif;
+    font-size: 1.8vw;
+    color: #FFF;
+}/*Temporal*/
+
+.txt-main-Title{
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.txt-main-Subtitle{
+    font-size: 1.8vw;
+}
+
+.flexibleDiv{
+	/* Flex */
+	display: -webkit-flex;
+	display:         flex;
+	-webkit-flex-flow: column;
+	-webkit-flex-direction: column;
+	-webkit-box-pack: center;
+  	-moz-box-pack: center;
+  	-ms-flex-pack: center;
+	flex-flow: column;
+	flex-direction: column;
+}
+
+.dummyContainer{
+    height: 85%;
+}
+
+.left-column{
+    width: 40%;
+    /*height: 100%;*/
+    float: left;
+    /**/
+    position: relative;
+}
+
+.right-column{
+    width: 60%;
+    /*height: 100%;*/
+	float: right;
+}
+
+.welcome-container{
+    position: absolute;
+    bottom: 2%;
+}
+
+.txt-main{
+    font-family: 'Marvel', sans-serif;
+}
+.txt-main h1{
+    font-size: 4vw
+}/*Temporal*/
+
+.txt-main p{
+    font-size: 1.8vw
+}/*Temporal*/
+
+.btn-Arrow-Container{
+    width: 7.2vw;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.img-Button{
+    width: 99%;
+    height: auto;
+}

@@ -457,3 +457,287 @@
 .cnt-inline-block {
     display: inline-block;
 }
+
+/*= For Webkit Scrollbars =*/
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,.4);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,0,.3);
+}
+/**/
+.cmn-sbtl {
+    font-family: "bbva-book-normal", sans-serif;
+}
+.cmn-txt {
+    font-family: "bbva-light-normal", sans-serif;
+}
+.cmn-ico {
+    width: 99%;
+}
+.cmn-block {
+    width: 100%;
+    display: inline-block;
+}
+.cmn-block-lit {
+    width: 100%;
+}
+.main-ttl-activity {
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 2.8em;
+    color: #fff;
+    text-align: center;
+}
+.sub-ttl-activity {
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 2.6em;
+    color: #fff;
+    text-align: center;
+}
+.left-ttl-cnt {
+    height: 100%;
+    width: calc(100% - 50px);
+    display: inline-block;
+    float: left;
+}
+.left-ttl-cnt60 {
+    height: 100%;
+    width: calc(100% - 60px);
+    display: inline-block;
+    float: left;
+}
+.dnts-ttl {
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 1.4em;
+    color: #fff;
+    display: inline-block;
+}
+.hdr-ttl {
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 1.6em;
+    color: #fff;
+    text-align: center;
+}
+.main-dsc-activity {
+    font-size: 22px;
+    color: #fff;
+    font-family: "bbva-light-normal", sans-serif;
+}
+.ttl-ico-cnt {
+    /*Correct & Optimized Styles*/
+    /*! width: 8vw; */
+    /*! min-width: 80px; */
+    /*! max-width: 100px; */
+    /*How NOT to do an responsive style*/
+    width: 7vw;
+    min-width: 60px;
+    max-width: 160px;
+    /**/
+    height: auto;
+    display: inline-block;
+}
+.ttl-ico {
+    width: 99%;
+}
+
+/*Feedback*/
+
+.fdbk-cnt {
+    height: 300px;
+    max-width: 900px;
+    display: inline-block;
+}
+.fdbk-cnt-min{
+    height: 160px;
+    max-width: 800px;
+    display: inline-block;
+}
+.fdbk-img-cnt {
+    width: 30%;
+    float: left;
+    height: 100%;
+}
+.fdbk-img {
+    width: 60%;
+    min-width: 100px;
+    max-width: 180px;
+}
+.fdbk-txt-cnt {
+    width: 70%;
+    height: 100%;
+    float: right;
+    padding: 10px;
+}
+.fdbk-txt-fll-cnt {
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+}
+.fdbk-txt-cnt article, .fdbk-txt-fll-cnt article {
+    text-align: left !important;
+}
+.fdbk-txt-cnt ul, .fdbk-txt-fll-cnt ul {
+    clear: both;
+    padding-left: 16px;
+}
+.fdbk-txt {
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 1.2em;
+    color: rgb(0, 86, 151);
+}
+.fdbk-info-txt {
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 1.3em;
+    color: rgb(0, 86, 151);
+}
+
+/*Boton Regresar*/
+
+.btn-rtrn {
+    display: inline-block;
+    font-size: 1.8em;
+    color: #fff;
+}
+/*
+*
+*[!] # How NOT to make responsive design
+*
+*/
+@media only screen and (min-width: 1601px) and (max-width: 1920px){
+    .btn-rtrn {
+        font-size: 42px;
+    }
+}
+@media only screen and (min-width: 1441px) and (max-width: 1600px){
+    .btn-rtrn {
+        font-size: 38px;
+    }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1440px){
+    .btn-rtrn {
+        font-size: 32px;
+    }
+}
+@media only screen and (min-width: 1121px) and (max-width: 1279px){
+    .btn-rtrn {
+        font-size: 26px;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 1120px){
+    .btn-rtrn {
+        font-size: 22px;
+    }
+}
+
+/**/
+.rtrn-txt-cnt {
+    height: 100%;
+    display: inline-block;
+}
+.rtrn-arrw-cnt {
+    width: 60px;
+    height: 50px;
+    display: inline-block;
+}
+
+/*Mid Column*/
+.mid-clmn {
+    width: 48%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+/*Mid Column No-Margin*/
+.mid-clmn-full {
+    width: 50%;
+    float: left;
+    display: inline-block;
+}
+
+/*Mid Column Always*/
+.mid-clmn-lwys {
+    width: 48%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/*Mid Column Always No-Margin*/
+.mid-clmn-lwys-full {
+    width: 50%;
+    float: left;
+    display: inline-block;
+}
+
+.thrty-clmn {
+    width: 31.3%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.thrty-clmn-lwys {
+    width: 31.3%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/*40% Column*/
+
+.frty-clmn {
+    width: 38%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.frty-clmn-lwys {
+    width: 38%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+/*60% Column*/
+
+.sxty-clmn {
+    width: 58%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.sxty-clmn-lwys {
+    width: 58%;
+    float: left;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.lightr-cnt {
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.2em;
+    color: rgb(0, 86, 151);
+}
