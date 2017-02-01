@@ -2,3 +2,6 @@
     background: url('../img/backgrounds/Back_Home_blur.jpg') no-repeat top fixed;
     background-size: cover;
 }
+.round-cnt{
+    max-width: 900px;
+}
