@@ -9,8 +9,10 @@
         <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
         <link rel="stylesheet" type="text/css" href="../resources/css/componentsStyle.css">
         <link rel="stylesheet" type="text/css" href="../resources/css/activities.css">
-
         <!-- Scripts -->
+        <script type="text/javascript" src="../resources/js/Frameworks/Jquery/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../resources/js/autoNumeric.js"></script>
+        <script type="text/javascript" src="../resources/js/armaFiesta.js"></script>
     </head>
     <body class="fiesta-bckgr">
         <!-- Main Content -->
@@ -55,25 +57,42 @@
                     <div class="bbva-content">
                         <div class="lit-row">
                             <hr class="bbva-separator-full">
-                            <div class="main-dsc-activity">
-                                <p>
-                                    Has decidido organizar una fiesta el viernes por la tarde a la cual invitarás a 3 amigos.
-                                </p>
-                                <p>
-                                    Compra lo necesario. Cuentas con $100. ¡Suerte!
-                                </p>
+                        </div>
+
+                        <div id="firstCnt" class="lit-row">
+                            <div class="cmn-block">
+                                <div class="lit-row">
+                                    <div class="main-dsc-activity">
+                                        <p>
+                                            Has decidido organizar una fiesta el viernes por la tarde a la cual invitarás a 3 amigos.
+                                        </p>
+                                        <p>
+                                            Compra lo necesario. Cuentas con $100. ¡Suerte!
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="lit-row topMargin100">
+                                    <button id="btnStart" class="blue-bbva-button" type="button" name="button">Comenzar</button>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="lit-row topMargin100">
-                            <button class="blue-bbva-button" type="button" name="button">Comenzar</button>
-                        </div>
                     </div>
 
                     <div class="bbva-content-fluid">
                         <div class="lit-row">
                             <!-- Round 1 -->
-                            <div id="round1" class="cmn-block round-cnt topMargin90">
+                            <div id="round1" class="cmn-block round-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Ronda 1
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Header -->
                                 <div class="lit-row">
                                     <div class="sxty-clmn-lwys-full padding-lf-mid">
@@ -117,7 +136,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
                                                         Pizza
                                                     </div>
                                                 </div>
@@ -128,14 +147,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
 
                                                     </div>
                                                 </div>
@@ -155,7 +174,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
                                                         Agua
                                                     </div>
                                                 </div>
@@ -166,14 +185,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
 
                                                     </div>
                                                 </div>
@@ -193,7 +212,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
                                                         Globos
                                                     </div>
                                                 </div>
@@ -204,14 +223,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl  vertical-align">
 
                                                     </div>
                                                 </div>
@@ -231,7 +250,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Platos
                                                     </div>
                                                 </div>
@@ -242,14 +261,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -269,7 +288,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Música
                                                     </div>
                                                 </div>
@@ -280,14 +299,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -300,7 +319,7 @@
                                   <div class="cmn-block">
                                     <div class="lit-row">
                                       <!-- Feedback container -->
-                                      <div id="firstFeed"class="fdbk-cnt bbva-blue-lghtr cnt-p20">
+                                      <div id="firstFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
                                           <div class="fdbk-img-cnt">
                                               <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
                                           </div>
@@ -325,7 +344,7 @@
 
                                     </div>
                                     <div class="lit-row">
-                                      <button class="blue-bbva-button" type="button" name="button">Ronda 2</button>
+                                      <button id="btnSecondR" class="blue-bbva-button" type="button" name="button">Ronda 2</button>
 
                                     </div>
 
@@ -337,7 +356,17 @@
 
                             </div>
                             <!-- Round 2 -->
-                            <div id="round2"class="cmn-block round-cnt topMargin90">
+                            <div id="round2"class="cmn-block round-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Ronda 2
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Header -->
                                 <div class="row">
                                     <div class="sxty-clmn-lwys-full padding-lf-mid">
@@ -381,7 +410,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Pizza
                                                     </div>
                                                 </div>
@@ -392,14 +421,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -419,7 +448,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Agua
                                                     </div>
                                                 </div>
@@ -430,14 +459,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prtyprty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -457,7 +486,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Globos
                                                     </div>
                                                 </div>
@@ -468,14 +497,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -495,7 +524,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Platos
                                                     </div>
                                                 </div>
@@ -506,14 +535,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -533,7 +562,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Música
                                                     </div>
                                                 </div>
@@ -544,14 +573,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -564,7 +593,7 @@
                                   <div class="cmn-block">
                                     <div class="lit-row">
                                       <!-- Feedback container -->
-                                      <div id="firstFeed"class="fdbk-cnt bbva-blue-lghtr cnt-p20">
+                                      <div id="secondFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
                                           <div class="fdbk-img-cnt">
                                               <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
                                           </div>
@@ -589,7 +618,7 @@
 
                                     </div>
                                     <div class="lit-row">
-                                      <button class="blue-bbva-button" type="button" name="button">Ronda 3</button>
+                                      <button id="btnThirdR" class="blue-bbva-button" type="button" name="button">Ronda 3</button>
 
                                     </div>
 
@@ -599,7 +628,17 @@
                                 </div>
                             </div>
                             <!-- Round 3 -->
-                            <div id="round3"class="cmn-block round-cnt topMargin90">
+                            <div id="round3" class="cmn-block round-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Ronda 3
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Header -->
                                 <div class="row">
                                     <div class="sxty-clmn-lwys-full padding-lf-mid">
@@ -643,7 +682,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Pizza
                                                     </div>
                                                 </div>
@@ -654,14 +693,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -681,7 +720,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Agua
                                                     </div>
                                                 </div>
@@ -692,14 +731,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -719,7 +758,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Globos
                                                     </div>
                                                 </div>
@@ -730,14 +769,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -757,7 +796,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Platos
                                                     </div>
                                                 </div>
@@ -768,14 +807,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -795,7 +834,7 @@
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
                                                         Música
                                                     </div>
                                                 </div>
@@ -806,14 +845,14 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="dnts-ttl vertical-align">
+                                                    <div class="prty-ttl vertical-align">
 
                                                     </div>
                                                 </div>
@@ -823,62 +862,317 @@
                                 </div>
                                 <!--Feedback -->
                                 <div class="lit-row">
-                                  <div class="cmn-block">
-                                    <div class="lit-row">
-                                      <!-- Feedback container -->
-                                      <div class="fdbk-cnt bbva-blue-lghtr cnt-p20">
-                                          <div class="fdbk-img-cnt">
-                                              <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
-                                          </div>
-                                          <div class="fdbk-txt-cnt">
-                                              <div class="fdbk-txt vertical-align">
-                                                  <article>
-                                                      <p>
-                                                          ¡FELICIDADES!
-                                                      </p>
-                                                      <p>
-                                                          ¡Tu fiesta fue un éxito!
-                                                      </p>
-                                                      <p>
-                                                          Tus invitados estuvieron muy satisfechos.
-                                                      </p>
+                                    <div class="cmn-block">
+                                        <div class="lit-row">
+                                            <!-- Feedback container -->
+                                            <div id="thirdFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
+                                                <div class="fdbk-img-cnt">
+                                                    <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
+                                                </div>
+                                                <div class="fdbk-txt-cnt">
+                                                    <div class="fdbk-txt vertical-align">
+                                                        <article>
+                                                            <p>
+                                                                ¡FELICIDADES!
+                                                            </p>
+                                                            <p>
+                                                                ¡Tu fiesta fue un éxito!
+                                                            </p>
+                                                            <p>
+                                                                Tus invitados estuvieron muy satisfechos.
+                                                            </p>
 
-                                                  </article>
+                                                        </article>
 
-                                              </div>
-                                          </div>
-                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                    </div>
-                                    <div class="lit-row">
-                                        <div class="main-dsc-activity">
-                                            <p>
-                                                ¿Recuerdas que compraste para tu fiesta?
-                                            </p>
+                                        </div>
+                                        <div class="lit-row">
+                                            <div class="main-dsc-activity">
+                                                <p>
+                                                    ¿Recuerdas que compraste para tu fiesta?
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="lit-row">
+                                            <button id="btnResults" class="blue-bbva-button" type="button" name="button"> Ver Resultados </button>
+
                                         </div>
 
                                     </div>
-                                    <div class="lit-row">
-                                      <button class="blue-bbva-button" type="button" name="button"> Ver Resultados </button>
-
-                                    </div>
-
-                                  </div>
-
-
                                 </div>
                             </div>
                             <!--  -->
-                            <div class="cmn-block topMargin100">
-                                <div class="thrty-clmn">
+                            <div id="resultsCnt" class="cmn-block topMargin40">
+                                <div class="lit-row">
+                                    <!-- Round 1 -->
+                                    <div class="thrty-clmn topMargin30">
+                                        <div class="cmn-block results-cnt">
+                                            <!-- Results Header -->
+                                            <div class="lit-row bottomMargin5">
+                                                <div class="padding-lf-1">
+                                                    <div class="cmn-block">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Ronda 1
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Results Rows -->
+                                            <div class="lit-row">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Cantidad
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Precio
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lit-row">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Results Total -->
+                                            <div class="lit-row topMargin20">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl-hrd vertical-align">
+                                                                Total
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl-hrd vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Round 2 -->
+                                    <div class="thrty-clmn topMargin30">
+                                        <div class="cmn-block">
+                                            <!-- Results Header -->
+                                            <div class="lit-row bottomMargin5">
+                                                <div class="padding-lf-1">
+                                                    <div class="cmn-block">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Ronda 2
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lit-row">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Cantidad
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Precio
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Results Rows -->
+                                            <div class="lit-row">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Results Total -->
+                                            <div class="lit-row topMargin20">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl-hrd vertical-align">
+                                                                Total
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl-hrd vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Round 3 -->
+                                    <div class="thrty-clmn topMargin30">
+                                        <div class="cmn-block">
+                                            <!-- Results Header -->
+                                            <div class="lit-row bottomMargin5">
+                                                <div class="padding-lf-1">
+                                                    <div class="cmn-block">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Ronda 3
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lit-row">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Cantidad
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-nrml cnt-h40">
+                                                            <div class="dnts-ttl vertical-align">
+                                                                Precio
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Results Rows -->
+                                            <div class="lit-row">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Results Total -->
+                                            <div class="lit-row topMargin20">
+                                                <div class="cmn-block">
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl-hrd vertical-align">
+                                                                Total
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mid-clmn-lwys">
+                                                        <div class="bbva-blue-lghtr cnt-h80">
+                                                            <div class="prty-ttl-hrd vertical-align">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lit-row">
+                                    <div class="cmn-block">
+                                        <!-- Title -->
+                                        <div class="lit-row">
+                                            <div class="ttl-txt-cont">
+                                                <div class="main-ttl-activity">
+                                                    <p>
+                                                        La inflación y el intercambio
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lit-row">
+                                            <!-- Feedback container -->
+                                            <div id="thirdFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
+                                                <div class="fdbk-img-cnt">
+                                                    <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
+                                                </div>
+                                                <div class="fdbk-txt-cnt">
+                                                    <div class="fdbk-txt vertical-align">
+                                                        <article>
+                                                            <p>
+                                                                Como te habrás dado cuenta, los precios aumentaron considerablemente en cada ronda.
+                                                                Al mismo tiempo, cada ronda tú recibías más dinero.
+                                                            </p>
+                                                            <p>
+                                                                ¿Tendrá alguna relación el aumento de tu ingreso y el aumento de los precios?
+                                                            </p>
+                                                            <p>
+                                                                Tus invitados estuvieron muy satisfechos.
+                                                            </p>
+
+                                                        </article>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
 
                                 </div>
-                                <div class="thrty-clmn">
 
-                                </div>
-                                <div class="thrty-clmn">
-
-                                </div>
                             </div>
 
                         </div>
