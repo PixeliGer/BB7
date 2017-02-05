@@ -1,3 +1,4 @@
+/**/
 .fiesta-bckgr{
     background: url('../img/backgrounds/Back_Home_blur.jpg') no-repeat top fixed;
     background-size: cover;
@@ -7,4 +8,84 @@
 }
 .results-cnt{
     max-width: 600px;
+}
+.item-cnt{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+.item-pizza{
+    background: url('../img/activity_fiesta/Pizza.svg') no-repeat center;
+    background-size: 60px auto;
+    height: 100%;
+}
+.item-agua{
+    background: url('../img/activity_fiesta/Agua.svg') no-repeat center;
+    background-size: 19px auto;
+    height: 100%;
+}
+.item-globos{
+    background: url('../img/activity_fiesta/Globos.svg') no-repeat center;
+    background-size: 88% auto;
+    height: 100%;
+}
+.item-platos{
+    background: url('../img/activity_fiesta/Platos.svg') no-repeat center;
+    background-size: 53px auto;
+    height: 100%;
+}
+.item-musica{
+    background: url('../img/activity_fiesta/Musica.svg') no-repeat center;
+    background-size: 60px auto;
+    height: 100%;
+}
+.mesa-cnt{
+    width: 300px;
+    height: 400px;
+}
+.mesa-img-cnt{
+    height: 400px;
+    width: 100%;
+}
+.mesa-sqrs-cnt{
+    width: 300px;
+    height: 100%;
+}
+.mesa-sqrs{
+    width: 280px;
+    height: 220px;
+    display: inline-block;
+}
+.mesa-img{
+    height: 100%;
+    width: 100%;
+    background: url('../img/activity_fiesta/Mesa.svg') no-repeat bottom;
+    background-size: 100% auto;
+}
+.mesa-item-cnt{
+    width: 60px !important;
+    height: 60px !important;
+    display: inline-block;
+    position: absolute;
+    top: 68%;
+}
+.input-fiesta{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    -webkit-appearance: none;
+    text-align: center;
+    font-family: "bbva-light-normal", sans-serif;
+    color: rgb(0, 125, 197);
+    font-size: 26px;
+}
+/*Size adjust*/
+#mesa-globos_r1,
+#mesa-globos_r1,
+#mesa-globos_r1{
+    width: 110px !important;
+    height: 113px !important;
+    top: 48%;
 }

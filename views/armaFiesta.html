@@ -93,6 +93,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="lit-row">
+                                    <span id="firstRound"></span>
+                                </div>
                                 <!-- Header -->
                                 <div class="lit-row">
                                     <div class="sxty-clmn-lwys-full padding-lf-mid">
@@ -130,7 +133,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-pizza">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -147,15 +154,17 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="prty-ttl  vertical-align">
-
+                                                    <!-- Price -->
+                                                    <div class="prty-ttl vertical-align">
+                                                        $80
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="prty-ttl  vertical-align">
-
+                                                    <!-- Cant. -->
+                                                    <div class="prty-ttl vertical-align">
+                                                        <input id="pizza_r1" placeholder="0" name="pizza" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.pizza._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,6 +177,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-agua">
+
+                                                            </div>
+                                                        </div>
 
                                                     </div>
                                                 </div>
@@ -186,14 +200,15 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl  vertical-align">
-
+                                                        $10
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="prty-ttl  vertical-align">
-
+                                                    <!-- Cant. -->
+                                                    <div class="prty-ttl vertical-align">
+                                                        <input id="agua_r1" placeholder="0" name="agua" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.agua._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,7 +221,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-globos">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -224,14 +243,15 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl  vertical-align">
-
+                                                        $10
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="prty-ttl  vertical-align">
-
+                                                    <!-- Cant. -->
+                                                    <div class="prty-ttl vertical-align">
+                                                        <input id="globos_r1" placeholder="0" name="globos" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.globos._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -244,7 +264,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-platos">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -262,14 +286,15 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $5
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
+                                                    <!-- Cant. -->
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="platos_r1" placeholder="0" name="platos" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.platos._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -282,7 +307,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-musica">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -300,16 +329,32 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $50
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
+                                                    <!-- Cant. -->
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="musica_r1" placeholder="0" name="musica" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.musica._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Items Table -->
+                                <div class="lit-row">
+                                    <div class="cmn-block mesa-cnt">
+                                        <div class="mesa-img-cnt cnt-relative">
+                                            <div class="mesa-sqrs-cnt cnt-absolute">
+                                                <div class="mesa-sqrs cnt-relative">
+
+                                                </div>
+                                            </div>
+                                            <div class="mesa-img cnt-relative">
+
                                             </div>
                                         </div>
                                     </div>
@@ -321,7 +366,7 @@
                                       <!-- Feedback container -->
                                       <div id="firstFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
                                           <div class="fdbk-img-cnt">
-                                              <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
+                                              <img class="fdbk-img vertical-align" src="../resources/img/activity_fiesta/Feedback1.svg" alt="" />
                                           </div>
                                           <div class="fdbk-txt-cnt">
                                               <div class="fdbk-txt vertical-align">
