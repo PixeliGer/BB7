@@ -79,10 +79,10 @@
 
                     </div>
 
-                    <div class="bbva-content-fluid">
-                        <div class="lit-row">
+                    <div id="roundsCnt" class="bbva-content-fluid">
+                        <div class="lit-row topMargin20">
                             <!-- Round 1 -->
-                            <div id="round1" class="cmn-block round-cnt">
+                            <div id="round1" class="cmn-block round-cnt cnt-relative">
                                 <!-- Title -->
                                 <div class="lit-row">
                                     <div class="ttl-txt-cont">
@@ -93,8 +93,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="lit-row">
-                                    <span id="firstRound"></span>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="firstBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="firstRound" class="counter-qnty">$0</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- Header -->
                                 <div class="lit-row">
@@ -164,7 +174,7 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <!-- Cant. -->
                                                     <div class="prty-ttl vertical-align">
-                                                        <input id="pizza_r1" placeholder="0" name="pizza" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.pizza._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="pizza_r1" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -182,7 +192,6 @@
 
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -208,7 +217,7 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <!-- Cant. -->
                                                     <div class="prty-ttl vertical-align">
-                                                        <input id="agua_r1" placeholder="0" name="agua" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.agua._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="agua_r1" placeholder="0" name="agua" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -251,7 +260,7 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <!-- Cant. -->
                                                     <div class="prty-ttl vertical-align">
-                                                        <input id="globos_r1" placeholder="0" name="globos" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.globos._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="globos_r1" placeholder="0" name="globos" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -294,7 +303,7 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <!-- Cant. -->
                                                     <div class="prty-ttl vertical-align">
-                                                        <input id="platos_r1" placeholder="0" name="platos" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.platos._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="platos_r1" placeholder="0" name="platos" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -337,7 +346,7 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <!-- Cant. -->
                                                     <div class="prty-ttl vertical-align">
-                                                        <input id="musica_r1" placeholder="0" name="musica" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onchange="_tb.musica._r1 = parseInt(this.value); updateResults()" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="musica_r1" placeholder="0" name="musica" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -349,7 +358,7 @@
                                     <div class="cmn-block mesa-cnt">
                                         <div class="mesa-img-cnt cnt-relative">
                                             <div class="mesa-sqrs-cnt cnt-absolute">
-                                                <div class="mesa-sqrs cnt-relative">
+                                                <div id="mesa_r1" class="mesa-sqrs cnt-relative">
 
                                                 </div>
                                             </div>
@@ -361,47 +370,38 @@
                                 </div>
                                 <!--Feedback -->
                                 <div class="lit-row">
-                                  <div class="cmn-block">
-                                    <div class="lit-row">
-                                      <!-- Feedback container -->
-                                      <div id="firstFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
-                                          <div class="fdbk-img-cnt">
-                                              <img class="fdbk-img vertical-align" src="../resources/img/activity_fiesta/Feedback1.svg" alt="" />
-                                          </div>
-                                          <div class="fdbk-txt-cnt">
-                                              <div class="fdbk-txt vertical-align">
-                                                  <article>
-                                                      <p>
-                                                          ¡Oh! Has utilizado todo tu presupuesto y llegaron 2 personas más a tu fiesta.
-                                                      </p>
-                                                      <p>
-                                                          Te aumentamos tu presupuesto a $300 para que compres lo que te falta.
-                                                      </p>
-                                                      <p>
-                                                          Compra lo necesario para 5 invitados.
-                                                      </p>
-
-                                                  </article>
-
-                                              </div>
-                                          </div>
-                                      </div>
-
+                                    <div class="cmn-block">
+                                        <div class="lit-row">
+                                            <!-- Feedback container -->
+                                            <div id="firstFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
+                                                <div class="fdbk-img-cnt">
+                                                    <img class="fdbk-img vertical-align" src="../resources/img/activity_fiesta/Feedback1.svg" alt="" />
+                                                </div>
+                                                <div class="fdbk-txt-cnt">
+                                                    <div class="fdbk-txt vertical-align">
+                                                        <article>
+                                                            <p>
+                                                                ¡Oh! Has utilizado todo tu presupuesto y llegaron 2 personas más a tu fiesta.
+                                                            </p>
+                                                            <p>
+                                                                Te aumentamos tu presupuesto a $300 para que compres lo que te falta.
+                                                            </p>
+                                                            <p>
+                                                                Compra lo necesario para 5 invitados.
+                                                            </p>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lit-row">
+                                            <button id="btnSecondR" class="blue-bbva-button" type="button" name="button">Ronda 2</button>
+                                        </div>
                                     </div>
-                                    <div class="lit-row">
-                                      <button id="btnSecondR" class="blue-bbva-button" type="button" name="button">Ronda 2</button>
-
-                                    </div>
-
-                                  </div>
-
-
                                 </div>
-
-
                             </div>
                             <!-- Round 2 -->
-                            <div id="round2"class="cmn-block round-cnt">
+                            <div id="round2"class="cmn-block round-cnt cnt-relative">
                                 <!-- Title -->
                                 <div class="lit-row">
                                     <div class="ttl-txt-cont">
@@ -412,6 +412,19 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="secondBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="secondRound" class="counter-qnty">$0</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Header -->
                                 <div class="row">
                                     <div class="sxty-clmn-lwys-full padding-lf-mid">
@@ -449,7 +462,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-pizza">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -467,14 +484,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $80
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="pizza_r2" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -487,7 +504,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-agua">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -504,15 +525,15 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="prtyprty-ttl vertical-align">
-
+                                                    <div class="prty-ttl vertical-align">
+                                                        $10
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="agua_r2" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -525,7 +546,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-globos">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -543,14 +568,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $10
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="globos_r2" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -563,7 +588,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-platos">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -581,14 +610,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $5
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="platos_r2" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -601,7 +630,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-musica">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -619,61 +652,72 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $50
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="musica_r2" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Items Table -->
+                                <div class="lit-row">
+                                    <div class="cmn-block mesa-cnt">
+                                        <div class="mesa-img-cnt cnt-relative">
+                                            <div class="mesa-sqrs-cnt cnt-absolute">
+                                                <div id="mesa_r2" class="mesa-sqrs cnt-relative">
+
+                                                </div>
+                                            </div>
+                                            <div class="mesa-img cnt-relative">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!--Feedback -->
                                 <div class="lit-row">
-                                  <div class="cmn-block">
-                                    <div class="lit-row">
-                                      <!-- Feedback container -->
-                                      <div id="secondFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
-                                          <div class="fdbk-img-cnt">
-                                              <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
-                                          </div>
-                                          <div class="fdbk-txt-cnt">
-                                              <div class="fdbk-txt vertical-align">
-                                                  <article>
-                                                      <p>
-                                                          ¡Oh! Has utilizado todo tu presupuesto y llegaron 5 personas más a tu fiesta.
-                                                      </p>
-                                                      <p>
-                                                          Te aumentamos tu presupuesto a $500 para que compres lo que te falta.
-                                                      </p>
-                                                      <p>
-                                                          Compra lo necesario para 10 invitados.
-                                                      </p>
+                                    <div class="cmn-block">
+                                        <div class="lit-row">
+                                            <!-- Feedback container -->
+                                            <div id="secondFeed" class="fdbk-cnt bbva-blue-lghtr cnt-p20">
+                                                <div class="fdbk-img-cnt">
+                                                    <img class="fdbk-img vertical-align" src="../../resources/images/Elementos_Actividad_ahorro/Manoa_respuesta_C.png" alt="" />
+                                                </div>
+                                                <div class="fdbk-txt-cnt">
+                                                    <div class="fdbk-txt vertical-align">
+                                                        <article>
+                                                            <p>
+                                                                ¡Oh! Has utilizado todo tu presupuesto y llegaron 5 personas más a tu fiesta.
+                                                            </p>
+                                                            <p>
+                                                                Te aumentamos tu presupuesto a $500 para que compres lo que te falta.
+                                                            </p>
+                                                            <p>
+                                                                Compra lo necesario para 10 invitados.
+                                                            </p>
 
-                                                  </article>
+                                                        </article>
 
-                                              </div>
-                                          </div>
-                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                        </div>
+                                        <div class="lit-row">
+                                            <button id="btnThirdR" class="blue-bbva-button" type="button" name="button">Ronda 3</button>
+                                        </div>
                                     </div>
-                                    <div class="lit-row">
-                                      <button id="btnThirdR" class="blue-bbva-button" type="button" name="button">Ronda 3</button>
-
-                                    </div>
-
-                                  </div>
-
-
                                 </div>
                             </div>
                             <!-- Round 3 -->
-                            <div id="round3" class="cmn-block round-cnt">
+                            <div id="round3" class="cmn-block round-cnt cnt-relative">
                                 <!-- Title -->
                                 <div class="lit-row">
                                     <div class="ttl-txt-cont">
@@ -684,6 +728,19 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="thirdBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="thirdRound" class="counter-qnty">$0</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Header -->
                                 <div class="row">
                                     <div class="sxty-clmn-lwys-full padding-lf-mid">
@@ -721,7 +778,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-pizza">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -739,14 +800,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $400
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="pizza_r3" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -759,7 +820,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-agua">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -777,14 +842,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $50
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="agua_r3" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -797,7 +862,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-globos">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -815,14 +884,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $50
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="globos_r3" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -835,7 +904,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-platos">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -853,14 +926,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $25
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="platos_r3" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -873,7 +946,11 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="dnts-ttl vertical-align">
+                                                        <div class="item-cnt">
+                                                            <div class="item-musica">
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -891,16 +968,31 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        $250
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="prty-ttl vertical-align">
-
+                                                        <input id="musica_r3" placeholder="0" name="" type="number" max="99" min="0" maxlength="2" class="input-fiesta" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Items Table -->
+                                <div class="lit-row">
+                                    <div class="cmn-block mesa-cnt">
+                                        <div class="mesa-img-cnt cnt-relative">
+                                            <div class="mesa-sqrs-cnt cnt-absolute">
+                                                <div id="mesa_r3"class="mesa-sqrs cnt-relative">
+
+                                                </div>
+                                            </div>
+                                            <div class="mesa-img cnt-relative">
+
                                             </div>
                                         </div>
                                     </div>
@@ -955,9 +1047,9 @@
                                 <div class="lit-row">
                                     <!-- Round 1 -->
                                     <div class="thrty-clmn topMargin30">
-                                        <div class="cmn-block results-cnt">
+                                        <div id="firstResults" class="cmn-block results-cnt">
                                             <!-- Results Header -->
-                                            <div class="lit-row bottomMargin5">
+                                            <div class="header-results lit-row bottomMargin5">
                                                 <div class="padding-lf-1">
                                                     <div class="cmn-block">
                                                         <div class="bbva-blue-nrml cnt-h40">
@@ -969,7 +1061,7 @@
                                                 </div>
                                             </div>
                                             <!-- Results Rows -->
-                                            <div class="lit-row">
+                                            <div class="subheader-results lit-row">
                                                 <div class="cmn-block">
                                                     <div class="mid-clmn-lwys">
                                                         <div class="bbva-blue-nrml cnt-h40">
@@ -987,26 +1079,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="lit-row">
-                                                <div class="cmn-block">
-                                                    <div class="mid-clmn-lwys">
-                                                        <div class="bbva-blue-lghtr cnt-h80">
-                                                            <div class="prty-ttl vertical-align">
+                                            <!-- Final Results Here -->
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mid-clmn-lwys">
-                                                        <div class="bbva-blue-lghtr cnt-h80">
-                                                            <div class="prty-ttl vertical-align">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <!-- Results Total -->
-                                            <div class="lit-row topMargin20">
+                                            <div class="total-results lit-row topMargin20">
                                                 <div class="cmn-block">
                                                     <div class="mid-clmn-lwys">
                                                         <div class="bbva-blue-lghtr cnt-h80">
@@ -1018,7 +1094,7 @@
                                                     <div class="mid-clmn-lwys">
                                                         <div class="bbva-blue-lghtr cnt-h80">
                                                             <div class="prty-ttl-hrd vertical-align">
-
+                                                                <span id="firstTotal"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1028,7 +1104,7 @@
                                     </div>
                                     <!-- Round 2 -->
                                     <div class="thrty-clmn topMargin30">
-                                        <div class="cmn-block">
+                                        <div id="secondResults" class="cmn-block results-cnt">
                                             <!-- Results Header -->
                                             <div class="lit-row bottomMargin5">
                                                 <div class="padding-lf-1">
@@ -1059,27 +1135,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Results Rows -->
-                                            <div class="lit-row">
-                                                <div class="cmn-block">
-                                                    <div class="mid-clmn-lwys">
-                                                        <div class="bbva-blue-lghtr cnt-h80">
-                                                            <div class="prty-ttl vertical-align">
+                                            <!-- Final Results Here -->
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mid-clmn-lwys">
-                                                        <div class="bbva-blue-lghtr cnt-h80">
-                                                            <div class="prty-ttl vertical-align">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <!-- Results Total -->
-                                            <div class="lit-row topMargin20">
+                                            <div class="total-results lit-row topMargin20">
                                                 <div class="cmn-block">
                                                     <div class="mid-clmn-lwys">
                                                         <div class="bbva-blue-lghtr cnt-h80">
@@ -1091,7 +1150,7 @@
                                                     <div class="mid-clmn-lwys">
                                                         <div class="bbva-blue-lghtr cnt-h80">
                                                             <div class="prty-ttl-hrd vertical-align">
-
+                                                                <span id="secondTotal"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1101,7 +1160,7 @@
                                     </div>
                                     <!-- Round 3 -->
                                     <div class="thrty-clmn topMargin30">
-                                        <div class="cmn-block">
+                                        <div id="thirdResults" class="cmn-block results-cnt">
                                             <!-- Results Header -->
                                             <div class="lit-row bottomMargin5">
                                                 <div class="padding-lf-1">
@@ -1132,27 +1191,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Results Rows -->
-                                            <div class="lit-row">
-                                                <div class="cmn-block">
-                                                    <div class="mid-clmn-lwys">
-                                                        <div class="bbva-blue-lghtr cnt-h80">
-                                                            <div class="prty-ttl vertical-align">
+                                            <!-- Final Results Here -->
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mid-clmn-lwys">
-                                                        <div class="bbva-blue-lghtr cnt-h80">
-                                                            <div class="prty-ttl vertical-align">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <!-- Results Total -->
-                                            <div class="lit-row topMargin20">
+                                            <div class="total-results lit-row topMargin20">
                                                 <div class="cmn-block">
                                                     <div class="mid-clmn-lwys">
                                                         <div class="bbva-blue-lghtr cnt-h80">
@@ -1164,7 +1206,7 @@
                                                     <div class="mid-clmn-lwys">
                                                         <div class="bbva-blue-lghtr cnt-h80">
                                                             <div class="prty-ttl-hrd vertical-align">
-
+                                                                <span id="thirdTotal"></span>
                                                             </div>
                                                         </div>
                                                     </div>
