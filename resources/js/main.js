@@ -16,8 +16,8 @@ $(document).ready(function() {
     var btnHanoi = $('#btnHanoi');
     var btnPitagras = $('#btnPitagoras');
     var btnGauss = $('#btnGauss');
-    var btnMoebius = $('#btnMoebius');
-    var btnElemComp = $('#btnElemComp');
+    var btnArmaFiesta = $('#btnArmaFiesta');
+    var btnViajeEspacio = $('#btnViajeEspacio');
     var mainSection = $('#main-section');
     var sectionArticle = $('#section-article-I');
 
@@ -26,42 +26,42 @@ $(document).ready(function() {
     });
 
     btnHanoi.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_1_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#332414');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Maquina_Tiempo_on.svg');
+        $(this).find('.txt-Button-Container').css('color', 'rgb(0, 86, 151)');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_1.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Maquina_Tiempo.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
     btnPitagras.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_2_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#332414');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Misterio_on.svg');
+        $(this).find('.txt-Button-Container').css('color', 'rgb(0, 86, 151)');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_2.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Misterio.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
     btnGauss.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_3_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#332414');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Construye_Suenos_on.svg');
+        $(this).find('.txt-Button-Container').css('color', 'rgb(0, 86, 151)');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_3.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Construye_Suenos.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
-    btnMoebius.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_4_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#332414');
+    btnArmaFiesta.mouseover(function(event) {
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Fiesta_on.svg');
+        $(this).find('.txt-Button-Container').css('color', 'rgb(0, 86, 151)');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_4.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Fiesta.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
 
-    btnElemComp.mouseover(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_5_on.svg');
-        $(this).find('.txt-Button-Container').css('color', '#332414');
+    btnViajeEspacio.mouseover(function(event) {
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Navega_on.svg');
+        $(this).find('.txt-Button-Container').css('color', 'rgb(0, 86, 151)');
     }).mouseout(function(event) {
-        $(this).find('.img-Button').attr('src', 'resources/img/icons/Botones_Menu/btn_menu_5.svg');
+        $(this).find('.img-Button').attr('src', 'resources/img/icons/home/Ico_Menu_Navega.svg');
         $(this).find('.txt-Button-Container').css('color', '#FFF');
     });
     mainHeight = mainSection.outerHeight();

@@ -113,7 +113,7 @@ $(document).ready(function() {
             var item        = _prty_item.split('_');
             var _name       = item[0];
             var _round      = "_"+item[1];
-            var _value      = this.value;
+            var _value      = parseInt(this.value);
             var _ammount    = obtainAmmount(_prty_item)
             var _pitem      = (_value * _ammount);
             console.log(_pitem);
@@ -138,9 +138,11 @@ $(document).ready(function() {
                             }, 500);
                         }, 180);
                     }
+                    // Update Budget and all item vars
+                    updateResults();
                 } else{
                     // Decrease value if can't add
-                    _tb[_name][_round] = (_value - 1);
+                    _tb[_name][_round] = 0;
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
@@ -163,9 +165,11 @@ $(document).ready(function() {
                             }, 500);
                         }, 180);
                     }
+                    // Update Budget and all item vars
+                    updateResults();
                 } else{
                     // Decrease value if can't add
-                    _tb[_name][_round] = (_value - 1);
+                    _tb[_name][_round] = 0;
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
@@ -187,9 +191,11 @@ $(document).ready(function() {
                             }, 500);
                         }, 180);
                     }
+                    // Update Budget and all item vars
+                    updateResults();
                 } else{
                     // Decrease value if can't add
-                    _tb[_name][_round] = (_value - 1);
+                    _tb[_name][_round] = 0
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
@@ -420,9 +426,9 @@ function removeFinalItem(name, round) {
             }
         }
     } else if (_round === '_r3') {
-        for (var element in itemsSecond) {
-            if (itemsSecond[element].name === _name) {
-                itemsSecond.splice(itemsSecond[element], 1);
+        for (var element in itemsThird) {
+            if (itemsThird[element].name === _name) {
+                itemsThird.splice(itemsThird[element], 1);
             }
         }
     }

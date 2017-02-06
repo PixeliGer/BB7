@@ -139,6 +139,7 @@
 
 .btn-Arrow-Container{
     width: 7.2vw;
+    max-width: 100px;
     display: inline-flex;
     cursor: pointer;
 }

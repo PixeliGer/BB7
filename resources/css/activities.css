@@ -1,4 +1,12 @@
-/**/
+/*
+######## #### ########  ######  ########    ###
+##        ##  ##       ##    ##    ##      ## ##
+##        ##  ##       ##          ##     ##   ##
+######    ##  ######    ######     ##    ##     ##
+##        ##  ##             ##    ##    #########
+##        ##  ##       ##    ##    ##    ##     ##
+##       #### ########  ######     ##    ##     ##
+*/
 .fiesta-bckgr{
     background: url('../img/backgrounds/Back_Home_blur.jpg') no-repeat top fixed;
     background-size: cover;
@@ -119,4 +127,17 @@
     font-family: 'bbva-light-normal', sans-serif;
     font-size: 40px;
     color: #fff;
+}
+/*
+########  ######  ########     ###     ######  ####  #######
+##       ##    ## ##     ##   ## ##   ##    ##  ##  ##     ##
+##       ##       ##     ##  ##   ##  ##        ##  ##     ##
+######    ######  ########  ##     ## ##        ##  ##     ##
+##             ## ##        ######### ##        ##  ##     ##
+##       ##    ## ##        ##     ## ##    ##  ##  ##     ##
+########  ######  ##        ##     ##  ######  ####  #######
+*/
+.espacio-bckgr{
+    background: url('../img/backgrounds/Back_Nave_espacial.jpg') no-repeat top fixed;
+    background-size: cover;
 }
