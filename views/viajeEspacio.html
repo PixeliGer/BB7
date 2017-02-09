@@ -11,9 +11,10 @@
         <link rel="stylesheet" type="text/css" href="../resources/css/activities.css">
         <!-- Scripts -->
         <script type="text/javascript" src="../resources/js/Frameworks/Jquery/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../resources/js/easytimer.min.js"></script>
         <script type="text/javascript" src="../resources/js/viajeEspacio.js" charset="utf-8"></script>
     </head>
-    <body class="espacio-bckgr">
+    <body class="puzzles-bckgr">
         <!-- Main Content -->
         <div class="content flex-div">
             <nav></nav>
@@ -137,15 +138,15 @@
                                 </div>
                                 <div class="lit-row">
                                     <!-- Spaceship Puzzle -->
-                                    <div class="cmn-block puzzle-cnt">
+                                    <div id="space_puzzle" class="cmn-block puzzle-cnt">
                                         <div id="space_square1" class="space-square puzzle-square">
                                             <div id="space_piece1" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -153,10 +154,10 @@
                                             <div id="space_piece2" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -164,10 +165,10 @@
                                             <div id="space_piece3" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -175,10 +176,10 @@
                                             <div id="space_piece4" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -186,10 +187,10 @@
                                             <div id="space_piece5" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -197,10 +198,10 @@
                                             <div id="space_piece6" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -208,10 +209,10 @@
                                             <div id="space_piece7" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -219,10 +220,10 @@
                                             <div id="space_piece8" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -231,7 +232,15 @@
                                 <div class="lit-row">
                                     <div class="cmn-block puzzle-cnt">
                                         <div class="puzzle-timer-cnt">
+                                            <div class="cmn-block">
+                                                <div id="firstTimer" class="chrnmtr">
+                                                    <div class="cnt-expand">
+                                                        <div class="vertical-align values topMargin10">
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="graphics-cnt-r">
                                             <div class="planet">
@@ -239,9 +248,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="cmn-block puzzle-cnt">
+                                    <div class="cmn-block puzzle-cnt bottomMargin60">
                                         <div class="puzzle-restart-cnt">
-                                            <button id="btnSartSpace" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
+                                            <button id="btnStartSpace" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
                                             <button id="btnRestartSpace" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
                                         </div>
                                     </div>
@@ -270,91 +279,91 @@
                                 <div class="lit-row">
                                     <!-- Plane Puzzle -->
                                     <div class="cmn-block puzzle-cnt">
-                                        <div id="plane_square1" class="space-square puzzle-square">
+                                        <div id="plane_square1" class="plane-square puzzle-square">
                                             <div id="plane_piece1" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="plane_square2" class="space-square puzzle-square">
+                                        <div id="plane_square2" class="plane-square puzzle-square">
                                             <div id="plane_piece2" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="plane_square3" class="space-square puzzle-square">
+                                        <div id="plane_square3" class="plane-square puzzle-square">
                                             <div id="plane_piece3" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="plane_square4" class="space-square puzzle-square">
+                                        <div id="plane_square4" class="plane-square puzzle-square">
                                             <div id="plane_piece4" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="plane_square5" class="space-square puzzle-square">
+                                        <div id="plane_square5" class="plane-square puzzle-square">
                                             <div id="plane_piece5" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="plane_square6" class="space-square puzzle-square">
+                                        <div id="plane_square6" class="plane-square puzzle-square">
                                             <div id="plane_piece6" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="plane_square7" class="space-square puzzle-square">
+                                        <div id="plane_square7" class="plane-square puzzle-square">
                                             <div id="plane_piece7" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="plane_square8" class="space-square puzzle-square">
+                                        <div id="plane_square8" class="plane-square puzzle-square">
                                             <div id="plane_piece8" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -404,91 +413,91 @@
                                 <div class="lit-row">
                                     <!-- Puzzle -->
                                     <div class="cmn-block puzzle-cnt">
-                                        <div id="truck_square1" class="space-square puzzle-square">
+                                        <div id="truck_square1" class="truck-square puzzle-square">
                                             <div id="truck_piece1" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="truck_square2" class="space-square puzzle-square">
+                                        <div id="truck_square2" class="truck-square puzzle-square">
                                             <div id="truck_piece2" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="truck_square3" class="space-square puzzle-square">
+                                        <div id="truck_square3" class="truck-square puzzle-square">
                                             <div id="truck_piece3" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="truck_square4" class="space-square puzzle-square">
+                                        <div id="truck_square4" class="truck-square puzzle-square">
                                             <div id="truck_piece4" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="truck_square5" class="space-square puzzle-square">
+                                        <div id="truck_square5" class="truck-square puzzle-square">
                                             <div id="truck_piece5" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="truck_square6" class="space-square puzzle-square">
+                                        <div id="truck_square6" class="truck-square puzzle-square">
                                             <div id="truck_piece6" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="truck_square7" class="space-square puzzle-square">
+                                        <div id="truck_square7" class="truck-square puzzle-square">
                                             <div id="truck_piece7" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="truck_square8" class="space-square puzzle-square">
+                                        <div id="truck_square8" class="truck-square puzzle-square">
                                             <div id="truck_piece8" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
@@ -537,91 +546,91 @@
                                 <div class="lit-row">
                                     <!-- Puzzle -->
                                     <div class="cmn-block puzzle-cnt">
-                                        <div id="unicorn_square1" class="space-square puzzle-square">
+                                        <div id="unicorn_square1" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece1" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="unicorn_square2" class="space-square puzzle-square">
+                                        <div id="unicorn_square2" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece2" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="unicorn_square3" class="space-square puzzle-square">
+                                        <div id="unicorn_square3" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece3" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="unicorn_square4" class="space-square puzzle-square">
+                                        <div id="unicorn_square4" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece4" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="unicorn_square5" class="space-square puzzle-square">
+                                        <div id="unicorn_square5" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece5" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="unicorn_square6" class="space-square puzzle-square">
+                                        <div id="unicorn_square6" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece6" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="unicorn_square7" class="space-square puzzle-square">
+                                        <div id="unicorn_square7" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece7" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>
-                                        <div id="unicorn_square8" class="space-square puzzle-square">
+                                        <div id="unicorn_square8" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece8" class="puzzle-piece">
 
                                             </div>
-                                            <div class="rotate-left">
+                                            <div class="rotate-btn rotate-left">
 
                                             </div>
-                                            <div class="rotate-right">
+                                            <div class="rotate-btn rotate-right">
 
                                             </div>
                                         </div>

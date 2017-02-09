@@ -347,6 +347,15 @@
 .bottomMargin5{
     margin-bottom: 5px;
 }
+.bottomMargin20{
+    margin-bottom: 20px;
+}
+.bottomMargin40{
+    margin-bottom: 40px;
+}
+.bottomMargin60{
+    margin-bottom: 60px;
+}
 .topMargin10 {
     margin-top: 10px;
 }

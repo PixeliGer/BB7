@@ -137,7 +137,7 @@
 ##       ##    ## ##        ##     ## ##    ##  ##  ##     ##
 ########  ######  ##        ##     ##  ######  ####  #######
 */
-.espacio-bckgr{
+.puzzles-bckgr{
     background: url('../img/backgrounds/Back_Nave_espacial.jpg') no-repeat top fixed;
     background-size: cover;
 }
@@ -160,7 +160,15 @@
     padding-bottom : 25%; /* = width for a 1:1 aspect ratio */
     background-position:center center;
     background-repeat:no-repeat;
-    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    /*background-size:cover;  you change this to "contain" if you don't want the images to be cropped */
+    /* Firefox */
+    -moz-transition: all 0.3s ease;
+    /* WebKit */
+    -webkit-transition: all .3s ease;
+    /* Opera */
+    -o-transition: all .3s ease;
+    /* Standard */
+    transition: all .3s ease;
 }
 .puzzle-piece{
     width: 100%;
@@ -175,6 +183,11 @@
     -o-transition: all 1s ease;
     /* Standard */
     transition: all 1s ease;
+}
+.piece-selected{
+    -moz-box-shadow: inset 0 0 0 4px #fff;
+    -webkit-box-shadow: inset 0 0 0 4px #fff;
+    box-shadow: inset 0 0 0 4px #fff;
 }
 .rotate-left{
     height: 5vw;
@@ -418,6 +431,11 @@ Unicorn Puzzle
     display: inline-block;
     float: left;
 }
+.puzzle-timer-cnt{
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
 
 /*Puzzle Graphics*/
 .spaceship{
@@ -467,4 +485,13 @@ Unicorn Puzzle
     padding: 50%;
     background: url('../img/activity_espacio/Juego_Unicornio_2.svg') no-repeat center;
     display: inline-block;
+}
+/*Puzzle Timers*/
+.chrnmtr {
+    width: 120px;
+    height: 138px;
+    display: inline-block;
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 3.4em;
+    color: #fff;
 }

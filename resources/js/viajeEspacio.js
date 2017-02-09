@@ -1,3 +1,10 @@
+var backgr = {
+    space   : '../resources/img/backgrounds/Back_Nave_espacial.jpg',
+    plane   : '../resources/img/backgrounds/Back_Cielo.jpg',
+    truck   : '../resources/img/backgrounds/Back_Carretera.jpg',
+    unicorn : '../resources/img/backgrounds/Back_Unicornio.jpg'
+}
+var degreeArray = [90, 180, 270];
 /*
 * Default Piece Status,
 * Puzzle Solution Arrays
@@ -56,6 +63,7 @@ var _c_states = {
     }
 }
 
+
 $(document).ready(function() {
     var _instructions       = $('#instructionsContent');
     var _buttons            = $('#btnsContent');
@@ -76,6 +84,7 @@ $(document).ready(function() {
     var _planePuzzle        = $('#puzzle2');
     var _truckPuzzle        = $('#puzzle3');
     var _unicornPuzzle      = $('#puzzle4');
+    var puzzleSpace         = $('#space_puzzle');
 
     _buttons.hide();
     btnRestartSpace.hide();
@@ -86,6 +95,8 @@ $(document).ready(function() {
     _planePuzzle.hide();
     _truckPuzzle.hide();
     _unicornPuzzle.hide();
+
+    puzzleSpace.addClass('bbva-dnt');
 
     btnNext.click(function(event) {
         _instructions.hide();
@@ -101,41 +112,30 @@ $(document).ready(function() {
     _spaceBtn.click(function(event) {
         _buttons.hide();
         _spacePuzzle.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: _spacePuzzle.offset().top
-            }, 500);
-        }, 180);
+        displayPuzzle(_spacePuzzle);
+        changeBackground('space');
+        randomRotation('space');
     });
 
     _planeBtn.click(function(event) {
         _buttons.hide();
         _planePuzzle.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: _planePuzzle.offset().top
-            }, 500);
-        }, 180);
+        displayPuzzle(_planePuzzle);
+        changeBackground('plane');
     });
 
     _truckBtn.click(function(event) {
         _buttons.hide();
         _truckPuzzle.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: _truckPuzzle.offset().top
-            }, 500);
-        }, 180);
+        displayPuzzle(_truckPuzzle);
+        changeBackground('truck');
     });
 
     _unicornBtn.click(function(event) {
         _buttons.hide();
         _unicornPuzzle.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: _unicornPuzzle.offset().top
-            }, 500);
-        }, 180);
+        displayPuzzle(_unicornPuzzle);
+        changeBackground('unicorn');
     });
 
     /*
@@ -171,16 +171,122 @@ $(document).ready(function() {
         rotate(current_piece, _degree);
     });
 
+    /*
+        Space Puzzle Pieces
+    */
     $('.space-square').click(function(event) {
-        /*
-          #! Deselect all Pieces but current
-          #! Select Class for current Piece
-          #! Show Rotate buttons
-        */
-        $(this).find('.rotate-right').toggleClass('show-buttons');
-        $(this).find('.rotate-left').toggleClass('show-buttons');
+        // Reset Selected Class in all Pieces
+        resetSelected('.space-square');
+        // Catch current Piece
+        var currentSelected = $(this).attr('id');
+        if ($(this).hasClass('relevant')) {
+            // Remove Selected Class in Current Piece
+            removeSelected(currentSelected);
+            //
+            $(this).removeClass('relevant')
+        } else {
+            // #! Reset RELEVANT Class for all Pieces
+            $('div.space-square').removeClass('relevant');
+            // #! Add RELEVANT Class to this element
+            $(this).addClass('relevant');
+            // Add Class to make Selected
+            addSelected(currentSelected);
+        }
+    }).children('.rotate-btn').click(function(e) {
+        return false;
+    });
+    /*
+        Plane Puzzle Pieces
+    */
+    $('.plane-square').click(function(event) {
+        // Reset Selected Class in all Pieces
+        resetSelected('.plane-square');
+        // Catch current Piece
+        var currentSelected = $(this).attr('id');
+        if ($(this).hasClass('relevant')) {
+            // Remove Selected Class in Current Piece
+            removeSelected(currentSelected);
+            //
+            $(this).removeClass('relevant')
+        } else {
+            // #! Reset RELEVANT Class for all Pieces
+            $('div.plane-square').removeClass('relevant');
+            // #! Add RELEVANT Class to this element
+            $(this).addClass('relevant');
+            // Add Class to make Selected
+            addSelected(currentSelected);
+        }
+    }).children('.rotate-btn').click(function(e) {
+        return false;
+    });
+    /*
+        Truck Puzzle Pieces
+    */
+    $('.truck-square').click(function(event) {
+        // Reset Selected Class in all Pieces
+        resetSelected('.truck-square');
+        // Catch current Piece
+        var currentSelected = $(this).attr('id');
+        if ($(this).hasClass('relevant')) {
+            // Remove Selected Class in Current Piece
+            removeSelected(currentSelected);
+            //
+            $(this).removeClass('relevant')
+        } else {
+            // #! Reset RELEVANT Class for all Pieces
+            $('div.truck-square').removeClass('relevant');
+            // #! Add RELEVANT Class to this element
+            $(this).addClass('relevant');
+            // Add Class to make Selected
+            addSelected(currentSelected);
+        }
+    }).children('.rotate-btn').click(function(e) {
+        return false;
     });
 
+    /*
+        Unicorn Puzzle Pieces
+    */
+    $('.unicorn-square').click(function(event) {
+        // Reset Selected Class in all Pieces
+        resetSelected('.unicorn-square');
+        // Catch current Piece
+        var currentSelected = $(this).attr('id');
+        if ($(this).hasClass('relevant')) {
+            // Remove Selected Class in Current Piece
+            removeSelected(currentSelected);
+            //
+            $(this).removeClass('relevant')
+        } else {
+            // #! Reset RELEVANT Class for all Pieces
+            $('div.unicorn-square').removeClass('relevant');
+            // #! Add RELEVANT Class to this element
+            $(this).addClass('relevant');
+            // Add Class to make Selected
+            addSelected(currentSelected);
+        }
+    }).children('.rotate-btn').click(function(e) {
+        return false;
+    });
+
+
+
+    function resetSelected(piece_class) {
+        $('div'+piece_class).removeClass('piece-selected');
+        $('div'+piece_class).find('.rotate-btn').hide();
+    }
+
+    function removeSelected(currentSelected) {
+        $('#'+currentSelected).removeClass('piece-selected');
+        $('#'+currentSelected).find('.rotate-btn').fadeOut(300).hide();
+    }
+
+    function addSelected(currentSelected) {
+        $('#'+currentSelected).addClass('piece-selected');
+        $('#'+currentSelected).find('.rotate-btn').fadeIn(300).show();
+    }
+
+    // Rotate Pieces
     function rotate(piece, degree){
         current_piece   = piece;
         _degree         = degree;
@@ -192,4 +298,111 @@ $(document).ready(function() {
         });
         // Compare Array states => Piece ON Class
     }
+
+    // Randomly rotate each piece in Current Puzzle
+    function randomRotation(puzzle){
+        var index = 1;
+        for (var piece in _c_states[puzzle]) {
+            var degree = degreeArray[Math.floor(Math.random() * degreeArray.length)];
+            // DOM puzzle-piece
+            _piece = (puzzle +'_piece'+ index);
+            // Current States degree
+            (_c_states[puzzle])[piece].degree = degree;
+            // Rotate dynamically
+            rotate(_piece, degree);
+            // Increment aux index
+            index++;
+        }
+    }
+
+    function displayPuzzle(puzzle){
+        setTimeout(function() {
+            $('html, body').animate({
+                scrollTop: puzzle.offset().top
+            }, 500);
+        }, 180);
+    }
+
+    function changeBackground(img) {
+        var _img = backgr[img];
+        $('.puzzles-bckgr').css({
+            'background'        : 'url('+_img+') no-repeat top fixed',
+            'background-size'   : 'cover'
+        });
+    }
+
+    /*
+    * # # # # # # # # # # #
+    * TIMERS SECTION
+    * # # # # # # # # # # #
+    */
+
+    var firstTimer = new Timer();
+    var secondTimer = new Timer();
+    var thirdTimer = new Timer();
+    var fourthTimer = new Timer();
+
+    btnStartSpace.click(function(event) {
+        puzzleSpace.removeClass('bbva-dnt');
+        startFirst();
+    });
+    btnRestartSpace.click(function(event) {
+        puzzleSpace.removeClass('bbva-dnt');
+        randomRotation('space');
+        startFirst();
+    });
+
+    function startFirst() {
+        firstTimer.start({
+            countdown: true,
+            startValues: {
+                seconds: 30
+            }
+        });
+    }
+
+    // #! First Timer => Space Puzzle
+    $('#firstTimer .values').html(firstTimer.getTimeValues().toString(['minutes', 'seconds']));
+    firstTimer.addEventListener('secondsUpdated', function(e) {
+        $('#firstTimer .values').html(firstTimer.getTimeValues().toString(['minutes', 'seconds']));
+    });
+    secondTimer.addEventListener('targetAchieved', function(e) {
+        puzzleSpace.addClass('bbva-dnt')
+        btnStartSpace.hide();
+        btnRestartSpace.fadeIn(300).show();
+    });
+
+    // #! Second Timer => Plane Puzzle
+    $('#secondTimer .values').html(secondTimer.getTimeValues().toString(['minutes', 'seconds']));
+    secondTimer.addEventListener('secondsUpdated', function(e) {
+        $('#secondTimer .values').html(secondTimer.getTimeValues().toString(['minutes', 'seconds']));
+    });
+    secondTimer.addEventListener('targetAchieved', function(e) {
+        puzzleSpace.addClass('bbva-dnt')
+        btnStartSpace.hide();
+        btnRestartSpace.fadeIn(300).show();
+    });
+
+    // #! Third Timer => Truck Puzzle
+    $('#firstTimer .values').html(firstTimer.getTimeValues().toString(['minutes', 'seconds']));
+    firstTimer.addEventListener('secondsUpdated', function(e) {
+        $('#firstTimer .values').html(firstTimer.getTimeValues().toString(['minutes', 'seconds']));
+    });
+    firstTimer.addEventListener('targetAchieved', function(e) {
+        puzzleSpace.addClass('bbva-dnt')
+        btnStartSpace.hide();
+        btnRestartSpace.fadeIn(300).show();
+    });
+
+    // #! Fourth Timer => Unicorn Puzzle
+    $('#firstTimer .values').html(firstTimer.getTimeValues().toString(['minutes', 'seconds']));
+    firstTimer.addEventListener('secondsUpdated', function(e) {
+        $('#firstTimer .values').html(firstTimer.getTimeValues().toString(['minutes', 'seconds']));
+    });secondTimer
+    firstTimer.addEventListener('targetAchieved', function(e) {
+        puzzleSpace.addClass('bbva-dnt')
+        btnStartSpace.hide();
+        btnRestartSpace.fadeIn(300).show();
+    });
+
 });
