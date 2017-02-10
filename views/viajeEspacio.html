@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height"/>
         <meta name="theme-color" content="#0097CE"/>
-        <title>Arma tu fiesta</title>
+        <title>Navega en el espacio</title>
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
         <link rel="stylesheet" type="text/css" href="../resources/css/componentsStyle.css">
@@ -278,7 +278,7 @@
                                 </div>
                                 <div class="lit-row">
                                     <!-- Plane Puzzle -->
-                                    <div class="cmn-block puzzle-cnt">
+                                    <div id="plane_puzzle" class="cmn-block puzzle-cnt">
                                         <div id="plane_square1" class="plane-square puzzle-square">
                                             <div id="plane_piece1" class="puzzle-piece">
 
@@ -373,9 +373,16 @@
                                 <div class="lit-row">
                                     <div class="cmn-block puzzle-cnt">
                                         <div class="puzzle-timer-cnt">
+                                            <div class="cmn-block">
+                                                <div id="secondTimer" class="chrnmtr">
+                                                    <div class="cnt-expand">
+                                                        <div class="vertical-align values topMargin10">
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-
                                         <div class="graphics-cnt-r">
                                             <div class="city">
 
@@ -384,7 +391,7 @@
                                     </div>
                                     <div class="cmn-block">
                                         <div class="puzzle-restart-cnt">
-                                            <button id="btnSartPlane" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
+                                            <button id="btnStartPlane" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
                                             <button id="btnRestartPlane" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
                                         </div>
                                     </div>
@@ -401,7 +408,7 @@
                                             </div>
                                         </div>
                                         <div class="instructs-cnt">
-                                            <div class="puzzle-dsc-txt">
+                                            <div class="puzzle-dsc-txt-hrdr">
                                                 <p>
                                                     Lleva tu camioneta por el camino, gira cada cuadrante hasta que encuentres el camino correcto, tienes 30 segundos para lograrlo.
                                                 </p>
@@ -411,8 +418,8 @@
                                     </div>
                                 </div>
                                 <div class="lit-row">
-                                    <!-- Puzzle -->
-                                    <div class="cmn-block puzzle-cnt">
+                                    <!-- Truck Puzzle -->
+                                    <div id="truck_puzzle" class="cmn-block puzzle-cnt">
                                         <div id="truck_square1" class="truck-square puzzle-square">
                                             <div id="truck_piece1" class="puzzle-piece">
 
@@ -507,7 +514,15 @@
                                 <div class="lit-row">
                                     <div class="cmn-block puzzle-cnt">
                                         <div class="puzzle-timer-cnt">
+                                            <div class="cmn-block">
+                                                <div id="thirdTimer" class="chrnmtr-hrdr">
+                                                    <div class="cnt-expand">
+                                                        <div class="vertical-align values topMargin10">
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="graphics-cnt-r">
                                             <div class="buildings">
@@ -517,7 +532,7 @@
                                     </div>
                                     <div class="cmn-block puzzle-cnt">
                                         <div class="puzzle-restart-cnt">
-                                            <button id="btnSartTruck" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
+                                            <button id="btnStartTruck" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
                                             <button id="btnRestartTruck" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
                                         </div>
                                     </div>
@@ -544,8 +559,8 @@
                                     </div>
                                 </div>
                                 <div class="lit-row">
-                                    <!-- Puzzle -->
-                                    <div class="cmn-block puzzle-cnt">
+                                    <!-- Unicorn Puzzle -->
+                                    <div id="unicorn_puzzle" class="cmn-block puzzle-cnt">
                                         <div id="unicorn_square1" class="unicorn-square puzzle-square">
                                             <div id="unicorn_piece1" class="puzzle-piece">
 
@@ -640,9 +655,16 @@
                                 <div class="lit-row">
                                     <div class="cmn-block puzzle-cnt">
                                         <div class="puzzle-timer-cnt">
+                                            <div class="cmn-block">
+                                                <div id="fourthTimer" class="chrnmtr">
+                                                    <div class="cnt-expand">
+                                                        <div class="vertical-align values topMargin10">
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-
                                         <div class="graphics-cnt-r">
                                             <div class="castle">
 
@@ -651,7 +673,7 @@
                                     </div>
                                     <div class="cmn-block puzzle-cnt">
                                         <div class="puzzle-restart-cnt">
-                                            <button id="btnSartUnicorn" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
+                                            <button id="btnStartUnicorn" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
                                             <button id="btnRestartUnicorn" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
                                         </div>
                                     </div>

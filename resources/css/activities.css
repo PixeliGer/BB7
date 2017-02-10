@@ -150,6 +150,11 @@
     font-size: 30px;
     color: #fff;
 }
+.puzzle-dsc-txt-hrdr{
+    font-family: 'bbva-light-normal',sans-serif;
+    font-size: 30px;
+    color: rgb(0, 86, 151);
+}
 .puzzle-square {
     border: 1px solid #fff;
     float:left;
@@ -494,4 +499,12 @@ Unicorn Puzzle
     font-family: "bbva-light-normal", sans-serif;
     font-size: 3.4em;
     color: #fff;
+}
+.chrnmtr-hrdr{
+    width: 120px;
+    height: 138px;
+    display: inline-block;
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 3.4em;
+    color: rgb(0, 86, 151);
 }
