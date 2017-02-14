@@ -1,4 +1,46 @@
 /*
+ ######  ##     ## ######## ##    ##  #######
+##    ## ##     ## ##       ###   ## ##     ##
+##       ##     ## ##       ####  ## ##     ##
+ ######  ##     ## ######   ## ## ## ##     ##
+      ## ##     ## ##       ##  #### ##     ##
+##    ## ##     ## ##       ##   ### ##     ##
+ ######   #######  ######## ##    ##  #######
+*/
+.sueno-bckgr{
+    background: url('../img/backgrounds/Back_Home_blur.jpg') no-repeat top fixed;
+    background-size: cover;
+}
+.btn-suenos{
+    display: inline-block;
+    width: 70%;
+    max-height: 230px;
+    padding-top: 65%;
+    cursor: pointer;
+}
+.btn-sueno-casa{
+    background: url('../img/icons/Boton_Casa.svg') no-repeat center;
+}
+.btn-sueno-casa:hover{
+    background: url('../img/icons/Boton_Casa_on.svg') no-repeat center;
+}
+.btn-sueno-auto{
+    background: url('../img/icons/Boton_Auto.svg') no-repeat center;
+}
+.btn-sueno-auto:hover{
+    background: url('../img/icons/Boton_Auto_on.svg') no-repeat center;
+}
+.btn-sueno-cohete{
+    background: url('../img/icons/Boton_Nave.svg') no-repeat center;
+}
+.btn-sueno-cohete:hover{
+    background: url('../img/icons/Boton_Nave_on.svg') no-repeat center;
+}
+.year-cnt{
+    max-width: 800px;
+}
+
+/*
 ######## #### ########  ######  ########    ###
 ##        ##  ##       ##    ##    ##      ## ##
 ##        ##  ##       ##          ##     ##   ##

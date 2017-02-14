@@ -2,8 +2,11 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /*For the lulz
-    font-family: Comic Sans, Comic Sans MS !important;*/
+    /*For the lulz*/
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
 }
 @font-face {
     font-family: "bbva-book-normal";
