@@ -39,6 +39,30 @@
 .year-cnt{
     max-width: 800px;
 }
+.sueno-ttl{
+    font-family: "bbva-light-normal",sans-serif;
+    font-size: 26px;
+    color: rgb(0, 125, 197);
+    display: inline-block;
+}
+.sueno-ttl-hrd{
+    font-family: "bbva-book-normal",sans-serif;
+    font-size: 26px;
+    color: rgb(0, 125, 197);
+    display: inline-block;
+}
+.input-sueno{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    -webkit-appearance: none;
+    text-align: center;
+    font-family: "bbva-light-normal", sans-serif;
+    color: rgb(0, 125, 197);
+    font-size: 26px;
+}
 
 /*
 ######## #### ########  ######  ########    ###
