@@ -74,7 +74,7 @@
                             </div>
                         </div>
 
-                        <div class="lit-row topMargin100">
+                        <div id="btns_cnt" class="lit-row topMargin100">
                             <div class="cmn-blck">
                                 <div class="thrty-clmn-lwys">
                                     <div id="btnCasa" class="btn-suenos btn-sueno-casa">
@@ -96,10 +96,36 @@
                     </div>
 
                     <!-- House Dream -->
-                    <div class="bbva-content-fluid">
+                    <div id="dream_house" class="bbva-content-fluid">
                         <div class="lit-row topMargin20">
                             <!-- House Year 1 -->
-                            <div class="cmn-block cnt-relative year-cnt">
+                            <div id="house_y1" class="cmn-block cnt-relative year-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Año 1
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="houseBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="houseRound1" class="counter-qnty">$0</span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Table Header -->
                                 <div class="lit-row">
                                     <div class="mid-clmn-lwys-full padding-lf-mid">
@@ -136,11 +162,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-paredes">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -166,7 +190,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="paredes_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,11 +202,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-cama">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -201,14 +223,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $100
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="cama_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -220,11 +242,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-comedor">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -232,7 +252,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Volante
+                                                        Comedor
                                                     </div>
                                                 </div>
                                             </div>
@@ -243,14 +263,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $500
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="comedor_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -262,11 +282,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-garage">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -274,7 +292,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Cajuela
+                                                        Garage
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,14 +303,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $100
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="garage_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -304,11 +322,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-puerta">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -327,56 +343,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $200
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="lit-row">
-                                    <div class="mid-clmn-lwys-full">
-                                        <div class="cmn-block">
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        Asiento
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mid-clmn-lwys-full">
-                                        <div class="cmn-block">
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-
+                                                        <input id="puerta_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -388,11 +362,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-sillon">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -400,49 +372,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        LLanta
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mid-clmn-lwys-full">
-                                        <div class="cmn-block">
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="lit-row">
-                                    <div class="mid-clmn-lwys-full">
-                                        <div class="cmn-block">
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        Estereo
+                                                        Sillón Grande
                                                     </div>
                                                 </div>
                                             </div>
@@ -460,7 +390,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="estereo_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="sillon_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -472,11 +402,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-techos">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -484,7 +412,87 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Parabrisas
+                                                        Techos
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="techos_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-television">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Televisión
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="television_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-ventanas">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Ventanas
                                                     </div>
                                                 </div>
                                             </div>
@@ -502,7 +510,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="parabrisas_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="ventanas_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -511,14 +519,33 @@
                                 </div>
                             </div>
                             <!-- House Year 2 -->
-
-                        </div>
-                    </div>
-                    <!-- Car Dream -->
-                    <div class="bbva-content-fluid">
-                        <div class="lit-row topMargin20">
-                            <!-- Car Year 1 -->
-                            <div class="cmn-block cnt-relative year-cnt">
+                            <div id="house_y2" class="cmn-block cnt-relative year-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Año 2
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="houseBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="houseYear1" class="counter-qnty">$0</span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Table Header -->
                                 <div class="lit-row">
                                     <div class="mid-clmn-lwys-full padding-lf-mid">
@@ -555,11 +582,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-paredes">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -567,7 +592,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Carrocería
+                                                        Paredes
                                                     </div>
                                                 </div>
                                             </div>
@@ -578,14 +603,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $600
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="paredes_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -597,11 +622,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-cama">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -609,7 +632,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Velocímetro
+                                                        Cama
                                                     </div>
                                                 </div>
                                             </div>
@@ -620,14 +643,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $120
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="cama_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -639,11 +662,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-comedor">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -651,7 +672,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Volante
+                                                        Comedor
                                                     </div>
                                                 </div>
                                             </div>
@@ -662,14 +683,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $600
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="comedor_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -681,11 +702,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-garage">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -693,7 +712,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Cajuela
+                                                        Garage
                                                     </div>
                                                 </div>
                                             </div>
@@ -704,14 +723,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $120
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="garage_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -723,11 +742,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-puerta">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -746,14 +763,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $240
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="puerta_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -765,11 +782,435 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-sillon">
 
-                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Sillón Grande
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $240
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="sillon_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-techos">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Techos
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $240
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="techos_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-television">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Televisión
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $240
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="television_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-ventanas">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Ventanas
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $60
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="ventanas_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Car Dream -->
+                    <div id="dream_car" class="bbva-content-fluid">
+                        <div class="lit-row topMargin20">
+                            <!-- Car Year 1 -->
+                            <div id="car_y1" class="cmn-block cnt-relative year-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Año 1
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="houseBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="houseRound1" class="counter-qnty">$0</span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Table Header -->
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full padding-lf-mid">
+                                        <div class="cmn-block">
+                                            <div class="bbva-blue-nrml cnt-h40">
+                                                <div class="dnts-ttl vertical-align">
+                                                    Insumos
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-nrml cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Precio
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-nrml cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Cantidad
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- First Row -->
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-carroceria">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Carrocería
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $500
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="carroceria_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-velocimetro">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Velocímetro
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $100
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="velocimetro_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-volante">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Volante
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $500
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="volante_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-cajuela">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Cajuela
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $100
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="cajuela_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-puertaa">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Puerta
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="puertaa_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-asiento">
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -788,14 +1229,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $200
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="asiento_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -807,11 +1248,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-llanta">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -830,14 +1269,14 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        $200
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-
+                                                        <input id="llanta_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -849,11 +1288,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-estereo">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -891,11 +1328,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-parabrisas">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -930,14 +1365,33 @@
                                 </div>
                             </div>
                             <!-- Car Year 2 -->
-
-                        </div>
-
-                    </div>
-                    <!-- Rocket Dream -->
-                    <div class="bbva-content-fluid">
-                        <div class="lit-row topMargin20">
-                            <div class="cmn-block cnt-relative year-cnt">
+                            <div id="car_y2" class="cmn-block cnt-relative year-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Año 2
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="houseBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="houseRound1" class="counter-qnty">$0</span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Table Header -->
                                 <div class="lit-row">
                                     <div class="mid-clmn-lwys-full padding-lf-mid">
@@ -974,11 +1428,9 @@
                                         <div class="cmn-block">
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="sueno-ttl vertical-align">
-                                                        <div class="item-cnt">
-                                                            <div class="">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-carroceria">
 
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -986,7 +1438,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Pizza
+                                                        Carrocería
                                                     </div>
                                                 </div>
                                             </div>
@@ -997,22 +1449,1187 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Pizza
+                                                        $600
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Pizza
+                                                        <input id="carroceria_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-velocimetro">
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Velocímetro
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $120
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="velocimetro_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-volante">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Volante
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $600
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="volante_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-cajuela">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Cajuela
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $120
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="cajuela_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-puertaa">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Puerta
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $240
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="puertaa_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-asiento">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Asiento
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $240
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="asiento_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-llanta">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        LLanta
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $240
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="llanta_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-estereo">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Estereo
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $240
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="estereo_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-parabrisas">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Parabrisas
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $60
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="parabrisas_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Rocket Dream -->
+                    <div id="dream_rocket" class="bbva-content-fluid">
+                        <div class="lit-row topMargin20">
+                            <!-- Car Year 1 -->
+                            <div id="rocket_y1" class="cmn-block cnt-relative year-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Año 1
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="houseBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="houseRound1" class="counter-qnty">$0</span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Table Header -->
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full padding-lf-mid">
+                                        <div class="cmn-block">
+                                            <div class="bbva-blue-nrml cnt-h40">
+                                                <div class="dnts-ttl vertical-align">
+                                                    Insumos
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-nrml cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Precio
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-nrml cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Cantidad
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- First Row -->
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-plataforma">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Plataforma
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $500
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="plataforma_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-caman">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Cama
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $100
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="caman_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-mesa">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Mesa
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $500
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="mesa_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-mando">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Mando
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $100
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="mando_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-puertan">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Puerta
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="puertan_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-sillonn">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Sillón
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="sillon_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-casco">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Casco
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="casco_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-tv">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        TV
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="tv_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-ventana">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Ventana
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $50
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="ventana_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Car Year 2 -->
+                            <div id="rocket_y2" class="cmn-block cnt-relative year-cnt">
+                                <!-- Title -->
+                                <div class="lit-row">
+                                    <div class="ttl-txt-cont">
+                                        <div class="main-ttl-activity">
+                                            <p>
+                                                Año 2
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Counters -->
+                                <div class="cmn-block counter-block">
+                                    <div class="counter-cnt">
+                                        <div class="lit-row">
+                                            <span class="counter-ttl">Presupuesto:</span><br>
+                                            <span id="rocketBudget" class="counter-qnty"></span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <span class="counter-ttl">Te quedan:</span><br>
+                                            <span id="rocketRound1" class="counter-qnty">$0</span>
+                                        </div>
+                                        <div class="lit-row topMargin10">
+                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Table Header -->
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full padding-lf-mid">
+                                        <div class="cmn-block">
+                                            <div class="bbva-blue-nrml cnt-h40">
+                                                <div class="dnts-ttl vertical-align">
+                                                    Insumos
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-nrml cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Precio
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-nrml cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Cantidad
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- First Row -->
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-plataforma">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Plataforma
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $600
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="plataforma_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-caman">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Cama
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $100
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="caman_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-mesa">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Mesa
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $500
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="mesa_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-mando">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Mando
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $100
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="mando_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-puertan">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Puerta
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="puertan_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-sillonn">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Sillón
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="sillon_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-casco">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Casco
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="casco_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-tv">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        TV
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $200
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="tv_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="item-cnt-sueno">
+                                                        <div class="item-ventana">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        Ventana
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mid-clmn-lwys-full">
+                                        <div class="cmn-block">
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        $50
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mid-clmn-lwys">
+                                                <div class="bbva-blue-lghtr cnt-h80">
+                                                    <div class="sueno-ttl vertical-align">
+                                                        <input id="ventana_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

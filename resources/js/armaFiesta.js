@@ -147,7 +147,7 @@ $(document).ready(function() {
                     // Update Budget and all item vars
                     updateResults();
 
-                    alert('No tienes suficiente para más articulos');
+                    alert('No tienes suficiente dinero para más artículos');
                 }
             } else if (CRRNT_RND === 'round2') {
                 // Restart Axis-X

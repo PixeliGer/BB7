@@ -63,6 +63,148 @@
     color: rgb(0, 125, 197);
     font-size: 26px;
 }
+.item-cnt-sueno{
+    height: 100%;
+    width: auto;
+}
+/*Casa Items*/
+.item-paredes{
+    background: url('../img/activity_suenos/Insumo_casa_1.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-cama{
+    background: url('../img/activity_suenos/Insumo_casa_2.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-comedor{
+    background: url('../img/activity_suenos/Insumo_casa_3.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-garage{
+    background: url('../img/activity_suenos/Insumo_casa_4.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-puerta{
+    background: url('../img/activity_suenos/Insumo_casa_5.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-sillon{
+    background: url('../img/activity_suenos/Insumo_casa_6.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-techos{
+    background: url('../img/activity_suenos/Insumo_casa_7.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-television{
+    background: url('../img/activity_suenos/Insumo_casa_8.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-ventanas{
+    background: url('../img/activity_suenos/Insumo_casa_9.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+/*Auto Items*/
+.item-carroceria{
+    background: url('../img/activity_suenos/Insumo_auto_1.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-velocimetro{
+    background: url('../img/activity_suenos/Insumo_auto_2.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-volante{
+    background: url('../img/activity_suenos/Insumo_auto_3.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-cajuela{
+    background: url('../img/activity_suenos/Insumo_auto_4.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-puertaa{
+    background: url('../img/activity_suenos/Insumo_auto_5.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-asiento{
+    background: url('../img/activity_suenos/Insumo_auto_6.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-llanta{
+    background: url('../img/activity_suenos/Insumo_auto_7.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-estereo{
+    background: url('../img/activity_suenos/Insumo_auto_8.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-parabrisas{
+    background: url('../img/activity_suenos/Insumo_auto_9.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+/*Nave Items*/
+.item-plataforma{
+    background: url('../img/activity_suenos/Insumo_nave_1.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-caman{
+    background: url('../img/activity_suenos/Insumo_nave_2.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-mesa{
+    background: url('../img/activity_suenos/Insumo_nave_3.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-mando{
+    background: url('../img/activity_suenos/Insumo_nave_4.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-puertan{
+    background: url('../img/activity_suenos/Insumo_nave_5.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-sillonn{
+    background: url('../img/activity_suenos/Insumo_nave_6.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-casco{
+    background: url('../img/activity_suenos/Insumo_nave_7.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-tv{
+    background: url('../img/activity_suenos/Insumo_nave_8.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.item-ventana{
+    background: url('../img/activity_suenos/Insumo_nave_9.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
 
 /*
 ######## #### ########  ######  ########    ###
@@ -157,8 +299,8 @@
 }
 /*Size adjust*/
 #mesa-globos_r1,
-#mesa-globos_r1,
-#mesa-globos_r1{
+#mesa-globos_r2,
+#mesa-globos_r3{
     width: 110px !important;
     height: 113px !important;
     top: 48%;

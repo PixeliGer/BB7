@@ -77,6 +77,20 @@
     padding: 0;
     text-shadow: none;
 }
+.blue-bbva-button-full{
+    background-color: rgb(52, 185, 235);
+    border: 1px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "bbva-light-normal", sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    text-shadow: none;
+}
 
 .blue-bbva-button:hover, .blue-bbva-button-s:hover {
     background-color: #182c69;
