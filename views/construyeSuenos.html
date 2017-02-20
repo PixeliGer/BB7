@@ -40,7 +40,7 @@
                         </div>
                         <!-- Activity/Calculator icon -->
                         <div class="ttl-ico-cnt">
-                            <img class="ttl-ico" src="../resources/img/icons/home/Ico_Menu_Fiesta.svg" alt="" />
+                            <img class="ttl-ico" src="../resources/img/icons/home/Ico_Menu_Construye_Suenos.svg" alt="" />
                         </div>
                         <!-- Activity/Calculator title -->
                         <div class="ttl-txt-cont">
@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                                 <!-- Counters -->
-                                <div class="cmn-block counter-block">
+                                <div class="cmn-block counter-block-b">
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
@@ -531,7 +531,7 @@
                                     </div>
                                 </div>
                                 <!-- Counters -->
-                                <div class="cmn-block counter-block">
+                                <div class="cmn-block counter-block-b">
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
@@ -942,10 +942,22 @@
                         </div>
                         <!--Feedback -->
                         <div class="lit-row">
-                            <div class="cmn-block">
+                            <div id="houseFeed" class="cmn-block topMargin60">
                                 <div class="lit-row">
                                     <!-- Feedback container -->
-                                    <div id="houseFeed" class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
+                                    <div class="fdbk-cnt-mic cmn-block bbva-blue-lghtr cnt-p20">
+                                        <div class="fdbk-txt-cnt-full">
+                                            <div class="fdbk-txt-book">
+                                                <article>
+                                                    <p>
+                                                        ¡Vaya! Compraste cosas útiles para tu casa pero no lograste construirla.
+                                                    </p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20 topMargin20">
                                         <div class="fdbk-img-cnt">
                                             <img class="fdbk-img vertical-align" src="../resources/img/activity_suenos/Feedback_1.svg" alt="" />
                                         </div>
@@ -973,109 +985,115 @@
                                     </div>
                                 </div>
                                 <div class="lit-row">
-                                    <button id="btnHomeSecondR" class="blue-bbva-button-s" type="button" name="button">Ir a la Ronda 2</button>
+                                    <button id="btnHouseSecondR" class="blue-bbva-button-s" type="button" name="button">Ir a la Ronda 2</button>
                                 </div>
                             </div>
                         </div>
                         <!-- Results -->
                         <div class="lit-row">
-                            <div class="cmn-block year-cnt">
-                                <div class="mid-clmn">
-                                    <div class="cmn-block dream-results-cnt topMargin60">
-                                        <!-- Results Header -->
-                                        <div class="lit-row padding-lf-1">
-                                            <div class="bbva-blue-nrml cnt-h40">
-                                                <div class="dnts-ttl vertical-align">
-                                                    Ronda 1
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Results Rows Here -->
-                                        <!-- Final Results  -->
-                                        <div class="final-results lit-row topMargin20">
-                                            <div class="mid-clmn-lwys">
-                                                <div class=" cnt-h80">
-
-                                                </div>
-                                            </div>
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="prty-ttl-hrd vertical-align">
-                                                        <span id="secondTotal"></span>
+                            <div id="houseResults" class="cmn-block year-cnt">
+                                <div class="lit-row">
+                                    <div class="mid-clmn">
+                                        <div class="cmn-block dream-results-cnt topMargin60">
+                                            <!-- Results Header -->
+                                            <div class="lit-row padding-lf-1">
+                                                <div class="bbva-blue-nrml cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Ronda 1
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- Final Message Block -->
-                                        <div class="lit-row">
-                                            <div class="padding-lf-1">
-                                                <div class="bbva-blue-nrml block-results-sqr">
-                                                    <p>
-                                                        Aqui compraste cosas útiles para tu casa, pero ¡no lograste construirla que es lo más importante!
-                                                    </p>
-                                                    <p>
-                                                        ¿Dónde pondrás todos los accesorios?
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <!-- Results Rows Here -->
+                                            <!-- Final Results  -->
+                                            <div class="final-results lit-row topMargin20">
+                                                <div class="mid-clmn-lwys">
+                                                    <div class=" cnt-h80">
 
-                                <div class="mid-clmn">
-                                    <div class="cmn-block dream-results-cnt topMargin60">
-                                        <!-- Results Header -->
-                                        <div class="lit-row padding-lf-1">
-                                            <div class="bbva-blue-hrdr cnt-h40">
-                                                <div class="dnts-ttl vertical-align">
-                                                    Ronda 2
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Results Rows Here -->
-                                        <!-- Final Results  -->
-                                        <div class="final-results lit-row topMargin20">
-                                            <div class="mid-clmn-lwys">
-                                                <div class=" cnt-h80">
-
-                                                </div>
-                                            </div>
-                                            <div class="mid-clmn-lwys">
-                                                <div class="bbva-blue-lghtr cnt-h80">
-                                                    <div class="prty-ttl-hrd vertical-align">
-                                                        <span id="secondTotal"></span>
+                                                <div class="mid-clmn-lwys">
+                                                    <div class="bbva-blue-lghtr cnt-h80">
+                                                        <div class="prty-ttl-hrd vertical-align">
+                                                            <span id="secondTotal"></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- Final Message Block -->
-                                        <div class="lit-row">
-                                            <div class="padding-lf-1">
-                                                <div class="bbva-blue-hrdr block-results-sqr">
-                                                    <p>
-                                                        Por el aumento en precios no lograste comprar todos los accesorios para tu casa,
-                                                        pero al menos lograste tener lo esencial.
-                                                    </p>
-                                                    <p>
-                                                        ¡Felicidades por priorizar tus compras!
-                                                    </p>
+                                            <!-- Final Message Block -->
+                                            <div class="lit-row">
+                                                <div class="padding-lf-1">
+                                                    <div class="bbva-blue-nrml block-results-sqr">
+                                                        <p>
+                                                            Aqui compraste cosas útiles para tu casa, pero ¡no lograste construirla que es lo más importante!
+                                                        </p>
+                                                        <p>
+                                                            ¿Dónde pondrás todos los accesorios?
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <div class="mid-clmn">
+                                        <div class="cmn-block dream-results-cnt topMargin60">
+                                            <!-- Results Header -->
+                                            <div class="lit-row padding-lf-1">
+                                                <div class="bbva-blue-hrdr cnt-h40">
+                                                    <div class="dnts-ttl vertical-align">
+                                                        Ronda 2
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Results Rows Here -->
+                                            <!-- Final Results  -->
+                                            <div class="final-results lit-row topMargin20">
+                                                <div class="mid-clmn-lwys">
+                                                    <div class=" cnt-h80">
+
+                                                    </div>
+                                                </div>
+                                                <div class="mid-clmn-lwys">
+                                                    <div class="bbva-blue-lghtr cnt-h80">
+                                                        <div class="prty-ttl-hrd vertical-align">
+                                                            <span id="secondTotal"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Final Message Block -->
+                                            <div class="lit-row">
+                                                <div class="padding-lf-1">
+                                                    <div class="bbva-blue-hrdr block-results-sqr">
+                                                        <p>
+                                                            Por el aumento en precios no lograste comprar todos los accesorios para tu casa,
+                                                            pero al menos lograste tener lo esencial.
+                                                        </p>
+                                                        <p>
+                                                            ¡Felicidades por priorizar tus compras!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cmn-block year-cnt topMargin40">
-                                <button id="btnFHomeFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                                <div class="lit-row">
+                                    <div class="cmn-block year-cnt topMargin40">
+                                        <button id="btnFHouseFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- Final  -->
                         <div class="lit-row">
-                            <div class="cmn-block year-cnt">
+                            <div id="finalHouseFeed" class="cmn-block year-cnt">
                                 <div class="lit-row">
-
+                                    <div class="cmn-block">
+                                        <img src="../resources/img/activity_suenos/Casa.svg" alt="">
+                                    </div>
                                 </div>
                                 <div class="lit-row">
                                     <div class="ttl-txt-cont">
@@ -1086,11 +1104,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="lit-row">
+                                <div class="lit-row topMargin20">
                                     <div class="cmn-block">
                                         <div class="lit-row">
                                             <!-- Feedback container -->
-                                            <div id="houseFeed" class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
+                                            <div class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
                                                 <div class="fdbk-img-cnt">
                                                     <img class="fdbk-img vertical-align" src="../resources/img/activity_suenos/Feedback_2.svg" alt="" />
                                                 </div>
@@ -1136,7 +1154,7 @@
                                     </div>
                                 </div>
                                 <!-- Counters -->
-                                <div class="cmn-block counter-block">
+                                <div class="cmn-block counter-block-b">
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
@@ -1556,7 +1574,7 @@
                                     </div>
                                 </div>
                                 <!-- Counters -->
-                                <div class="cmn-block counter-block">
+                                <div class="cmn-block counter-block-b">
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
@@ -2160,7 +2178,7 @@
                                     </div>
                                 </div>
                                 <!-- Counters -->
-                                <div class="cmn-block counter-block">
+                                <div class="cmn-block counter-block-b">
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
@@ -2580,7 +2598,7 @@
                                     </div>
                                 </div>
                                 <!-- Counters -->
-                                <div class="cmn-block counter-block">
+                                <div class="cmn-block counter-block-b">
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>

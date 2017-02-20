@@ -101,22 +101,32 @@ $(document).ready(function() {
         car_y1      = $('#car_y1'),
         car_y2      = $('#car_y2'),
         rocket_y1   = $('#rocket_y1'),
-        rocket_y2   = $('#rocket_y2')
+        rocket_y2   = $('#rocket_y2'),
+        // [HOUSE] ELEMENTS
+        btnHouseSR      = $('#btnHouseSecondR'),
+        btnFHouseFeed   = $('#btnFHouseFeed'),
+        houseFeed       = $('#houseFeed'),
+        houseResults    = $('#houseResults'),
+        finalHouseFeed  = $('#finalHouseFeed');
 
-
-        // Hide Dream Containers
-        dreamHouse.hide();
-        dreamCar.hide();
-        dreamRocket.hide();
-        // Disable [Next Year] Buttons
-        btnNextCa.addClass('bbva-disable');
-        btnNextAu.addClass('bbva-disable');
-        btnNextNa.addClass('bbva-disable');
-        // Hide Year [2] Dreams
-        house_y2.hide();
-        car_y2.hide();
-        rocket_y2.hide();
-
+    // Hide Dream Containers
+    dreamHouse.hide();
+    dreamCar.hide();
+    dreamRocket.hide();
+    // Disable [Next Year] Buttons
+    btnNextCa.addClass('bbva-disable');
+    btnNextAu.addClass('bbva-disable');
+    btnNextNa.addClass('bbva-disable');
+    // Hide Year [2] Dreams
+    house_y2.hide();
+    car_y2.hide();
+    rocket_y2.hide();
+    // Hide [HOUSE] Elements
+    btnHouseSR.hide();
+    btnFHouseFeed.hide();
+    houseFeed.hide();
+    houseResults.hide();
+    finalHouseFeed.hide();
 
 
     // Main Activity Buttons Events
@@ -144,19 +154,29 @@ $(document).ready(function() {
         displayContainer(dreamRocket);
     });
 
+    // [Next Year] Buttons
     btnNextCa.click(function(event) {
-        CRRNT_RND = 'round2';
         house_y1.hide();
         house_y2.fadeIn(300).show('fast');
         displayContainer(house_y2);
     });
 
     btnNextAu.click(function(event) {
-        /* Act on the event */
+        car_y1.hide();
+        car_y2.fadeIn(300).show('fast');
+        displayContainer(car_y2);
+
     });
 
     btnNextNa.click(function(event) {
-        /* Act on the event */
+        rocket_y1.hide();
+        rocket_y2.fadeIn(300).show('fast');
+        displayContainer(rocket_y2);
+    });
+
+    //
+    btnHouseSR.click(function(event) {
+        CRRNT_CA_RND = 'round2';
     });
 
     $('.input-sueno').each(function() {
@@ -181,6 +201,10 @@ $(document).ready(function() {
                         fillItems(dream_item, CRRNT_DRM);
                         // F-> Fill Items
                         if ( budget.a_budget == budget.casa) {
+                            if (_year === '_y2') {
+                                houseFeed.fadeIn(300).show('fast');
+                                displayContainer(houseFeed);
+                            }
                             btnNextCa.removeClass('bbva-disable');
                         }
                     } else {
@@ -269,9 +293,6 @@ function obtainAmmount(dream_item) {
 function updateResults(year) {
     var _year = year;
     var results = AddResults(_year);
-    // budget.a_budget = results.auto;
-    // budget.c_budget = results.casa;
-    // budget.n_budget = results.nave;
 }
 
 function AddResults(year) {
@@ -383,19 +404,98 @@ function addFinalItem(dream, name, year) {
                 }
             }
 
-
         }
         /*
         *
         */
         else if (_dream === 'auto') {
-
+            if (CRRNT_CA_RND === 'round1') {
+                if (_year === '_y1') {
+                    _price  = exploreMainArrays(_name, _autoStuff).price_1;
+                    _cant   = ts_ca[_name][_year];
+                    itemsCar.round1.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                } else if (_year === '_y2') {
+                    _price  = exploreMainArrays(_name, _autoStuff).price_2;
+                    _cant   = ts_ca[_name][_year];
+                    itemsCar.round1.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                }
+            } else if (CRRNT_CA_RND === 'round2') {
+                if (_year === '_y1') {
+                    _price  = exploreMainArrays(_name, _autoStuff).price_1;
+                    _cant   = ts_ca[_name][_year];
+                    itemsCar.round2.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                } else if (_year === '_y2') {
+                    _price  = exploreMainArrays(_name, _autoStuff).price_2;
+                    _cant   = ts_ca[_name][_year];
+                    itemsCar.round2.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                }
+            }
         }
         /*
         *
         */
         else if (_dream === 'nave') {
-
+            if (CRRNT_CA_RND === 'round1') {
+                if (_year === '_y1') {
+                    _price  = exploreMainArrays(_name, _naveStuff).price_1;
+                    _cant   = ts_ca[_name][_year];
+                    itemsRocket.round1.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                } else if (_year === '_y2') {
+                    _price  = exploreMainArrays(_name, _naveStuff).price_2;
+                    _cant   = ts_ca[_name][_year];
+                    itemsRocket.round1.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                }
+            } else if (CRRNT_CA_RND === 'round2') {
+                if (_year === '_y1') {
+                    _price  = exploreMainArrays(_name, _naveStuff).price_1;
+                    _cant   = ts_ca[_name][_year];
+                    itemsRocket.round2.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                } else if (_year === '_y2') {
+                    _price  = exploreMainArrays(_name, _naveStuff).price_2;
+                    _cant   = ts_ca[_name][_year];
+                    itemsRocket.round2.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                }
+            }
         }
 }
 function removeFinalItem(dream, name, year) {
@@ -436,6 +536,59 @@ function removeFinalItem(dream, name, year) {
         }
     }
 
+}
+function setFinalItems(dreamItems) {
+
+    var f_row = '', f_rows = '',
+        s_row = '', s_rows = '';
+
+    for (var item in dreamItems.round1) {
+        f_row = '<div class="lit-row">'+'\n'+
+                    '<div class="cmn-block">'+'\n'+
+                        '<div class="mid-clmn-lwys">'+'\n'+
+                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                '<div class="prty-ttl vertical-align">'+'\n'+
+                                    '<div class="item-cnt-sueno">'+'\n'+
+                                        '<div class="'+dreamItems.round1[item].iclass+'"></div>'+'\n'+
+                                    '</div>'+'\n'+
+                                '</div>'+'\n'+
+                            '</div>'+'\n'+
+                        '</div>'+'\n'+
+                        '<div class="mid-clmn-lwys">'+'\n'+
+                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                '<div class="prty-ttl vertical-align">'+'\n'+
+                                    '<span> $'+dreamItems.round1[item].price+'</span>'+'\n'+
+                                '</div>'+'\n'+
+                            '</div>'+'\n'+
+                        '</div>'+'\n'+
+                    '</div>'+'\n'+
+                '</div>'+'\n';
+        f_rows += f_row;
+    }
+
+    for (var item in dreamItems.round2) {
+        f_row = '<div class="lit-row">'+'\n'+
+                    '<div class="cmn-block">'+'\n'+
+                        '<div class="mid-clmn-lwys">'+'\n'+
+                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                '<div class="prty-ttl vertical-align">'+'\n'+
+                                    '<div class="item-cnt-sueno">'+'\n'+
+                                        '<div class="'+dreamItems.round2[item].iclass+'"></div>'+'\n'+
+                                    '</div>'+'\n'+
+                                '</div>'+'\n'+
+                            '</div>'+'\n'+
+                        '</div>'+'\n'+
+                        '<div class="mid-clmn-lwys">'+'\n'+
+                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                '<div class="prty-ttl vertical-align">'+'\n'+
+                                    '<span> $'+dreamItems.round2[item].price+'</span>'+'\n'+
+                                '</div>'+'\n'+
+                            '</div>'+'\n'+
+                        '</div>'+'\n'+
+                    '</div>'+'\n'+
+                '</div>'+'\n';
+        f_rows += f_row;
+    }
 }
 function exploreMainArrays(_name, _array) {
     var name        = _name,
