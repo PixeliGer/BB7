@@ -222,6 +222,7 @@ function isNumeric (evt) {
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
 }
+
 function obtainAmmount(_prty_item) {
     var item = _prty_item.split('_');
     var _name = item[0];

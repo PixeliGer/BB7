@@ -92,11 +92,11 @@
     text-shadow: none;
 }
 
-.blue-bbva-button:hover, .blue-bbva-button-s:hover {
+.blue-bbva-button:hover, .blue-bbva-button-s:hover, .blue-bbva-button-full:hover {
     background-color: #182c69;
 }
 
-.blue-bbva-button:active, .blue-bbva-button-s:active {
+.blue-bbva-button:active, .blue-bbva-button-s:active, .blue-bbva-button-full:active {
     position: relative;
     top: 1px;
 }
@@ -157,6 +157,11 @@
 
 .bbva-opaque {
     opacity: .5 !important;
+}
+
+.bbva-disable{
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .bbva-separator {
@@ -627,13 +632,17 @@
     max-width: 800px;
     display: inline-block;
 }
+.fdbk-cnt-medium{
+    height: 400px;
+    max-width: 900px;
+    display: inline-block;
+}
 .fdbk-img-cnt {
     width: 30%;
     float: left;
     height: 100%;
 }
 .fdbk-img {
-    width: 60%;
     min-width: 100px;
     max-width: 180px;
 }
@@ -658,6 +667,11 @@
 .fdbk-txt {
     font-family: "bbva-light-normal", sans-serif;
     font-size: 1.2em;
+    color: rgb(0, 86, 151);
+}
+.fdbk-txt-book{
+    font-family: "bbva-book-normal", sans-serif;
+    font-size: 1.4em;
     color: rgb(0, 86, 151);
 }
 .fdbk-info-txt {
@@ -833,6 +847,9 @@
 @media screen and (max-width: 800px) {
     .fdbk-cnt {
         height: 400px !important;
+    }
+    .fdbk-cnt-medium{
+        height: 550px !important;
     }
     .thrty-clmn{
         width: 98% !important
