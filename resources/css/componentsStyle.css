@@ -675,7 +675,7 @@
     padding: 32px;
 }
 .fdbk-txt-cnt article, .fdbk-txt-fll-cnt article {
-    text-align: left !important;
+    text-align: left;
 }
 .fdbk-txt-cnt ul, .fdbk-txt-fll-cnt ul {
     clear: both;

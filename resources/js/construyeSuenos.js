@@ -66,7 +66,6 @@ var _casaStuff = [ // Main Array for Casa
         casco       : { _y1: 0, _y2: 0},
         tv          : { _y1: 0, _y2: 0},
         ventana     : { _y1: 0, _y2: 0}
-
     },
     budget = {
         casa : 1000, auto: 1000, nave: 1000,
@@ -108,6 +107,8 @@ $(document).ready(function() {
         houseFeed       = $('#houseFeed'),
         houseResults    = $('#houseResults'),
         finalHouseFeed  = $('#finalHouseFeed');
+        // [CAR] ELEMENTS
+        // [ROCKET] ELEMENTS
 
     // Hide Dream Containers
     dreamHouse.hide();
@@ -127,6 +128,11 @@ $(document).ready(function() {
     houseFeed.hide();
     houseResults.hide();
     finalHouseFeed.hide();
+
+    // Print First Budgets
+    $("span[id^='houseBudget']").text('$'+budget.casa);
+    $("span[id^='carBudget']").text('$'+budget.auto);
+    $("span[id^='rocketBudget']").text('$'+budget.nave);
 
 
     // Main Activity Buttons Events
@@ -196,11 +202,11 @@ $(document).ready(function() {
                 updateResults(_year);
                 //if (CRRNT_CA_RND === 'round1') {
                     ts_ca[_name][_year] = _value;
-                    if ( (budget.a_budget) <= budget.casa) {
+                    if ( (budget.c_budget) <= budget.casa) {
                         ts_ca[_name][_year] = _value;
                         fillItems(dream_item, CRRNT_DRM);
                         // F-> Fill Items
-                        if ( budget.a_budget == budget.casa) {
+                        if ( budget.c_budget == budget.casa) {
                             if (_year === '_y2') {
                                 houseFeed.fadeIn(300).show('fast');
                                 displayContainer(houseFeed);
@@ -219,8 +225,56 @@ $(document).ready(function() {
                 //}
             } else if (CRRNT_DRM === 'auto') {
                 ts_au[_name][_year] = _value;
+                updateResults(_year);
+                //if (CRRNT_AU_RND === 'round1') {
+                    ts_au[_name][_year] = _value;
+                    if ( (budget.a_budget) <= budget.auto) {
+                        ts_au[_name][_year] = _value;
+                        fillItems(dream_item, CRRNT_DRM);
+                        // F-> Fill Items
+                        if ( budget.a_budget == budget.auto) {
+                            if (_year === '_y2') {
+                                houseFeed.fadeIn(300).show('fast');
+                                displayContainer(autoFeed);
+                            }
+                            btnNextAu.removeClass('bbva-disable');
+                        }
+                    } else {
+                        // Decrease value if can't add
+                        ts_au[_name][_year] = 0;
+                        $(this).val(ts_au[_name][_year]);
+                        // Update Budget and all item vars
+                        updateResults(_year);
+                        //  F-> Update Results
+                        alert('No tienes suficiente dinero para más artículos');
+                    }
+                //}
             } else if (CRRNT_DRM === 'nave') {
                 ts_na[_name][_year] = _value;
+                updateResults(_year);
+                //if (CRRNT_AU_RND === 'round1') {
+                    ts_na[_name][_year] = _value;
+                    if ( (budget.n_budget) <= budget.nave) {
+                        ts_na[_name][_year] = _value;
+                        fillItems(dream_item, CRRNT_DRM);
+                        // F-> Fill Items
+                        if ( budget.n_budget == budget.nave) {
+                            if (_year === '_y2') {
+                                naveFeed.fadeIn(300).show('fast');
+                                displayContainer(autoFeed);
+                            }
+                            btnNextAu.removeClass('bbva-disable');
+                        }
+                    } else {
+                        // Decrease value if can't add
+                        ts_na[_name][_year] = 0;
+                        $(this).val(ts_au[_name][_year]);
+                        // Update Budget and all item vars
+                        updateResults(_year);
+                        //  F-> Update Results
+                        alert('No tienes suficiente dinero para más artículos');
+                    }
+                //}
             }
 
         });
@@ -293,25 +347,57 @@ function obtainAmmount(dream_item) {
 function updateResults(year) {
     var _year = year;
     var results = AddResults(_year);
+    $('#houseRound1').text('$'+ ( budget.casa - budget.a_budget) )
 }
 
 function AddResults(year) {
     var _auto = 0, _suma_auto = 0,
-        _casa = 0, _suma_casa1 = 0, _suma_casa2 = 0,
-        _nave = 0, _suma_nave1 = 0, _suma_nave2 = 0,
+        _casa = 0, _suma_casa = 0,
+        _nave = 0, _suma_nave = 0,
         index = 0, _year = year;
 
-    for (var c_item in _casaStuff) {
-        var casa_var = _casaStuff[c_item].name;
-        if (_year === '_y1') {
-            window[casa_var+"_1"] = ( (ts_ca[casa_var]._y1) * (_casaStuff[c_item].price_y1) );
-            _suma_auto += window[casa_var+"_1"];
-        } else if (_year === '_y2') {
-            window[casa_var+"_2"] = ( (ts_ca[casa_var]._y2) * (_casaStuff[c_item].price_y2) );
-            _suma_auto += window[casa_var+"_2"];
+    if (CRRNT_DRM === 'casa') {
+        // Additions for House
+        for (var c_item in _casaStuff) {
+            var casa_var = _casaStuff[c_item].name;
+            if (_year === '_y1') {
+                window[casa_var+"_1"] = ( (ts_ca[casa_var]._y1) * (_casaStuff[c_item].price_y1) );
+                _suma_casa += window[casa_var+"_1"];
+            } else if (_year === '_y2') {
+                window[casa_var+"_2"] = ( (ts_ca[casa_var]._y2) * (_casaStuff[c_item].price_y2) );
+                _suma_casa += window[casa_var+"_2"];
+            }
         }
+        budget.c_budget = _suma_casa;
     }
-    budget.a_budget = _suma_auto;
+    else if (CRRNT_DRM === 'auto') {
+        // Additions for Car
+        for (var a_item in _autoStuff) {
+            var auto_var = _autoStuff[a_item].name;
+            if (_year === '_y1') {
+                window[auto_var+"_1"] = ( (ts_au[auto_var]._y1) * (_autoStuff[a_item].price_y1) );
+                _suma_auto += window[casa_var+"_1"];
+            } else if (_year === '_y2') {
+                window[auto_var+"_2"] = ( (ts_au[auto_var]._y2) * (_autoStuff[a_item].price_y2) );
+                _suma_auto += window[auto_var+"_2"];
+            }
+        }
+        budget.a_budget = _suma_auto;
+    }
+    else if (CRRNT_DRM === 'nave') {
+        // Additions for Rocket
+        for (var n_item in _naveStuff) {
+            var nave_var = _naveStuff[n_item].name;
+            if (_year === '_y1') {
+                window[nave_var+"_1"] = ( (ts_na[nave_var]._y1) * (_naveStuff[n_item].price_y1) );
+                _suma_nave += window[nave_var+"_1"];
+            } else if (_year === '_y2') {
+                window[nave_var+"_2"] = ( (ts_na[nave_var]._y2) * (_naveStuff[n_item].price_y2) );
+                _suma_nave += window[nave_var+"_2"];
+            }
+        }
+        budget.n_budget = _suma_nave;
+    }
 }
 
 function fillItems(dream_item, current_dream) {
@@ -382,7 +468,8 @@ function addFinalItem(dream, name, year) {
                         iclass: 'item-'+_name
                     });
                 }
-            } else if (CRRNT_CA_RND === 'round2') {
+            }
+            else if (CRRNT_CA_RND === 'round2') {
                 if (_year === '_y1') {
                     _price  = exploreMainArrays(_name, _casaStuff).price_1;
                     _cant   = ts_ca[_name][_year];
@@ -403,7 +490,6 @@ function addFinalItem(dream, name, year) {
                     });
                 }
             }
-
         }
         /*
         *
@@ -429,7 +515,8 @@ function addFinalItem(dream, name, year) {
                         iclass: 'item-'+_name
                     });
                 }
-            } else if (CRRNT_CA_RND === 'round2') {
+            }
+            else if (CRRNT_CA_RND === 'round2') {
                 if (_year === '_y1') {
                     _price  = exploreMainArrays(_name, _autoStuff).price_1;
                     _cant   = ts_ca[_name][_year];
@@ -475,7 +562,8 @@ function addFinalItem(dream, name, year) {
                         iclass: 'item-'+_name
                     });
                 }
-            } else if (CRRNT_CA_RND === 'round2') {
+            }
+            else if (CRRNT_CA_RND === 'round2') {
                 if (_year === '_y1') {
                     _price  = exploreMainArrays(_name, _naveStuff).price_1;
                     _cant   = ts_ca[_name][_year];
