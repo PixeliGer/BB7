@@ -72,12 +72,14 @@ var _casaStuff = [ // Main Array for Casa
         c_budget: 0 , a_budget: 0, n_budget: 0
     },
     CRRNT_DRM, CRRNT_CA_RND, CRRNT_AU_RND, CRRNT_NA_RND;
+    _elemsHouse = {},_elemsCar   = {},_elemsRocket = {},
     itemsCar    = {},
     itemsRocket = {},
     itemsHome   = {};
     itemsCar.round1 = []; itemsCar.round2 = [];
     itemsRocket.round1 = []; itemsRocket.round2 = [];
     itemsHome.round1 = []; itemsHome.round2 = [];
+
 
 
 
@@ -104,11 +106,27 @@ $(document).ready(function() {
         // [HOUSE] ELEMENTS
         btnHouseSR      = $('#btnHouseSecondR'),
         btnFHouseFeed   = $('#btnFHouseFeed'),
+        btnHouseResults = $('#btnHouseResults'),
         houseFeed       = $('#houseFeed'),
+        houseSecondFeed = $('#houseSecondFeed'),
         houseResults    = $('#houseResults'),
-        finalHouseFeed  = $('#finalHouseFeed');
+        finalHouseFeed  = $('#finalHouseFeed'),
         // [CAR] ELEMENTS
+        btnCarSR      = $('#btnCarSecondR'),
+        btnFCarFeed   = $('#btnFCarFeed'),
+        btnCarResults = $('#btnCarResults'),
+        carFeed       = $('#carFeed'),
+        carSecondFeed = $('#carSecondFeed'),
+        carResults    = $('#carResults'),
+        finalCarFeed  = $('#finalCarFeed');
         // [ROCKET] ELEMENTS
+        btnRocketSR      = $('#btnRocketSecondR'),
+        btnFRocketFeed   = $('#btnFRocketFeed'),
+        btnRocketResults = $('#btnRocketResults'),
+        rocketFeed       = $('#rocketFeed'),
+        rocketSecondFeed = $('#rocketSecondFeed'),
+        rocketResults    = $('#rocketResults'),
+        finalRocketFeed  = $('#finalRocketFeed');
 
     // Hide Dream Containers
     dreamHouse.hide();
@@ -123,11 +141,21 @@ $(document).ready(function() {
     car_y2.hide();
     rocket_y2.hide();
     // Hide [HOUSE] Elements
-    btnHouseSR.hide();
-    btnFHouseFeed.hide();
+    // btnHouseSR.hide();
+    //btnFHouseFeed.hide();
     houseFeed.hide();
+    houseSecondFeed.hide();
     houseResults.hide();
     finalHouseFeed.hide();
+    _elemsHouse     = {house_y1,house_y2,btnNextCa,btnFHouseFeed,houseFeed,houseSecondFeed,houseResults,finalHouseFeed};
+    _elemsCar       = {car_y1,car_y2,btnNextAu,btnFCarFeed,carFeed,carSecondFeed,carResults,finalCarFeed};
+    _elemsRocket    = {rocket_y1, rocket_y2,btnNextNa,btnFRocketFeed,rocketFeed,rocketSecondFeed,rocketResults,finalRocketFeed};
+    //
+    btnCarSR.hide();
+    btnFCarFeed.hide();
+    carFeed.hide();
+    carResults.hide();
+    finalCarFeed.hide();
 
     // Print First Budgets
     $("span[id^='houseBudget']").text('$'+budget.casa);
@@ -180,9 +208,25 @@ $(document).ready(function() {
         displayContainer(rocket_y2);
     });
 
-    //
+    // HOUSE BUTTONS
     btnHouseSR.click(function(event) {
         CRRNT_CA_RND = 'round2';
+        restartTable();
+        updateResults();
+    });
+    btnHouseResults.click(function(event) {
+        setFinalItems(itemsHome);
+        houseResults.fadeIn(300).show('fast');
+        displayContainer(houseResults);
+    });
+    btnFHouseFeed.click(function(event) {
+        house_y1.hide();
+        house_y2.hide();
+        houseFeed.hide();
+        houseSecondFeed.hide();
+        houseResults.hide();
+        finalHouseFeed.fadeIn(300).show('fast');
+        displayContainer(finalHouseFeed);
     });
 
     $('.input-sueno').each(function() {
@@ -206,13 +250,13 @@ $(document).ready(function() {
                         ts_ca[_name][_year] = _value;
                         fillItems(dream_item, CRRNT_DRM);
                         // F-> Fill Items
-                        if ( budget.c_budget == budget.casa) {
-                            if (_year === '_y2') {
-                                houseFeed.fadeIn(300).show('fast');
-                                displayContainer(houseFeed);
-                            }
-                            btnNextCa.removeClass('bbva-disable');
-                        }
+                        // if ( budget.c_budget == budget.casa) {
+                        //     if (_year === '_y2') {
+                        //         houseFeed.fadeIn(300).show('fast');
+                        //         displayContainer(houseFeed);
+                        //     }
+                        //     btnNextCa.removeClass('bbva-disable');
+                        // }
                     } else {
                         // Decrease value if can't add
                         ts_ca[_name][_year] = 0;
@@ -232,13 +276,13 @@ $(document).ready(function() {
                         ts_au[_name][_year] = _value;
                         fillItems(dream_item, CRRNT_DRM);
                         // F-> Fill Items
-                        if ( budget.a_budget == budget.auto) {
-                            if (_year === '_y2') {
-                                houseFeed.fadeIn(300).show('fast');
-                                displayContainer(autoFeed);
-                            }
-                            btnNextAu.removeClass('bbva-disable');
-                        }
+                        // if ( budget.a_budget == budget.auto) {
+                        //     if (_year === '_y2') {
+                        //         houseFeed.fadeIn(300).show('fast');
+                        //         displayContainer(autoFeed);
+                        //     }
+                        //     btnNextAu.removeClass('bbva-disable');
+                        // }
                     } else {
                         // Decrease value if can't add
                         ts_au[_name][_year] = 0;
@@ -258,13 +302,13 @@ $(document).ready(function() {
                         ts_na[_name][_year] = _value;
                         fillItems(dream_item, CRRNT_DRM);
                         // F-> Fill Items
-                        if ( budget.n_budget == budget.nave) {
-                            if (_year === '_y2') {
-                                naveFeed.fadeIn(300).show('fast');
-                                displayContainer(autoFeed);
-                            }
-                            btnNextAu.removeClass('bbva-disable');
-                        }
+                        // if ( budget.n_budget == budget.nave) {
+                        //     if (_year === '_y2') {
+                        //         naveFeed.fadeIn(300).show('fast');
+                        //         displayContainer(autoFeed);
+                        //     }
+                        //     btnNextAu.removeClass('bbva-disable');
+                        // }
                     } else {
                         // Decrease value if can't add
                         ts_na[_name][_year] = 0;
@@ -347,13 +391,18 @@ function obtainAmmount(dream_item) {
 function updateResults(year) {
     var _year = year;
     var results = AddResults(_year);
-    $('#houseRound1').text('$'+ ( budget.casa - budget.a_budget) )
+    $('#houseYear1').text('$'+ ( budget.casa - budget.c_budget) );
+    $('#carYear1').text('$'+ (budget.auto - budget.a_budget) );
+    $('#rocketYear1').text('$'+ (budget.nave - budget.n_budget) );
+    $('#houseYear2').text('$'+ ( budget.casa - budget.c_budget) );
+    $('#carYear2').text('$'+ (budget.auto - budget.a_budget) );
+    $('#rocketYear2').text('$'+ (budget.nave - budget.n_budget) );
 }
 
 function AddResults(year) {
-    var _auto = 0, _suma_auto = 0,
-        _casa = 0, _suma_casa = 0,
-        _nave = 0, _suma_nave = 0,
+    var _auto = 0, _suma_auto1 = 0, _suma_auto2 = 0,
+        _casa = 0, _suma_casa1 = 0, _suma_casa2 = 0,
+        _nave = 0, _suma_nave1 = 0, _suma_nave2 = 0
         index = 0, _year = year;
 
     if (CRRNT_DRM === 'casa') {
@@ -362,13 +411,17 @@ function AddResults(year) {
             var casa_var = _casaStuff[c_item].name;
             if (_year === '_y1') {
                 window[casa_var+"_1"] = ( (ts_ca[casa_var]._y1) * (_casaStuff[c_item].price_y1) );
-                _suma_casa += window[casa_var+"_1"];
+                _suma_casa1 += window[casa_var+"_1"];
+                console.log(_suma_casa1);
             } else if (_year === '_y2') {
                 window[casa_var+"_2"] = ( (ts_ca[casa_var]._y2) * (_casaStuff[c_item].price_y2) );
-                _suma_casa += window[casa_var+"_2"];
+                _suma_casa2 += window[casa_var+"_2"];
+                console.log(_suma_casa2);
             }
         }
-        budget.c_budget = _suma_casa;
+        console.log(_suma_casa1);
+        console.log(_suma_casa2);
+        budget.c_budget = ( _suma_casa1 + _suma_casa2);
     }
     else if (CRRNT_DRM === 'auto') {
         // Additions for Car
@@ -376,13 +429,13 @@ function AddResults(year) {
             var auto_var = _autoStuff[a_item].name;
             if (_year === '_y1') {
                 window[auto_var+"_1"] = ( (ts_au[auto_var]._y1) * (_autoStuff[a_item].price_y1) );
-                _suma_auto += window[casa_var+"_1"];
+                _suma_auto1 += window[auto_var+"_1"];
             } else if (_year === '_y2') {
                 window[auto_var+"_2"] = ( (ts_au[auto_var]._y2) * (_autoStuff[a_item].price_y2) );
-                _suma_auto += window[auto_var+"_2"];
+                _suma_auto2 += window[auto_var+"_2"];
             }
         }
-        budget.a_budget = _suma_auto;
+        budget.a_budget = (_suma_auto1 +_suma_auto2 );
     }
     else if (CRRNT_DRM === 'nave') {
         // Additions for Rocket
@@ -390,13 +443,13 @@ function AddResults(year) {
             var nave_var = _naveStuff[n_item].name;
             if (_year === '_y1') {
                 window[nave_var+"_1"] = ( (ts_na[nave_var]._y1) * (_naveStuff[n_item].price_y1) );
-                _suma_nave += window[nave_var+"_1"];
+                _suma_nave1 += window[nave_var+"_1"];
             } else if (_year === '_y2') {
                 window[nave_var+"_2"] = ( (ts_na[nave_var]._y2) * (_naveStuff[n_item].price_y2) );
-                _suma_nave += window[nave_var+"_2"];
+                _suma_nave2 += window[nave_var+"_2"];
             }
         }
-        budget.n_budget = _suma_nave;
+        budget.n_budget = (_suma_nave1 + _suma_nave2);
     }
 }
 
@@ -458,6 +511,10 @@ function addFinalItem(dream, name, year) {
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsHome.round1.length == 2) {
+                        _elemsHouse.btnNextCa.removeClass('bbva-disable');
+                    }
                 } else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _casaStuff).price_2;
                     _cant   = ts_ca[_name][_year];
@@ -467,6 +524,11 @@ function addFinalItem(dream, name, year) {
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsHome.round1.length == 4) {
+                        _elemsHouse.houseFeed.fadeIn(300).show('fast');
+                        displayContainer(_elemsHouse.houseFeed);
+                    }
                 }
             }
             else if (CRRNT_CA_RND === 'round2') {
@@ -479,6 +541,10 @@ function addFinalItem(dream, name, year) {
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsHome.round2.length == 2) {
+                        _elemsHouse.btnNextCa.removeClass('bbva-disable');
+                    }
                 } else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _casaStuff).price_2;
                     _cant   = ts_ca[_name][_year];
@@ -488,6 +554,11 @@ function addFinalItem(dream, name, year) {
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsHome.round2.length == 4) {
+                        _elemsHouse.houseSecondFeed.fadeIn(300).show('fast');
+                        displayContainer(_elemsHouse.houseSecondFeed);
+                    }
                 }
             }
         }
@@ -495,46 +566,65 @@ function addFinalItem(dream, name, year) {
         *
         */
         else if (_dream === 'auto') {
-            if (CRRNT_CA_RND === 'round1') {
+            if (CRRNT_AU_RND === 'round1') {
                 if (_year === '_y1') {
                     _price  = exploreMainArrays(_name, _autoStuff).price_1;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_au[_name][_year];
                     itemsCar.round1.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsCar.round1.length == 2) {
+                        _elemsCar.btnNextAu.removeClass('bbva-disable');
+                    }
+
                 } else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _autoStuff).price_2;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_au[_name][_year];
                     itemsCar.round1.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsCar.round1.length == 4) {
+                        _elemsCar.carFeed.fadeIn(300).show('fast');
+                        displayContainer(_elemsCar.carFeed);
+                    }
                 }
             }
-            else if (CRRNT_CA_RND === 'round2') {
+            else if (CRRNT_AU_RND === 'round2') {
                 if (_year === '_y1') {
                     _price  = exploreMainArrays(_name, _autoStuff).price_1;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_au[_name][_year];
                     itemsCar.round2.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsCar.round2.length == 2) {
+                        _elemsCar.btnNextAu.removeClass('bbva-disable');
+                    }
                 } else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _autoStuff).price_2;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_au[_name][_year];
                     itemsCar.round2.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsCar.round2.length == 4) {
+                        _elemsCar.carSecondFeed.fadeIn(300).show('fast');
+                        displayContainer(_elemsCar.carSecondFeed);
+                    }
                 }
             }
         }
@@ -542,46 +632,64 @@ function addFinalItem(dream, name, year) {
         *
         */
         else if (_dream === 'nave') {
-            if (CRRNT_CA_RND === 'round1') {
+            if (CRRNT_NA_RND === 'round1') {
                 if (_year === '_y1') {
                     _price  = exploreMainArrays(_name, _naveStuff).price_1;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_na[_name][_year];
                     itemsRocket.round1.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsRocket.round1.length == 2) {
+                        _elemsRocket.btnNextNa.removeClass('bbva-disable');
+                    }
                 } else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _naveStuff).price_2;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_na[_name][_year];
                     itemsRocket.round1.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsRocket.round1.length == 4) {
+                        _elemsRocket.rocketFeed.fadeIn(300).show('fast');
+                        displayContainer(_elemsRocket.rocketFeed);
+                    }
                 }
             }
-            else if (CRRNT_CA_RND === 'round2') {
+            else if (CRRNT_NA_RND === 'round2') {
                 if (_year === '_y1') {
                     _price  = exploreMainArrays(_name, _naveStuff).price_1;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_na[_name][_year];
                     itemsRocket.round2.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsRocket.round2.length == 2) {
+                        _elemsRocket.btnNextNa.removeClass('bbva-disable');
+                    }
                 } else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _naveStuff).price_2;
-                    _cant   = ts_ca[_name][_year];
+                    _cant   = ts_na[_name][_year];
                     itemsRocket.round2.push({
                         name: _name,
                         price: _price,
                         cant: _cant,
                         iclass: 'item-'+_name
                     });
+                    // #! Condition
+                    if (itemsRocket.round2.length == 4) {
+                        _elemsRocket.rocketSecondFeed.fadeIn(300).show('fast');
+                        displayContainer(_elemsRocket.rocketSecondFeed);
+                    }
                 }
             }
         }
@@ -635,10 +743,8 @@ function setFinalItems(dreamItems) {
                     '<div class="cmn-block">'+'\n'+
                         '<div class="mid-clmn-lwys">'+'\n'+
                             '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<div class="item-cnt-sueno">'+'\n'+
-                                        '<div class="'+dreamItems.round1[item].iclass+'"></div>'+'\n'+
-                                    '</div>'+'\n'+
+                                '<div class="item-cnt-sueno">'+'\n'+
+                                    '<div class="'+dreamItems.round1[item].iclass+'"></div>'+'\n'+
                                 '</div>'+'\n'+
                             '</div>'+'\n'+
                         '</div>'+'\n'+
@@ -655,14 +761,12 @@ function setFinalItems(dreamItems) {
     }
 
     for (var item in dreamItems.round2) {
-        f_row = '<div class="lit-row">'+'\n'+
+        s_row = '<div class="lit-row">'+'\n'+
                     '<div class="cmn-block">'+'\n'+
                         '<div class="mid-clmn-lwys">'+'\n'+
                             '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<div class="item-cnt-sueno">'+'\n'+
-                                        '<div class="'+dreamItems.round2[item].iclass+'"></div>'+'\n'+
-                                    '</div>'+'\n'+
+                                '<div class="item-cnt-sueno">'+'\n'+
+                                    '<div class="'+dreamItems.round2[item].iclass+'"></div>'+'\n'+
                                 '</div>'+'\n'+
                             '</div>'+'\n'+
                         '</div>'+'\n'+
@@ -675,7 +779,41 @@ function setFinalItems(dreamItems) {
                         '</div>'+'\n'+
                     '</div>'+'\n'+
                 '</div>'+'\n';
-        f_rows += f_row;
+        s_rows += s_row;
+    }
+    if (CRRNT_DRM === 'casa') {
+        $('#houseRes1 .final-results').prepend(f_rows);
+        $('#houseRes2 .final-results').prepend(s_rows);
+        $('#fHouseTotal').text('$'+ countResults(itemsHome).f_total);
+        $('#sHouseTotal').text('$'+ countResults(itemsHome).s_total);
+    }
+    else if (CRRNT_DRM === 'auto') {
+        $('#carRes1 .final-results').prepend(f_rows);
+        $('#carRes2 .final-results').prepend(s_rows);
+        $('#fCarTotal').text('$'+ countResults(itemsCar).f_total);
+        $('#sCarTotal').text('$'+ countResults(itemsCar).s_total);
+    }
+    else if (CRRNT_DRM === 'nave') {
+        $('#rocketRes1 .final-results').prepend(f_rows);
+        $('#rocketRes2 .final-results').prepend(s_rows);
+        $('#fRocketTotal').text('$'+ countResults(itemsRocket).f_total);
+        $('#sRocketTotal').text('$'+ countResults(itemsRocket).s_total);
+    }
+}
+
+function countResults(itemsArray) {
+    var f_Total = 0,
+        s_Total = 0;
+
+    for (var _item in itemsArray.round1) {
+        f_Total += itemsArray.round1[_item].price;
+    }
+    for (var _item in itemsArray.round2) {
+        s_Total += itemsArray.round2[_item].price;
+    }
+    return{
+        f_total : f_Total,
+        s_total : s_Total
     }
 }
 function exploreMainArrays(_name, _array) {
@@ -696,6 +834,59 @@ function exploreMainArrays(_name, _array) {
         price_2 : price_2
     }
 
+}
+// Restart DOM Tables
+function restartTable() {
+    $('.input-sueno').val(0);
+
+    budget.a_budget = 0;
+    budget.c_budget = 0;
+    budget.n_budget = 0;
+
+    hideDreamElems();
+    toFirstTable();
+    disableButtons();
+}
+function hideDreamElems() {
+    if (CRRNT_DRM === 'casa') {
+        for (var dom_elem in _elemsHouse) {
+            if (_elemsHouse[dom_elem] !== _elemsHouse["btnNextCa"] && _elemsHouse[dom_elem] !== _elemsHouse["btnFHouseFeed"] ) {
+                _elemsHouse[dom_elem].hide();
+            }
+        }
+    } else if (CRRNT_DRM === 'auto') {
+        for (var dom_elem in _elemsCar) {
+            if (_elemsCar[dom_elem] !== _elemsCar["btnNextAu"] && _elemsCar[dom_elem] !== _elemsCar["btnFCarFeed"] ) {
+                _elemsCar[dom_elem].hide();
+            }
+        }
+
+    } else if (CRRNT_DRM === 'nave') {
+        for (var dom_elem in _elemsRocket) {
+            if (_elemsRocket[dom_elem] !== _elemsRocket["btnNextNa"] && _elemsRocket[dom_elem] !== _elemsRocket["btnFRocketFeed"] ) {
+                _elemsRocket[dom_elem].hide();
+            }
+        }
+    }
+}
+function toFirstTable() {
+    if (CRRNT_DRM === 'casa') {
+        _elemsHouse.house_y2.hide();
+        _elemsHouse.house_y1.fadeIn(300).show('fast');
+        displayContainer(_elemsHouse.house_y1);
+    } else if (CRRNT_DRM === 'auto') {
+        _elemsCar.car_y2.hide();
+        _elemsCar.car_y1.fadeIn(300).show('fast');
+        displayContainer(_elemsCar.car_y1);
+
+    } else if (CRRNT_DRM === 'nave') {
+        _elemsRocket.rocket_y2.hide();
+        _elemsRocket.rocket_y1.fadeIn(300).show('fast');
+        displayContainer(_elemsRocket.rocket_y1);
+    }
+}
+function disableButtons() {
+    _elemsHouse.btnNextCa.addClass('bbva-disable');
 }
 // Display and Animate Puzzle or Container dynamically
 function displayContainer(container){
