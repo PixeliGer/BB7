@@ -621,7 +621,12 @@
 }
 
 /*Feedback*/
-
+.fdbk-w-800{
+    max-width: 800px;
+}
+.fdbk-w-900{
+    max-width: 900px;
+}
 .fdbk-cnt {
     height: 300px;
     max-width: 900px;
@@ -649,6 +654,9 @@
 .fdbk-img {
     min-width: 100px;
     max-width: 180px;
+}
+.fdbk-img-full{
+    min-width: 100px;
 }
 .fdbk-txt-cnt {
     width: 70%;

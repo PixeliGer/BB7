@@ -1,9 +1,9 @@
 var _partyStuff = [
-    {name: 'pizza', text: "Pizza", price_first: 80, price_second: 80, price_third: 400, _class: 'item-pizza'},
-    {name: 'agua', text: "Agua", price_first: 10, price_second: 10, price_third: 50, _class: 'item-agua'},
-    {name: 'globos', text: "Globos", price_first: 10, price_second: 10, price_third: 50, _class: 'item-globos'},
-    {name: 'platos', text: "Platos", price_first: 5, price_second: 5, price_third: 25, _class: 'item-platos'},
-    {name: 'musica', text: "Música", price_first: 50, price_second: 50, price_third: 250, _class: 'item-musica'},
+    {name: 'pizza', text: "Pizza", price_first: 80, price_second: 240, price_third: 400, _class: 'item-pizza'},
+    {name: 'agua', text: "Agua", price_first: 10, price_second: 30, price_third: 50, _class: 'item-agua'},
+    {name: 'globos', text: "Globos", price_first: 10, price_second: 30, price_third: 50, _class: 'item-globos'},
+    {name: 'platos', text: "Platos", price_first: 5, price_second: 15, price_third: 25, _class: 'item-platos'},
+    {name: 'musica', text: "Música", price_first: 50, price_second: 150, price_third: 250, _class: 'item-musica'},
 ];
 var _tb = {
     pizza  : { _r1: 0,_r2: 0,_r3: 0 },
@@ -28,35 +28,39 @@ var itemsThird = new Array();
 var CRRNT_RND;
 
 var _prty_item = '';
-var pos_x = 0;
+var pos_x = 0, item_i = 0;
 
 $(document).ready(function() {
     // Auto-numeric
     $('.auto').autoNumeric('init');
     //
-    var _firstCnt       = $('#firstCnt');
-    var _firstRound     = $('#round1');
-    var _secondRound    = $('#round2');
-    var _thirdRound     = $('#round3');
-    var _resultsCnt     = $('#resultsCnt')
-    var btnStart        = $('#btnStart');
-    var btnSecondR      = $('#btnSecondR');
-    var btnThirdR       = $('#btnThirdR');
-    var btnResults      = $('#btnResults');
-    var firstFeed       = $('#firstFeed');
-    var secondFeed      = $('#secondFeed');
-    var thirdFeed       = $('#thirdFeed');
-    var firstBudget     = $('#firstBudget');
-    var secondBudget    = $('#secondBudget');
-    var thirdBudget     = $('#thirdBudget');
+    var _firstCnt       = $('#firstCnt'),
+        _firstRound     = $('#round1'),
+        _secondRound    = $('#round2'),
+        _thirdRound     = $('#round3'),
+        _resultsCnt     = $('#resultsCnt'),
+        btnStart        = $('#btnStart'),
+        btnSecondR      = $('#btnSecondR'),
+        btnThirdR       = $('#btnThirdR'),
+        btnResults      = $('#btnResults'),
+        firstFeed       = $('#firstFeed'),
+        secondFeed      = $('#secondFeed'),
+        thirdFeed       = $('#thirdFeed'),
+        cntFinals       = $('#cntFinals'),
+        firstBudget     = $('#firstBudget'),
+        secondBudget    = $('#secondBudget'),
+        thirdBudget     = $('#thirdBudget');
     //
     _firstRound.hide();
     _secondRound.hide();
     _thirdRound.hide();
     _resultsCnt.hide();
+    btnSecondR.hide();
+    btnThirdR.hide();
     firstFeed.hide();
     secondFeed.hide();
     thirdFeed.hide();
+    cntFinals.hide();
     //
     firstBudget.text('$'+_budget._first);
     secondBudget.text('$'+_budget._second);
@@ -66,41 +70,30 @@ $(document).ready(function() {
         _firstCnt.hide('fast');
         //
         _firstRound.fadeIn(300).show('fast');
-        setTimeout(function(){
-            $('html, body').animate({ scrollTop: _firstRound.offset().top }, 500);
-        }, 180);
+        displayContainer(_firstRound);
         CRRNT_RND = 'round1';
     });
 
     btnSecondR.click(function(event) {
         _firstRound.hide('fast');
         _secondRound.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({ scrollTop: _secondRound.offset().top }, 500);
-        }, 180);
+        displayContainer(_secondRound);
         CRRNT_RND = 'round2';
+        pos_x = 0;
     });
 
     btnThirdR.click(function(event) {
         _secondRound.hide('fast');
         _thirdRound.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: _thirdRound.offset().top
-            }, 500);
-        }, 180);
+        displayContainer(_thirdRound);
         CRRNT_RND = 'round3';
+        pos_x = 0;
     });
 
     btnResults.click(function(event) {
         _thirdRound.hide('fast');
         _resultsCnt.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: _resultsCnt.offset().top
-            }, 500);
-        }, 180);
-
+        displayContainer(_resultsCnt);
         setFinalItems();
     });
 
@@ -119,7 +112,6 @@ $(document).ready(function() {
             console.log(_pitem);
             //
 
-
             _tb[_name][_round] = _value;
 
             updateResults();
@@ -132,17 +124,15 @@ $(document).ready(function() {
 
                     if ((_budget._r1_budget) == _budget._first) {
                         firstFeed.fadeIn(300).show('fast');
-                        setTimeout(function() {
-                            $('html, body').animate({
-                                scrollTop: firstFeed.offset().top
-                            }, 500);
-                        }, 180);
+                        btnSecondR.fadeIn(300).show('fast');
+                        displayContainer(firstFeed);
                     }
                     // Update Budget and all item vars
                     updateResults();
                 } else{
                     // Decrease value if can't add
                     _tb[_name][_round] = 0;
+                    fillItems(_prty_item);
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
@@ -150,8 +140,6 @@ $(document).ready(function() {
                     alert('No tienes suficiente dinero para más artículos');
                 }
             } else if (CRRNT_RND === 'round2') {
-                // Restart Axis-X
-                pos_x = 0;
                 //
                 if ( (_budget._r2_budget) <= _budget._second ) {
                     _tb[_name][_round] = _value;
@@ -159,25 +147,21 @@ $(document).ready(function() {
 
                     if ((_budget._r2_budget) == _budget._second) {
                         secondFeed.fadeIn(300).show('fast');
-                        setTimeout(function() {
-                            $('html, body').animate({
-                                scrollTop: secondFeed.offset().top
-                            }, 500);
-                        }, 180);
+                        btnThirdR.fadeIn(300).show('fast');
+                        displayContainer(secondFeed);
                     }
                     // Update Budget and all item vars
                     updateResults();
                 } else{
                     // Decrease value if can't add
                     _tb[_name][_round] = 0;
+                    fillItems(_prty_item);
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
                     alert('No tienes suficiente para más articulos')
                 }
             } else if (CRRNT_RND === 'round3') {
-                // Restart Axis-X
-                pos_x = 0;
                 //
                 if ( (_budget._r3_budget) <= _budget._third ) {
                     _tb[_name][_round] = _value;
@@ -185,17 +169,15 @@ $(document).ready(function() {
 
                     if ((_budget._r3_budget) == _budget._third) {
                         thirdFeed.fadeIn(300).show('fast');
-                        setTimeout(function() {
-                            $('html, body').animate({
-                                scrollTop: thirdFeed.offset().top
-                            }, 500);
-                        }, 180);
+                        cntFinals.fadeIn(300).show('fast');
+                        displayContainer(thirdFeed);
                     }
                     // Update Budget and all item vars
                     updateResults();
                 } else{
                     // Decrease value if can't add
                     _tb[_name][_round] = 0
+                    fillItems(_prty_item)
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
@@ -319,12 +301,13 @@ function normalizeValues(){
 */
 function fillItems(_prty_item, _value){
     // Catch a DOM id (from inputs) and use for making stuff
-    $item = _prty_item.split("_");
-    _name = $item[0];
-    _round = "_"+$item[1];
+    var $item   = _prty_item.split("_"),
+        _name   = $item[0],
+        _round  = "_"+$item[1];
     //
     if (_tb[_name][_round] < 1) {
-        $('#mesa-'+ _name + _round).remove();
+        $('item-'+_name).last().remove();
+        $('#mesa-'+ _name + _round + item_i).remove();
         // Initial position in Table
         pos_x == 0 ? pos_x = 0 : pos_x-=40;
 
@@ -332,7 +315,7 @@ function fillItems(_prty_item, _value){
     }
     else if (_tb[_name][_round] >= 1) {
         // If Exists Destroy --> Prevent Multiple Items
-        if ( $('#mesa-'+ _name + _round).length ) {
+        /*if ( $('#mesa-'+ _name + _round).length ) {
             // Remove Specific DOM Element
             $('#mesa-'+ _name + _round).remove();
 
@@ -352,19 +335,21 @@ function fillItems(_prty_item, _value){
 
             addFinalItem(_name, _round);
 
-        } else {
+        } else {*/
+        item_i++;
             // Create DOM Object
             $('<div/>' , {
                 'class': 'mesa-item-cnt item-'+_name,
-                'id': 'mesa-' + _name + _round
+                'id': 'mesa-' + _name + _round + item_i
             }).appendTo('#mesa'+_round);
 
             // Increment Position Axis-X and set
             pos_x+=40;
-            $('#mesa-'+_name+_round).css('left', pos_x);
+
+            $('#mesa-'+_name+_round + item_i).css('left', pos_x);
 
             addFinalItem(_name, _round);
-        }
+        //}
     }
 }
 
@@ -547,4 +532,12 @@ function exploreStuffArray(name){
         price_t : price_t
     }
 
+}
+// Display and Animate Puzzle or Container dynamically
+function displayContainer(container){
+    setTimeout(function() {
+        $('html, body').animate({
+            scrollTop: container.offset().top
+        }, 500);
+    }, 180);
 }
