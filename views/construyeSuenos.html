@@ -542,7 +542,7 @@
                                             <span id="houseYear2" class="counter-qnty">$0</span>
                                         </div>
                                         <div class="lit-row topMargin10">
-                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                            <!-- <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button> -->
                                         </div>
                                     </div>
                                 </div>
@@ -1126,7 +1126,7 @@
                                     </div>
                                 </div>
                                 <div class="lit-row">
-                                    <div class="cmn-block year-cnt topMargin40">
+                                    <div class="cmn-block topMargin40">
                                         <button id="btnFHouseFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
                                     </div>
                                 </div>
@@ -1622,14 +1622,14 @@
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
-                                            <span id="houseBudget" class="counter-qnty"></span>
+                                            <span id="carBudget" class="counter-qnty"></span>
                                         </div>
                                         <div class="lit-row topMargin10">
                                             <span class="counter-ttl">Te quedan:</span><br>
-                                            <span id="houseRound1" class="counter-qnty">$0</span>
+                                            <span id="carYear2" class="counter-qnty">$0</span>
                                         </div>
                                         <div class="lit-row topMargin10">
-                                            <button class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                            <button id="" class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
                                         </div>
                                     </div>
                                 </div>
@@ -2063,6 +2063,52 @@
                                     <button id="btnCarSecondR" class="blue-bbva-button-s" type="button" name="button">Ir a la Ronda 2</button>
                                 </div>
                             </div>
+                            <div id="carSecondFeed" class="cmn-block topMargin60">
+                                <div class="lit-row">
+                                    <!-- Feedback container -->
+                                    <div class="fdbk-cnt-mic cmn-block bbva-blue-lghtr cnt-p20">
+                                        <div class="fdbk-txt-cnt-full">
+                                            <div class="fdbk-txt-book">
+                                                <article>
+                                                    <p>
+                                                        ¡Vaya! Por el aumento en precios no lograste comprar todos los accesorios para tu casa, pero al menos lograste tener lo esencial.
+                                                    </p>
+                                                    <p>
+                                                        ¡Felicidades por priorizar tus compras!
+                                                    </p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20 topMargin20">
+                                        <div class="fdbk-img-cnt">
+                                            <img class="fdbk-img vertical-align" src="../resources/img/activity_suenos/Feedback_1.svg" alt="" />
+                                        </div>
+                                        <div class="fdbk-txt-cnt">
+                                            <div class="fdbk-txt-book vertical-align">
+                                                <article>
+                                                    <p>
+                                                        Ya no te alcanzó tu presupuesto. Como puedes ver, cada año el precio de los insumos aumenta.
+                                                    </p>
+                                                    <p>
+                                                        Esto tuvo un impacto en tu meta.
+                                                    </p>
+                                                    <p>
+                                                        Al aumento de los precios se le llama inflación.
+                                                    </p>
+                                                    <p>
+                                                        Es importante priorizar y comprar tus necesidades antes de tus gustos, sobretodo en periodos de inflación alta.
+                                                    </p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <button id="btnCarResults" class="blue-bbva-button-s" type="button" name="button">Ver Resultados</button>
+                                </div>
+                            </div>
                         </div>
                         <!-- Results -->
                         <div class="lit-row">
@@ -2153,16 +2199,20 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cmn-block year-cnt topMargin40">
-                                <button id="btnFCarFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                                <div class="lit-row">
+                                    <div class="cmn-block year-cnt topMargin40">
+                                        <button id="btnFCarFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- Final  -->
                         <div class="lit-row">
                             <div id="finalCarFeed" class="cmn-block year-cnt">
                                 <div class="lit-row">
-
+                                    <div class="cmn-block img-block">
+                                        <img src="../resources/img/activity_suenos/Camioneta.svg" alt="">
+                                    </div>
                                 </div>
                                 <div class="lit-row">
                                     <div class="ttl-txt-cont">
@@ -2177,7 +2227,7 @@
                                     <div class="cmn-block">
                                         <div class="lit-row">
                                             <!-- Feedback container -->
-                                            <div id="houseFeed" class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
+                                            <div class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
                                                 <div class="fdbk-img-cnt">
                                                     <img class="fdbk-img vertical-align" src="../resources/img/activity_suenos/Feedback_2.svg" alt="" />
                                                 </div>
@@ -2226,11 +2276,11 @@
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
-                                            <span id="houseBudget" class="counter-qnty"></span>
+                                            <span id="rocketBudget" class="counter-qnty"></span>
                                         </div>
                                         <div class="lit-row topMargin10">
                                             <span class="counter-ttl">Te quedan:</span><br>
-                                            <span id="houseRound1" class="counter-qnty">$0</span>
+                                            <span id="rocketRound1" class="counter-qnty">$0</span>
                                         </div>
                                         <div class="lit-row topMargin10">
                                             <button id="btnNxtNa" class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
@@ -2501,7 +2551,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="sillon_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="sillonn_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2761,7 +2811,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="caman_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="caman_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2801,7 +2851,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="mesa_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="mesa_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2841,7 +2891,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="mando_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="mando_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2881,7 +2931,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="puertan_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="puertan_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2921,7 +2971,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="sillon_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="sillonn_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2961,7 +3011,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="casco_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="casco_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3001,7 +3051,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="tv_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="tv_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3041,7 +3091,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        <input id="ventana_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+                                                        <input id="ventana_y2" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3049,11 +3099,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <!--Feedback -->
                         <div class="lit-row">
-                            <div class="cmn-block">
+                            <div id="rocketFeed" class="cmn-block topMargin60">
                                 <div class="lit-row">
                                     <!-- Feedback container -->
                                     <div id="rocketFeed" class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
@@ -3087,6 +3136,52 @@
                                     <button id="btnRocketSecondR" class="blue-bbva-button-s" type="button" name="button">Ir a la Ronda 2</button>
                                 </div>
                             </div>
+                            <div id="rocketSecondFeed" class="cmn-block topMargin60">
+                                <div class="lit-row">
+                                    <!-- Feedback container -->
+                                    <div class="fdbk-cnt-mic cmn-block bbva-blue-lghtr cnt-p20">
+                                        <div class="fdbk-txt-cnt-full">
+                                            <div class="fdbk-txt-book">
+                                                <article>
+                                                    <p>
+                                                        ¡Vaya! Por el aumento en precios no lograste comprar todos los accesorios para tu casa, pero al menos lograste tener lo esencial.
+                                                    </p>
+                                                    <p>
+                                                        ¡Felicidades por priorizar tus compras!
+                                                    </p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20 topMargin20">
+                                        <div class="fdbk-img-cnt">
+                                            <img class="fdbk-img vertical-align" src="../resources/img/activity_suenos/Feedback_1.svg" alt="" />
+                                        </div>
+                                        <div class="fdbk-txt-cnt">
+                                            <div class="fdbk-txt-book vertical-align">
+                                                <article>
+                                                    <p>
+                                                        Ya no te alcanzó tu presupuesto. Como puedes ver, cada año el precio de los insumos aumenta.
+                                                    </p>
+                                                    <p>
+                                                        Esto tuvo un impacto en tu meta.
+                                                    </p>
+                                                    <p>
+                                                        Al aumento de los precios se le llama inflación.
+                                                    </p>
+                                                    <p>
+                                                        Es importante priorizar y comprar tus necesidades antes de tus gustos, sobretodo en periodos de inflación alta.
+                                                    </p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <button id="btnRocketResults" class="blue-bbva-button-s" type="button" name="button">Ver Resultados</button>
+                                </div>
+                            </div>
                         </div>
                         <!-- Results -->
                         <div class="lit-row">
@@ -3113,7 +3208,7 @@
                                                 <div class="mid-clmn-lwys">
                                                     <div class="bbva-blue-lghtr cnt-h80">
                                                         <div class="prty-ttl-hrd vertical-align">
-                                                            <span id="secondTotal"></span>
+                                                            <span id="fRocketTotal"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3155,7 +3250,7 @@
                                                 <div class="mid-clmn-lwys">
                                                     <div class="bbva-blue-lghtr cnt-h80">
                                                         <div class="prty-ttl-hrd vertical-align">
-                                                            <span id="secondTotal"></span>
+                                                            <span id="sRocketTotal"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3177,17 +3272,20 @@
                                         </div>
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="cmn-block year-cnt topMargin40">
-                                <button id="btnFHomeFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                                <div class="lit-row">
+                                    <div class="cmn-block topMargin40">
+                                        <button id="btnFRocketFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- Final  -->
                         <div class="lit-row">
-                            <div class="cmn-block year-cnt">
+                            <div id="finalRocketFeed" class="cmn-block year-cnt">
                                 <div class="lit-row">
-
+                                    <div class="cmn-block img-block">
+                                        <img src="../resources/img/activity_suenos/Nave.svg" alt="">
+                                    </div>
                                 </div>
                                 <div class="lit-row">
                                     <div class="ttl-txt-cont">
@@ -3202,7 +3300,7 @@
                                     <div class="cmn-block">
                                         <div class="lit-row">
                                             <!-- Feedback container -->
-                                            <div id="houseFeed" class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
+                                            <div class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
                                                 <div class="fdbk-img-cnt">
                                                     <img class="fdbk-img vertical-align" src="../resources/img/activity_suenos/Feedback_2.svg" alt="" />
                                                 </div>

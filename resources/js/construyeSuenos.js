@@ -141,22 +141,24 @@ $(document).ready(function() {
     car_y2.hide();
     rocket_y2.hide();
     // Hide [HOUSE] Elements
-    // btnHouseSR.hide();
-    //btnFHouseFeed.hide();
     houseFeed.hide();
     houseSecondFeed.hide();
     houseResults.hide();
     finalHouseFeed.hide();
+    // Hide [CAR] Elements
+    carFeed.hide();
+    carSecondFeed.hide();
+    carResults.hide();
+    finalCarFeed.hide();
+    // Hide [Rocket] Elements
+    rocketFeed.hide();
+    rocketSecondFeed.hide();
+    rocketResults.hide();
+    finalRocketFeed.hide();
+    //
     _elemsHouse     = {house_y1,house_y2,btnNextCa,btnFHouseFeed,houseFeed,houseSecondFeed,houseResults,finalHouseFeed};
     _elemsCar       = {car_y1,car_y2,btnNextAu,btnFCarFeed,carFeed,carSecondFeed,carResults,finalCarFeed};
     _elemsRocket    = {rocket_y1, rocket_y2,btnNextNa,btnFRocketFeed,rocketFeed,rocketSecondFeed,rocketResults,finalRocketFeed};
-    //
-    btnCarSR.hide();
-    btnFCarFeed.hide();
-    carFeed.hide();
-    carResults.hide();
-    finalCarFeed.hide();
-
     // Print First Budgets
     $("span[id^='houseBudget']").text('$'+budget.casa);
     $("span[id^='carBudget']").text('$'+budget.auto);
@@ -227,6 +229,46 @@ $(document).ready(function() {
         houseResults.hide();
         finalHouseFeed.fadeIn(300).show('fast');
         displayContainer(finalHouseFeed);
+    });
+    // CAR BUTTONS
+    btnCarSR.click(function(event) {
+        CRRNT_AU_RND = 'round2';
+        restartTable();
+        updateResults();
+    });
+    btnCarResults.click(function(event) {
+        setFinalItems(itemsCar);
+        carResults.fadeIn(300).show('fast');
+        displayContainer(carResults);
+    });
+    btnFCarFeed.click(function(event) {
+        car_y1.hide();
+        car_y2.hide();
+        carFeed.hide();
+        carSecondFeed.hide();
+        carResults.hide();
+        finalCarFeed.fadeIn(300).show('fast');
+        displayContainer(finalCarFeed);
+    });
+    // ROCKET BUTTONS
+    btnRocketSR.click(function(event) {
+        CRRNT_NA_RND = 'round2';
+        restartTable();
+        updateResults();
+    });
+    btnRocketResults.click(function(event) {
+        setFinalItems(itemsRocket);
+        rocketResults.fadeIn(300).show('fast');
+        displayContainer(rocketResults);
+    });
+    btnFRocketFeed.click(function(event) {
+        rocket_y1.hide();
+        rocket_y2.hide();
+        rocketFeed.hide();
+        rocketSecondFeed.hide();
+        rocketResults.hide();
+        finalRocketFeed.fadeIn(300).show('fast');
+        displayContainer(finalRocketFeed);
     });
 
     $('.input-sueno').each(function() {
@@ -312,7 +354,7 @@ $(document).ready(function() {
                     } else {
                         // Decrease value if can't add
                         ts_na[_name][_year] = 0;
-                        $(this).val(ts_au[_name][_year]);
+                        $(this).val(ts_na[_name][_year]);
                         // Update Budget and all item vars
                         updateResults(_year);
                         //  F-> Update Results
@@ -419,8 +461,6 @@ function AddResults(year) {
                 console.log(_suma_casa2);
             }
         }
-        console.log(_suma_casa1);
-        console.log(_suma_casa2);
         budget.c_budget = ( _suma_casa1 + _suma_casa2);
     }
     else if (CRRNT_DRM === 'auto') {
