@@ -1,71 +1,71 @@
 var _casaStuff = [ // Main Array for Casa
-        {name: 'paredes', text: 'Paredes', price_y1: 500, price_y2: 600, class: 'item-paredes'},
-        {name: 'cama', text: 'Cama', price_y1: 100, price_y2: 120, class: 'item-cama'},
-        {name: 'comedor', text: 'Comedor', price_y1: 500, price_y2: 600, class: 'item-comedor'},
-        {name: 'garage', text: 'Garage', price_y1: 100, price_y2: 120, class: 'item-garage'},
-        {name: 'puerta', text: 'Puerta', price_y1: 200, price_y2: 240, class: 'item-puerta'},
-        {name: 'sillon', text: 'Sillón grande', price_y1: 200, price_y2: 240, class: 'item-sillon'},
-        {name: 'techos', text: 'Techos', price_y1: 200, price_y2: 240, class: 'item-techos'},
-        {name: 'television', text: 'Televisión', price_y1: 200, price_y2: 240, class: 'item-television'},
-        {name: 'ventanas', text: 'Ventanas', price_y1: 50, price_y2: 60, class: 'item-ventanas'},
+        {name: 'paredes', text: 'Paredes', price_y1: 500, price_y2: 600, price_y3: , class: 'item-paredes'},
+        {name: 'cama', text: 'Cama', price_y1: 100, price_y2: 120, price_y3: , class: 'item-cama'},
+        {name: 'comedor', text: 'Comedor', price_y1: 500, price_y2: 600, price_y3: , class: 'item-comedor'},
+        {name: 'garage', text: 'Garage', price_y1: 100, price_y2: 120, price_y3: , class: 'item-garage'},
+        {name: 'puerta', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-puerta'},
+        {name: 'sillon', text: 'Sillón grande', price_y1: 200, price_y2: 240, price_y3: , class: 'item-sillon'},
+        {name: 'techos', text: 'Techos', price_y1: 200, price_y2: 240, price_y3: , class: 'item-techos'},
+        {name: 'television', text: 'Televisión', price_y1: 200, price_y2: 240, price_y3: , class: 'item-television'},
+        {name: 'ventanas', text: 'Ventanas', price_y1: 50, price_y2: 60, price_y3: , class: 'item-ventanas'},
     ],
     _autoStuff = [ // Main Array for Auto
-        {name: 'carroceria', text: 'Carrocería', price_y1: 500, price_y2: 600, class: 'item-carroceria'},
-        {name: 'velocimetro', text: 'Velocímetro', price_y1: 100, price_y2: 120, class: 'item-velocimetro'},
-        {name: 'volante', text: 'Volante', price_y1: 500, price_y2: 600, class: 'item-volante'},
-        {name: 'cajuela', text: 'Cajuela', price_y1: 100, price_y2: 120, class: 'item-cajuela'},
-        {name: 'puertaa', text: 'Puerta', price_y1: 200, price_y2: 240, class: 'item-puertaa'},
-        {name: 'asiento', text: 'Asiento', price_y1: 200, price_y2: 240, class: 'item-asiento'},
-        {name: 'llanta', text: 'LLanta', price_y1: 200, price_y2: 240, class: 'item-llanta'},
-        {name: 'estereo', text: 'Estéreo', price_y1: 200, price_y2: 240, class: 'item-estereo'},
-        {name: 'parabrisas', text: 'Parabrisas', price_y1: 50, price_y2: 60, class: 'item-parabrisas'},
+        {name: 'carroceria', text: 'Carrocería', price_y1: 500, price_y2: 600, price_y3: , class: 'item-carroceria'},
+        {name: 'velocimetro', text: 'Velocímetro', price_y1: 100, price_y2: 120, price_y3: , class: 'item-velocimetro'},
+        {name: 'volante', text: 'Volante', price_y1: 500, price_y2: 600, price_y3: , class: 'item-volante'},
+        {name: 'cajuela', text: 'Cajuela', price_y1: 100, price_y2: 120, price_y3: , class: 'item-cajuela'},
+        {name: 'puertaa', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-puertaa'},
+        {name: 'asiento', text: 'Asiento', price_y1: 200, price_y2: 240, price_y3: , class: 'item-asiento'},
+        {name: 'llanta', text: 'LLanta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-llanta'},
+        {name: 'estereo', text: 'Estéreo', price_y1: 200, price_y2: 240, price_y3: , class: 'item-estereo'},
+        {name: 'parabrisas', text: 'Parabrisas', price_y1: 50, price_y2: 60, price_y3: , class: 'item-parabrisas'},
     ],
     _naveStuff = [ // Main Array for Nave
-        {name: 'plataforma', text: 'Plataforma', price_y1: 500, price_y2: 600, class: 'item-plataforma'},
-        {name: 'caman', text: 'Cama', price_y1: 100, price_y2: 120, class: 'item-caman'},
-        {name: 'mesa', text: 'Mesa', price_y1: 500, price_y2: 600, class: 'item-mesa'},
-        {name: 'mando', text: 'Mando', price_y1: 100, price_y2: 120, class: 'item-mando'},
-        {name: 'puertan', text: 'Puerta', price_y1: 200, price_y2: 240, class: 'item-puertan'},
-        {name: 'sillonn', text: 'Sillón', price_y1: 200, price_y2: 240, class: 'item-sillonn'},
-        {name: 'casco', text: 'Casco', price_y1: 200, price_y2: 240, class: 'item-casco'},
-        {name: 'tv', text: 'TV', price_y1: 200, price_y2: 240, class: 'item-tv'},
-        {name: 'ventana', text: 'Ventana', price_y1: 50, price_y2: 60, class: 'item-ventana'},
+        {name: 'plataforma', text: 'Plataforma', price_y1: 500, price_y2: 600, price_y3: , class: 'item-plataforma'},
+        {name: 'caman', text: 'Cama', price_y1: 100, price_y2: 120, price_y3: , class: 'item-caman'},
+        {name: 'mesa', text: 'Mesa', price_y1: 500, price_y2: 600, price_y3: , class: 'item-mesa'},
+        {name: 'mando', text: 'Mando', price_y1: 100, price_y2: 120, price_y3: , class: 'item-mando'},
+        {name: 'puertan', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-puertan'},
+        {name: 'sillonn', text: 'Sillón', price_y1: 200, price_y2: 240, price_y3: , class: 'item-sillonn'},
+        {name: 'casco', text: 'Casco', price_y1: 200, price_y2: 240, price_y3: , class: 'item-casco'},
+        {name: 'tv', text: 'TV', price_y1: 200, price_y2: 240, price_y3: , class: 'item-tv'},
+        {name: 'ventana', text: 'Ventana', price_y1: 50, price_y2: 60, price_y3: , class: 'item-ventana'},
     ],
     /*
     * Arrays for mutable values submitted by user
     */
     ts_ca = { // Mutable [Casa] values
-        paredes     : { _y1: 0, _y2: 0},
-        cama        : { _y1: 0, _y2: 0},
-        comedor     : { _y1: 0, _y2: 0},
-        garage      : { _y1: 0, _y2: 0},
-        puerta      : { _y1: 0, _y2: 0},
-        sillon      : { _y1: 0, _y2: 0},
-        techos      : { _y1: 0, _y2: 0},
-        television  : { _y1: 0, _y2: 0},
-        ventanas    : { _y1: 0, _y2: 0}
+        paredes     : { _y1: 0, _y2: 0, _y3: 0},
+        cama        : { _y1: 0, _y2: 0, _y3: 0},
+        comedor     : { _y1: 0, _y2: 0, _y3: 0},
+        garage      : { _y1: 0, _y2: 0, _y3: 0},
+        puerta      : { _y1: 0, _y2: 0, _y3: 0},
+        sillon      : { _y1: 0, _y2: 0, _y3: 0},
+        techos      : { _y1: 0, _y2: 0, _y3: 0},
+        television  : { _y1: 0, _y2: 0, _y3: 0},
+        ventanas    : { _y1: 0, _y2: 0, _y3: 0}
     },
     ts_au = { // Mutable [Auto] values
-        carroceria  : { _y1: 0, _y2: 0},
-        velocimetro : { _y1: 0, _y2: 0},
-        volante     : { _y1: 0, _y2: 0},
-        cajuela     : { _y1: 0, _y2: 0},
-        puertaa     : { _y1: 0, _y2: 0},
-        asiento     : { _y1: 0, _y2: 0},
-        llanta      : { _y1: 0, _y2: 0},
-        estereo     : { _y1: 0, _y2: 0},
-        parabrisas  : { _y1: 0, _y2: 0}
+        carroceria  : { _y1: 0, _y2: 0, _y3: 0},
+        velocimetro : { _y1: 0, _y2: 0, _y3: 0},
+        volante     : { _y1: 0, _y2: 0, _y3: 0},
+        cajuela     : { _y1: 0, _y2: 0, _y3: 0},
+        puertaa     : { _y1: 0, _y2: 0, _y3: 0},
+        asiento     : { _y1: 0, _y2: 0, _y3: 0},
+        llanta      : { _y1: 0, _y2: 0, _y3: 0},
+        estereo     : { _y1: 0, _y2: 0, _y3: 0},
+        parabrisas  : { _y1: 0, _y2: 0, _y3: 0}
     },
     ts_na = { // Mutable [Nave] values
-        plataforma  : { _y1: 0, _y2: 0},
-        caman       : { _y1: 0, _y2: 0},
-        mesa        : { _y1: 0, _y2: 0},
-        mando       : { _y1: 0, _y2: 0},
-        puertan     : { _y1: 0, _y2: 0},
-        sillonn     : { _y1: 0, _y2: 0},
-        casco       : { _y1: 0, _y2: 0},
-        tv          : { _y1: 0, _y2: 0},
-        ventana     : { _y1: 0, _y2: 0}
+        plataforma  : { _y1: 0, _y2: 0, _y3: 0},
+        caman       : { _y1: 0, _y2: 0, _y3: 0},
+        mesa        : { _y1: 0, _y2: 0, _y3: 0},
+        mando       : { _y1: 0, _y2: 0, _y3: 0},
+        puertan     : { _y1: 0, _y2: 0, _y3: 0},
+        sillonn     : { _y1: 0, _y2: 0, _y3: 0},
+        casco       : { _y1: 0, _y2: 0, _y3: 0},
+        tv          : { _y1: 0, _y2: 0, _y3: 0},
+        ventana     : { _y1: 0, _y2: 0, _y3: 0}
     },
     budget = {
         casa : 1000, auto: 1000, nave: 1000,
@@ -79,10 +79,6 @@ var _casaStuff = [ // Main Array for Casa
     itemsCar.round1 = []; itemsCar.round2 = [];
     itemsRocket.round1 = []; itemsRocket.round2 = [];
     itemsHome.round1 = []; itemsHome.round2 = [];
-
-
-
-
 
 $(document).ready(function() {
     var btnCasa     = $('#btnCasa'),
@@ -167,11 +163,11 @@ $(document).ready(function() {
 
     // Main Activity Buttons Events
     btnCasa.click(function(event) {
-        CRRNT_DRM = 'casa';
-        CRRNT_CA_RND = 'round1';
-        buttons.hide();
-        dreamHouse.fadeIn(300).show('fast');
-        displayContainer(dreamHouse);
+        CRRNT_DRM = 'casa';                     // Set Dream
+        CRRNT_CA_RND = 'round1';                // Set Dream [First] Round
+        buttons.hide();                         // Hide Main Buttons container
+        dreamHouse.fadeIn(300).show('fast');    // Show selected Dream container
+        displayContainer(dreamHouse);           // Animate and Scroll to current Dream
     });
 
     btnAuto.click(function(event) {
@@ -192,43 +188,46 @@ $(document).ready(function() {
 
     // [Next Year] Buttons
     btnNextCa.click(function(event) {
-        house_y1.hide();
-        house_y2.fadeIn(300).show('fast');
-        displayContainer(house_y2);
+        house_y1.hide();                        // Hide Year 1 Table
+        house_y2.fadeIn(300).show('fast');      // Show Year 2 Table
+        displayContainer(house_y2);             // Animate and Scroll to Year 2 Table
+        enableInputs();                         // Enable Inputs
     });
 
     btnNextAu.click(function(event) {
         car_y1.hide();
         car_y2.fadeIn(300).show('fast');
         displayContainer(car_y2);
-
+        enableInputs();
     });
 
     btnNextNa.click(function(event) {
         rocket_y1.hide();
         rocket_y2.fadeIn(300).show('fast');
         displayContainer(rocket_y2);
+        enableInputs();
     });
 
     // HOUSE BUTTONS
     btnHouseSR.click(function(event) {
-        CRRNT_CA_RND = 'round2';
-        restartTable();
-        updateResults();
+        CRRNT_CA_RND = 'round2';                // Current Dream Round
+        restartTable();                         // Restart all Table values
+        updateResults();                        // Update Tables and Additions
+        enableInputs();                         // Enable Inputs
     });
     btnHouseResults.click(function(event) {
-        setFinalItems(itemsHome);
-        houseResults.fadeIn(300).show('fast');
-        displayContainer(houseResults);
+        setFinalItems(itemsHome);               // Populate items in Final Results Tables
+        houseResults.fadeIn(300).show('fast');  // Show Final Results Tables
+        displayContainer(houseResults);         // Animate and Scroll to Final Results Tables
     });
     btnFHouseFeed.click(function(event) {
-        house_y1.hide();
-        house_y2.hide();
-        houseFeed.hide();
-        houseSecondFeed.hide();
-        houseResults.hide();
-        finalHouseFeed.fadeIn(300).show('fast');
-        displayContainer(finalHouseFeed);
+        house_y1.hide();                        // Hide Year 1
+        house_y2.hide();                        // Hide Year 2
+        houseFeed.hide();                       // Hide First Dream Feedback
+        houseSecondFeed.hide();                 // Hide Second Dream Feedback
+        houseResults.hide();                    // Hide Final Results
+        finalHouseFeed.fadeIn(300).show('fast');// Show Final Dream Feedback
+        displayContainer(finalHouseFeed);       // Animate and Scroll to Final Dream Feedback
     });
     // CAR BUTTONS
     btnCarSR.click(function(event) {
@@ -291,14 +290,6 @@ $(document).ready(function() {
                     if ( (budget.c_budget) <= budget.casa) {
                         ts_ca[_name][_year] = _value;
                         fillItems(dream_item, CRRNT_DRM);
-                        // F-> Fill Items
-                        // if ( budget.c_budget == budget.casa) {
-                        //     if (_year === '_y2') {
-                        //         houseFeed.fadeIn(300).show('fast');
-                        //         displayContainer(houseFeed);
-                        //     }
-                        //     btnNextCa.removeClass('bbva-disable');
-                        // }
                     } else {
                         // Decrease value if can't add
                         ts_ca[_name][_year] = 0;
@@ -317,14 +308,6 @@ $(document).ready(function() {
                     if ( (budget.a_budget) <= budget.auto) {
                         ts_au[_name][_year] = _value;
                         fillItems(dream_item, CRRNT_DRM);
-                        // F-> Fill Items
-                        // if ( budget.a_budget == budget.auto) {
-                        //     if (_year === '_y2') {
-                        //         houseFeed.fadeIn(300).show('fast');
-                        //         displayContainer(autoFeed);
-                        //     }
-                        //     btnNextAu.removeClass('bbva-disable');
-                        // }
                     } else {
                         // Decrease value if can't add
                         ts_au[_name][_year] = 0;
@@ -343,14 +326,6 @@ $(document).ready(function() {
                     if ( (budget.n_budget) <= budget.nave) {
                         ts_na[_name][_year] = _value;
                         fillItems(dream_item, CRRNT_DRM);
-                        // F-> Fill Items
-                        // if ( budget.n_budget == budget.nave) {
-                        //     if (_year === '_y2') {
-                        //         naveFeed.fadeIn(300).show('fast');
-                        //         displayContainer(autoFeed);
-                        //     }
-                        //     btnNextAu.removeClass('bbva-disable');
-                        // }
                     } else {
                         // Decrease value if can't add
                         ts_na[_name][_year] = 0;
@@ -400,6 +375,10 @@ function obtainAmmount(dream_item) {
                 if(_casaStuff[ditem].name === _name){
                     _price = _casaStuff[ditem].price_y2;
                 }
+            } else if (_year === '_y3') {
+                if(_casaStuff[ditem].name === _name){
+                    _price = _casaStuff[ditem].price_y3;
+                }
             }
         }
     } else if (CRRNT_DRM === 'auto') {
@@ -412,7 +391,12 @@ function obtainAmmount(dream_item) {
                 if(_autoStuff[ditem].name === _name){
                     _price = _autoStuff[ditem].price_y2;
                 }
+            } else if (_year === '_y3') {
+                if(_autoStuff[ditem].name === _name){
+                    _price = _autoStuff[ditem].price_y3;
+                }
             }
+
         }
     } else if (CRRNT_DRM === 'nave') {
         for (var ditem in _naveStuff) {
@@ -423,6 +407,10 @@ function obtainAmmount(dream_item) {
             } else if (_year === '_y2') {
                 if(_naveStuff[ditem].name === _name){
                     _price = _naveStuff[ditem].price_y2;
+                }
+            } else if (_year === '_y3') {
+                if(_naveStuff[ditem].name === _name){
+                    _price = _naveStuff[ditem].price_y3;
                 }
             }
         }
@@ -459,6 +447,10 @@ function AddResults(year) {
                 window[casa_var+"_2"] = ( (ts_ca[casa_var]._y2) * (_casaStuff[c_item].price_y2) );
                 _suma_casa2 += window[casa_var+"_2"];
                 console.log(_suma_casa2);
+            } else if (_year === '_y3') {
+                window[casa_var+"_3"] = ( (ts_ca[casa_var]._y3) * (_casaStuff[c_item].price_y3) );
+                _suma_casa3 += window[casa_var+"_3"];
+                console.log(_suma_casa3);
             }
         }
         budget.c_budget = ( _suma_casa1 + _suma_casa2);
@@ -473,6 +465,9 @@ function AddResults(year) {
             } else if (_year === '_y2') {
                 window[auto_var+"_2"] = ( (ts_au[auto_var]._y2) * (_autoStuff[a_item].price_y2) );
                 _suma_auto2 += window[auto_var+"_2"];
+            } else if (_year === '_y3') {
+                window[auto_var+"_3"] = ( (ts_au[auto_var]._y3) * (_autoStuff[a_item].price_y3) );
+                _suma_auto3 += window[auto_var+"_3"];
             }
         }
         budget.a_budget = (_suma_auto1 +_suma_auto2 );
@@ -487,6 +482,9 @@ function AddResults(year) {
             } else if (_year === '_y2') {
                 window[nave_var+"_2"] = ( (ts_na[nave_var]._y2) * (_naveStuff[n_item].price_y2) );
                 _suma_nave2 += window[nave_var+"_2"];
+            } else if (_year === '_y3') {
+                window[nave_var+"_3"] = ( (ts_na[nave_var]._y3) * (_naveStuff[n_item].price_y3) );
+                _suma_nave3 += window[nave_var+"_3"];
             }
         }
         budget.n_budget = (_suma_nave1 + _suma_nave2);
@@ -554,6 +552,7 @@ function addFinalItem(dream, name, year) {
                     // #! Condition
                     if (itemsHome.round1.length == 2) {
                         _elemsHouse.btnNextCa.removeClass('bbva-disable');
+                        disableInputs();
                     }
                 } else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _casaStuff).price_2;
@@ -568,6 +567,7 @@ function addFinalItem(dream, name, year) {
                     if (itemsHome.round1.length == 4) {
                         _elemsHouse.houseFeed.fadeIn(300).show('fast');
                         displayContainer(_elemsHouse.houseFeed);
+                        disableInputs();
                     }
                 }
             }
@@ -927,6 +927,14 @@ function toFirstTable() {
 }
 function disableButtons() {
     _elemsHouse.btnNextCa.addClass('bbva-disable');
+    _elemsCar.btnNextAu.addClass('bbva-disable');
+    _elemsRocket.btnNextNa.addClass('bbva-disable');
+}
+function disableInputs() {
+    $('.input-sueno').prop('disabled', true);
+}
+function enableInputs() {
+    $('.input-sueno').prop('disabled', false);
 }
 // Display and Animate Puzzle or Container dynamically
 function displayContainer(container){
