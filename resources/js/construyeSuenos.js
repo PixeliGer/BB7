@@ -95,10 +95,13 @@ $(document).ready(function() {
         // Dream Year
         house_y1    = $('#house_y1'),
         house_y2    = $('#house_y2'),
+        house_y3    = $('#house_y3'),
         car_y1      = $('#car_y1'),
         car_y2      = $('#car_y2'),
+        car_y3      = $('#car_y3'),
         rocket_y1   = $('#rocket_y1'),
         rocket_y2   = $('#rocket_y2'),
+        rocket_y3   = $('#rocket_y3'),
         // [HOUSE] ELEMENTS
         btnHouseSR      = $('#btnHouseSecondR'),
         btnFHouseFeed   = $('#btnFHouseFeed'),
@@ -186,7 +189,7 @@ $(document).ready(function() {
         displayContainer(dreamRocket);
     });
 
-    // [Next Year] Buttons
+    // [Second Year] Buttons
     btnNextCa.click(function(event) {
         house_y1.hide();                        // Hide Year 1 Table
         house_y2.fadeIn(300).show('fast');      // Show Year 2 Table
@@ -569,6 +572,21 @@ function addFinalItem(dream, name, year) {
                         displayContainer(_elemsHouse.houseFeed);
                         disableInputs();
                     }
+                } else if (_year === '_y3') {
+                    _price  = exploreMainArrays(_name, _casaStuff).price_3;
+                    _cant   = ts_ca[_name][_year];
+                    itemsHome.round1.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                    // #! Condition
+                    // if (itemsHome.round1.length == 4) {
+                    //     _elemsHouse.houseFeed.fadeIn(300).show('fast');
+                    //     displayContainer(_elemsHouse.houseFeed);
+                    //     disableInputs();
+                    // }
                 }
             }
             else if (CRRNT_CA_RND === 'round2') {
@@ -599,6 +617,20 @@ function addFinalItem(dream, name, year) {
                         _elemsHouse.houseSecondFeed.fadeIn(300).show('fast');
                         displayContainer(_elemsHouse.houseSecondFeed);
                     }
+                } else if (_year === '_y3') {
+                    _price  = exploreMainArrays(_name, _casaStuff).price_3;
+                    _cant   = ts_ca[_name][_year];
+                    itemsHome.round2.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                    // #! Condition
+                    // if (itemsHome.round2.length == 4) {
+                    //     _elemsHouse.houseSecondFeed.fadeIn(300).show('fast');
+                    //     displayContainer(_elemsHouse.houseSecondFeed);
+                    // }
                 }
             }
         }
@@ -635,6 +667,20 @@ function addFinalItem(dream, name, year) {
                         _elemsCar.carFeed.fadeIn(300).show('fast');
                         displayContainer(_elemsCar.carFeed);
                     }
+                } else if (_year === '_y3') {
+                    _price  = exploreMainArrays(_name, _autoStuff).price_3;
+                    _cant   = ts_au[_name][_year];
+                    itemsCar.round1.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                    // #! Condition
+                    // if (itemsCar.round1.length == 4) {
+                    //     _elemsCar.carFeed.fadeIn(300).show('fast');
+                    //     displayContainer(_elemsCar.carFeed);
+                    // }
                 }
             }
             else if (CRRNT_AU_RND === 'round2') {
@@ -665,6 +711,20 @@ function addFinalItem(dream, name, year) {
                         _elemsCar.carSecondFeed.fadeIn(300).show('fast');
                         displayContainer(_elemsCar.carSecondFeed);
                     }
+                } else if (_year === '_y3') {
+                    _price  = exploreMainArrays(_name, _autoStuff).price_3;
+                    _cant   = ts_au[_name][_year];
+                    itemsCar.round2.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                    // #! Condition
+                    // if (itemsCar.round2.length == 4) {
+                    //     _elemsCar.carSecondFeed.fadeIn(300).show('fast');
+                    //     displayContainer(_elemsCar.carSecondFeed);
+                    // }
                 }
             }
         }
@@ -700,6 +760,20 @@ function addFinalItem(dream, name, year) {
                         _elemsRocket.rocketFeed.fadeIn(300).show('fast');
                         displayContainer(_elemsRocket.rocketFeed);
                     }
+                } else if (_year === '_y3') {
+                    _price  = exploreMainArrays(_name, _naveStuff).price_3;
+                    _cant   = ts_na[_name][_year];
+                    itemsRocket.round1.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                    // #! Condition
+                    // if (itemsRocket.round1.length == 4) {
+                    //     _elemsRocket.rocketFeed.fadeIn(300).show('fast');
+                    //     displayContainer(_elemsRocket.rocketFeed);
+                    }
                 }
             }
             else if (CRRNT_NA_RND === 'round2') {
@@ -730,6 +804,20 @@ function addFinalItem(dream, name, year) {
                         _elemsRocket.rocketSecondFeed.fadeIn(300).show('fast');
                         displayContainer(_elemsRocket.rocketSecondFeed);
                     }
+                } else if (_year === '_y3') {
+                    _price  = exploreMainArrays(_name, _naveStuff).price_3;
+                    _cant   = ts_na[_name][_year];
+                    itemsRocket.round2.push({
+                        name: _name,
+                        price: _price,
+                        cant: _cant,
+                        iclass: 'item-'+_name
+                    });
+                    // #! Condition
+                    // if (itemsRocket.round2.length == 4) {
+                    //     _elemsRocket.rocketSecondFeed.fadeIn(300).show('fast');
+                    //     displayContainer(_elemsRocket.rocketSecondFeed);
+                    // }
                 }
             }
         }
