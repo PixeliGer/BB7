@@ -1,35 +1,35 @@
 var _casaStuff = [ // Main Array for Casa
-        {name: 'paredes', text: 'Paredes', price_y1: 500, price_y2: 600, price_y3: , class: 'item-paredes'},
-        {name: 'cama', text: 'Cama', price_y1: 100, price_y2: 120, price_y3: , class: 'item-cama'},
-        {name: 'comedor', text: 'Comedor', price_y1: 500, price_y2: 600, price_y3: , class: 'item-comedor'},
-        {name: 'garage', text: 'Garage', price_y1: 100, price_y2: 120, price_y3: , class: 'item-garage'},
-        {name: 'puerta', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-puerta'},
-        {name: 'sillon', text: 'Sillón grande', price_y1: 200, price_y2: 240, price_y3: , class: 'item-sillon'},
-        {name: 'techos', text: 'Techos', price_y1: 200, price_y2: 240, price_y3: , class: 'item-techos'},
-        {name: 'television', text: 'Televisión', price_y1: 200, price_y2: 240, price_y3: , class: 'item-television'},
-        {name: 'ventanas', text: 'Ventanas', price_y1: 50, price_y2: 60, price_y3: , class: 'item-ventanas'},
+        {name: 'paredes', text: 'Paredes', price_y1: 500, price_y2: 600, price_y3: 900, iclass: 'item-paredes'},
+        {name: 'cama', text: 'Cama', price_y1: 100, price_y2: 120, price_y3: 180, iclass: 'item-cama'},
+        {name: 'comedor', text: 'Comedor', price_y1: 500, price_y2: 600, price_y3: 900, iclass: 'item-comedor'},
+        {name: 'garage', text: 'Garage', price_y1: 100, price_y2: 120, price_y3: 180, iclass: 'item-garage'},
+        {name: 'puerta', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-puerta'},
+        {name: 'sillon', text: 'Sillón grande', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-sillon'},
+        {name: 'techos', text: 'Techos', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-techos'},
+        {name: 'television', text: 'Televisión', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-television'},
+        {name: 'ventanas', text: 'Ventanas', price_y1: 50, price_y2: 60, price_y3: 90, iclass: 'item-ventanas'}
     ],
     _autoStuff = [ // Main Array for Auto
-        {name: 'carroceria', text: 'Carrocería', price_y1: 500, price_y2: 600, price_y3: , class: 'item-carroceria'},
-        {name: 'velocimetro', text: 'Velocímetro', price_y1: 100, price_y2: 120, price_y3: , class: 'item-velocimetro'},
-        {name: 'volante', text: 'Volante', price_y1: 500, price_y2: 600, price_y3: , class: 'item-volante'},
-        {name: 'cajuela', text: 'Cajuela', price_y1: 100, price_y2: 120, price_y3: , class: 'item-cajuela'},
-        {name: 'puertaa', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-puertaa'},
-        {name: 'asiento', text: 'Asiento', price_y1: 200, price_y2: 240, price_y3: , class: 'item-asiento'},
-        {name: 'llanta', text: 'LLanta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-llanta'},
-        {name: 'estereo', text: 'Estéreo', price_y1: 200, price_y2: 240, price_y3: , class: 'item-estereo'},
-        {name: 'parabrisas', text: 'Parabrisas', price_y1: 50, price_y2: 60, price_y3: , class: 'item-parabrisas'},
+        {name: 'carroceria', text: 'Carrocería', price_y1: 500, price_y2: 600, price_y3: 900, iclass: 'item-carroceria'},
+        {name: 'velocimetro', text: 'Velocímetro', price_y1: 100, price_y2: 120, price_y3: 180, iclass: 'item-velocimetro'},
+        {name: 'volante', text: 'Volante', price_y1: 500, price_y2: 600, price_y3: 900, iclass: 'item-volante'},
+        {name: 'cajuela', text: 'Cajuela', price_y1: 100, price_y2: 120, price_y3: 180, iclass: 'item-cajuela'},
+        {name: 'puertaa', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-puertaa'},
+        {name: 'asiento', text: 'Asiento', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-asiento'},
+        {name: 'llanta', text: 'LLanta', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-llanta'},
+        {name: 'estereo', text: 'Estéreo', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-estereo'},
+        {name: 'parabrisas', text: 'Parabrisas', price_y1: 50, price_y2: 60, price_y3: 90, iclass: 'item-parabrisas'}
     ],
     _naveStuff = [ // Main Array for Nave
-        {name: 'plataforma', text: 'Plataforma', price_y1: 500, price_y2: 600, price_y3: , class: 'item-plataforma'},
-        {name: 'caman', text: 'Cama', price_y1: 100, price_y2: 120, price_y3: , class: 'item-caman'},
-        {name: 'mesa', text: 'Mesa', price_y1: 500, price_y2: 600, price_y3: , class: 'item-mesa'},
-        {name: 'mando', text: 'Mando', price_y1: 100, price_y2: 120, price_y3: , class: 'item-mando'},
-        {name: 'puertan', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: , class: 'item-puertan'},
-        {name: 'sillonn', text: 'Sillón', price_y1: 200, price_y2: 240, price_y3: , class: 'item-sillonn'},
-        {name: 'casco', text: 'Casco', price_y1: 200, price_y2: 240, price_y3: , class: 'item-casco'},
-        {name: 'tv', text: 'TV', price_y1: 200, price_y2: 240, price_y3: , class: 'item-tv'},
-        {name: 'ventana', text: 'Ventana', price_y1: 50, price_y2: 60, price_y3: , class: 'item-ventana'},
+        {name: 'plataforma', text: 'Plataforma', price_y1: 500, price_y2: 600, price_y3: 900, iclass: 'item-plataforma'},
+        {name: 'caman', text: 'Cama', price_y1: 100, price_y2: 120, price_y3: 180, iclass: 'item-caman'},
+        {name: 'mesa', text: 'Mesa', price_y1: 500, price_y2: 600, price_y3: 900, iclass: 'item-mesa'},
+        {name: 'mando', text: 'Mando', price_y1: 100, price_y2: 120, price_y3: 180, iclass: 'item-mando'},
+        {name: 'puertan', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-puertan'},
+        {name: 'sillonn', text: 'Sillón', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-sillonn'},
+        {name: 'casco', text: 'Casco', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-casco'},
+        {name: 'tv', text: 'TV', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-tv'},
+        {name: 'ventana', text: 'Ventana', price_y1: 50, price_y2: 60, price_y3: 90, iclass: 'item-ventana'}
     ],
     /*
     * Arrays for mutable values submitted by user
@@ -139,6 +139,10 @@ $(document).ready(function() {
     house_y2.hide();
     car_y2.hide();
     rocket_y2.hide();
+    // Hide Year [3] Dreams
+    house_y3.hide();
+    car_y3.hide();
+    rocket_y3.hide();
     // Hide [HOUSE] Elements
     houseFeed.hide();
     houseSecondFeed.hide();
@@ -218,11 +222,13 @@ $(document).ready(function() {
         updateResults();                        // Update Tables and Additions
         enableInputs();                         // Enable Inputs
     });
+
     btnHouseResults.click(function(event) {
         setFinalItems(itemsHome);               // Populate items in Final Results Tables
         houseResults.fadeIn(300).show('fast');  // Show Final Results Tables
         displayContainer(houseResults);         // Animate and Scroll to Final Results Tables
     });
+
     btnFHouseFeed.click(function(event) {
         house_y1.hide();                        // Hide Year 1
         house_y2.hide();                        // Hide Year 2
@@ -232,17 +238,20 @@ $(document).ready(function() {
         finalHouseFeed.fadeIn(300).show('fast');// Show Final Dream Feedback
         displayContainer(finalHouseFeed);       // Animate and Scroll to Final Dream Feedback
     });
+
     // CAR BUTTONS
     btnCarSR.click(function(event) {
         CRRNT_AU_RND = 'round2';
         restartTable();
         updateResults();
     });
+
     btnCarResults.click(function(event) {
         setFinalItems(itemsCar);
         carResults.fadeIn(300).show('fast');
         displayContainer(carResults);
     });
+
     btnFCarFeed.click(function(event) {
         car_y1.hide();
         car_y2.hide();
@@ -252,17 +261,20 @@ $(document).ready(function() {
         finalCarFeed.fadeIn(300).show('fast');
         displayContainer(finalCarFeed);
     });
+
     // ROCKET BUTTONS
     btnRocketSR.click(function(event) {
         CRRNT_NA_RND = 'round2';
         restartTable();
         updateResults();
     });
+
     btnRocketResults.click(function(event) {
         setFinalItems(itemsRocket);
         rocketResults.fadeIn(300).show('fast');
         displayContainer(rocketResults);
     });
+
     btnFRocketFeed.click(function(event) {
         rocket_y1.hide();
         rocket_y2.hide();
@@ -423,13 +435,29 @@ function obtainAmmount(dream_item) {
 
 function updateResults(year) {
     var _year = year;
-    var results = AddResults(_year);
+    // var results = AddResults(_year);
+    if (CRRNT_DRM === 'casa') {
+        var results = countResults(itemsHome);
+        if (CRRNT_CA_RND === "round1") {
+            budget.c_budget = results.f_total;
+        } else if (CRRNT_CA_RND === 'round2') {
+            budget.c_budget = results.s_total;
+        }
+    } else if (CRRNT_DRM === 'auto') {
+        var results = countResults(itemsCar)
+    } else if (CRRNT_DRM === 'nave') {
+        var results = countResults(itemsRocket)
+    }
+
     $('#houseYear1').text('$'+ ( budget.casa - budget.c_budget) );
     $('#carYear1').text('$'+ (budget.auto - budget.a_budget) );
     $('#rocketYear1').text('$'+ (budget.nave - budget.n_budget) );
     $('#houseYear2').text('$'+ ( budget.casa - budget.c_budget) );
     $('#carYear2').text('$'+ (budget.auto - budget.a_budget) );
     $('#rocketYear2').text('$'+ (budget.nave - budget.n_budget) );
+    $('#houseYear3').text('$'+ ( budget.casa - budget.c_budget) );
+    $('#carYear3').text('$'+ (budget.auto - budget.a_budget) );
+    $('#rocketYear3').text('$'+ (budget.nave - budget.n_budget) );
 }
 
 function AddResults(year) {
@@ -534,6 +562,7 @@ function fillItems(dream_item, current_dream) {
     }
 
 }
+
 function addFinalItem(dream, name, year) {
     var _dream = dream,
         _name  = name,
@@ -773,7 +802,7 @@ function addFinalItem(dream, name, year) {
                     // if (itemsRocket.round1.length == 4) {
                     //     _elemsRocket.rocketFeed.fadeIn(300).show('fast');
                     //     displayContainer(_elemsRocket.rocketFeed);
-                    }
+                    // }
                 }
             }
             else if (CRRNT_NA_RND === 'round2') {
@@ -790,7 +819,8 @@ function addFinalItem(dream, name, year) {
                     if (itemsRocket.round2.length == 2) {
                         _elemsRocket.btnNextNa.removeClass('bbva-disable');
                     }
-                } else if (_year === '_y2') {
+                }
+                else if (_year === '_y2') {
                     _price  = exploreMainArrays(_name, _naveStuff).price_2;
                     _cant   = ts_na[_name][_year];
                     itemsRocket.round2.push({
@@ -804,7 +834,8 @@ function addFinalItem(dream, name, year) {
                         _elemsRocket.rocketSecondFeed.fadeIn(300).show('fast');
                         displayContainer(_elemsRocket.rocketSecondFeed);
                     }
-                } else if (_year === '_y3') {
+                }
+                else if (_year === '_y3') {
                     _price  = exploreMainArrays(_name, _naveStuff).price_3;
                     _cant   = ts_na[_name][_year];
                     itemsRocket.round2.push({
@@ -821,7 +852,9 @@ function addFinalItem(dream, name, year) {
                 }
             }
         }
+
 }
+
 function removeFinalItem(dream, name, year) {
     var _dream  = dream,
         _name   = name,
@@ -861,6 +894,7 @@ function removeFinalItem(dream, name, year) {
     }
 
 }
+
 function setFinalItems(dreamItems) {
 
     var f_row = '', f_rows = '',
@@ -944,6 +978,7 @@ function countResults(itemsArray) {
         s_total : s_Total
     }
 }
+
 function exploreMainArrays(_name, _array) {
     var name        = _name,
         stuffArray  = _array,
@@ -963,6 +998,7 @@ function exploreMainArrays(_name, _array) {
     }
 
 }
+
 // Restart DOM Tables
 function restartTable() {
     $('.input-sueno').val(0);
@@ -975,6 +1011,7 @@ function restartTable() {
     toFirstTable();
     disableButtons();
 }
+
 function hideDreamElems() {
     if (CRRNT_DRM === 'casa') {
         for (var dom_elem in _elemsHouse) {
@@ -997,6 +1034,7 @@ function hideDreamElems() {
         }
     }
 }
+
 function toFirstTable() {
     if (CRRNT_DRM === 'casa') {
         _elemsHouse.house_y2.hide();
@@ -1013,17 +1051,21 @@ function toFirstTable() {
         displayContainer(_elemsRocket.rocket_y1);
     }
 }
+
 function disableButtons() {
     _elemsHouse.btnNextCa.addClass('bbva-disable');
     _elemsCar.btnNextAu.addClass('bbva-disable');
     _elemsRocket.btnNextNa.addClass('bbva-disable');
 }
+
 function disableInputs() {
     $('.input-sueno').prop('disabled', true);
 }
+
 function enableInputs() {
     $('.input-sueno').prop('disabled', false);
 }
+
 // Display and Animate Puzzle or Container dynamically
 function displayContainer(container){
     setTimeout(function() {
