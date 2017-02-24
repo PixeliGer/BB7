@@ -224,7 +224,7 @@ $(document).ready(function() {
     });
 
     btnHouseResults.click(function(event) {
-        setFinalItems(itemsHome);               // Populate items in Final Results Tables
+        // setFinalItems(itemsHome);               // Populate items in Final Results Tables
         houseResults.fadeIn(300).show('fast');  // Show Final Results Tables
         displayContainer(houseResults);         // Animate and Scroll to Final Results Tables
     });
@@ -247,7 +247,7 @@ $(document).ready(function() {
     });
 
     btnCarResults.click(function(event) {
-        setFinalItems(itemsCar);
+        // setFinalItems(itemsCar);
         carResults.fadeIn(300).show('fast');
         displayContainer(carResults);
     });
@@ -270,7 +270,7 @@ $(document).ready(function() {
     });
 
     btnRocketResults.click(function(event) {
-        setFinalItems(itemsRocket);
+        // setFinalItems(itemsRocket);
         rocketResults.fadeIn(300).show('fast');
         displayContainer(rocketResults);
     });
@@ -435,19 +435,7 @@ function obtainAmmount(dream_item) {
 
 function updateResults(year) {
     var _year = year;
-    // var results = AddResults(_year);
-    if (CRRNT_DRM === 'casa') {
-        var results = countResults(itemsHome);
-        if (CRRNT_CA_RND === "round1") {
-            budget.c_budget = results.f_total;
-        } else if (CRRNT_CA_RND === 'round2') {
-            budget.c_budget = results.s_total;
-        }
-    } else if (CRRNT_DRM === 'auto') {
-        var results = countResults(itemsCar)
-    } else if (CRRNT_DRM === 'nave') {
-        var results = countResults(itemsRocket)
-    }
+    var results = AddResults(_year);
 
     $('#houseYear1').text('$'+ ( budget.casa - budget.c_budget) );
     $('#carYear1').text('$'+ (budget.auto - budget.a_budget) );
