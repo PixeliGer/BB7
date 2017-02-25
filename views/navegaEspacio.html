@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height"/>
+        <meta name="theme-color" content="#0097CE"/>
+        <title>Navega en el espacio</title>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/componentsStyle.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/activities.css">
+        <!-- Scripts -->
+        <script type="text/javascript" src="../resources/js/Frameworks/Jquery/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../resources/js/easytimer.min.js"></script>
+        <script type="text/javascript" src="../resources/js/viajeEspacio.js" charset="utf-8"></script>
+    </head>
+    <body class="puzzles-bckgr">
+        <!-- Main Content -->
+        <div class="content flex-div">
+            <nav></nav>
+
+            <section id="main-section">
+                <!-- BBVA Activity Title -->
+                <header>
+                    <div class="bbva-content">
+                        <div class="btn-rtrn-cnt">
+                            <!-- Return Button -->
+                            <a href="../index.html">
+                                <div class="btn-rtrn cnt-h50 bbva-font-book">
+                                    <div class="rtrn-arrw-cnt pull-left">
+                                        <img class="vertical-align" src="../resources/img/icons/Ico_flecha_regresar.png" alt="" />
+                                    </div>
+                                    <div class="rtrn-txt-cnt pull-left">
+                                        <div class="rtrn-txt vertical-align">
+                                            Regresa a Actividades
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Activity/Calculator icon -->
+                        <div class="ttl-ico-cnt">
+                            <img class="ttl-ico" src="../resources/img/icons/home/Ico_Menu_Fiesta.svg" alt="" />
+                        </div>
+                        <!-- Activity/Calculator title -->
+                        <div class="ttl-txt-cont">
+                            <div class="main-ttl-activity">
+                                <p>
+                                    Navega en el espacio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Here's where Magic happens -->
+                <article>
+                    <div class="bbva-content">
+                        <div class="lit-row">
+                            <hr class="bbva-separator-full">
+                            <div id="instructionsContent" class="main-dsc-activity">
+                                <p>
+                                    ¿Te gustaría tener una máquina de billetes? ¿Sabías que sí existe? El Banco Central es el encargado de hacer los billetes y monedas de una economía.
+                                    Pero no es tan fácil como crees. Es una tarea que requiere mucha responsabilidad, pues debe mantener un equilibrio para que no genere inflación.
+                                </p>
+                                <p>
+                                    A continuación pondrás en práctica un ejercicio de inteligencia y precisión, como el que debe tener el Banco Central al cuidar la inflación.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="lit-row topMargin100">
+                            <button id="btnNext" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div id="btnsContent" class="bbva-content">
+                        <div class="lit-row">
+                            <div class="main-ttl-activity">
+                                <p>
+                                    Para comenzar, elige tu vehículo:
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lit-row">
+                            <div class="cmn-block puzzle-btn-cnt">
+                                <div class="mid-clmn">
+                                    <div class="cmn-block">
+                                        <div class="mid-clmn-lwys">
+                                            <div id="spaceBtn" class="puzzle-btn space-btn">
+
+                                            </div>
+                                        </div>
+                                        <div class="mid-clmn-lwys">
+                                            <div id="planeBtn" class="puzzle-btn plane-btn">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mid-clmn">
+                                    <div class="cmn-block">
+                                        <div class="mid-clmn-lwys">
+                                            <div id="truckBtn" class="puzzle-btn truck-btn">
+
+                                            </div>
+                                        </div>
+                                        <div class="mid-clmn-lwys">
+                                            <div id="unicornBtn" class="puzzle-btn unicorn-btn">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bbva-content-fluid">
+                        <div class="lit-row">
+                            <div id="puzzle1" class="cmn-block puzzle-box">
+                                <div class="lit-row">
+                                    <div class="cmn-block puzzle-cnt">
+                                        <div class="graphics-cnt-l">
+                                            <div class="spaceship">
+
+                                            </div>
+                                        </div>
+                                        <div class="instructs-cnt">
+                                            <div class="puzzle-dsc-txt">
+                                                <p>
+                                                    Lleva tu nave por el camino de estrellas, gira cada cuadrante hasta que encuentres el camino correcto, tienes 30 segundos para lograrlo.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <!-- Spaceship Puzzle -->
+                                    <div id="space_puzzle" class="cmn-block puzzle-cnt">
+                                        <div id="space_square1" class="space-square puzzle-square">
+                                            <div id="space_piece1" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="space_square2" class="space-square puzzle-square">
+                                            <div id="space_piece2" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="space_square3" class="space-square puzzle-square">
+                                            <div id="space_piece3" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="space_square4" class="space-square puzzle-square">
+                                            <div id="space_piece4" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="space_square5" class="space-square puzzle-square">
+                                            <div id="space_piece5" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="space_square6" class="space-square puzzle-square">
+                                            <div id="space_piece6" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="space_square7" class="space-square puzzle-square">
+                                            <div id="space_piece7" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="space_square8" class="space-square puzzle-square">
+                                            <div id="space_piece8" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="cmn-block puzzle-cnt">
+                                        <div class="puzzle-timer-cnt">
+                                            <div class="cmn-block">
+                                                <div id="firstTimer" class="chrnmtr">
+                                                    <div class="cnt-expand">
+                                                        <div class="vertical-align values topMargin10">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="graphics-cnt-r">
+                                            <div class="planet">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cmn-block puzzle-cnt bottomMargin60">
+                                        <div class="puzzle-restart-cnt">
+                                            <button id="btnStartSpace" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
+                                            <button id="btnRestartSpace" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="puzzle2" class="cmn-block puzzle-box">
+                                <div class="lit-row">
+                                    <div class="cmn-block puzzle-cnt">
+                                        <div class="graphics-cnt-l">
+                                            <div class="plane">
+
+                                            </div>
+                                        </div>
+                                        <div class="instructs-cnt">
+                                            <div class="puzzle-dsc-txt">
+                                                <p>
+                                                    Lleva tu avión por el camino de nubes, gira cada cuadrante hasta que encuentres el camino correcto, tienes 30 segundos para lograrlo.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <!-- Plane Puzzle -->
+                                    <div id="plane_puzzle" class="cmn-block puzzle-cnt">
+                                        <div id="plane_square1" class="plane-square puzzle-square">
+                                            <div id="plane_piece1" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="plane_square2" class="plane-square puzzle-square">
+                                            <div id="plane_piece2" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="plane_square3" class="plane-square puzzle-square">
+                                            <div id="plane_piece3" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="plane_square4" class="plane-square puzzle-square">
+                                            <div id="plane_piece4" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="plane_square5" class="plane-square puzzle-square">
+                                            <div id="plane_piece5" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="plane_square6" class="plane-square puzzle-square">
+                                            <div id="plane_piece6" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="plane_square7" class="plane-square puzzle-square">
+                                            <div id="plane_piece7" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="plane_square8" class="plane-square puzzle-square">
+                                            <div id="plane_piece8" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="cmn-block puzzle-cnt">
+                                        <div class="puzzle-timer-cnt">
+                                            <div class="cmn-block">
+                                                <div id="secondTimer" class="chrnmtr">
+                                                    <div class="cnt-expand">
+                                                        <div class="vertical-align values topMargin10">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="graphics-cnt-r">
+                                            <div class="city">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cmn-block">
+                                        <div class="puzzle-restart-cnt">
+                                            <button id="btnStartPlane" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
+                                            <button id="btnRestartPlane" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="puzzle3" class="cmn-block puzzle-box">
+                                <div class="lit-row">
+                                    <div class="cmn-block puzzle-cnt">
+                                        <div class="graphics-cnt-l">
+                                            <div class="truck">
+
+                                            </div>
+                                        </div>
+                                        <div class="instructs-cnt">
+                                            <div class="puzzle-dsc-txt-hrdr">
+                                                <p>
+                                                    Lleva tu camioneta por el camino, gira cada cuadrante hasta que encuentres el camino correcto, tienes 30 segundos para lograrlo.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <!-- Truck Puzzle -->
+                                    <div id="truck_puzzle" class="cmn-block puzzle-cnt">
+                                        <div id="truck_square1" class="truck-square puzzle-square">
+                                            <div id="truck_piece1" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="truck_square2" class="truck-square puzzle-square">
+                                            <div id="truck_piece2" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="truck_square3" class="truck-square puzzle-square">
+                                            <div id="truck_piece3" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="truck_square4" class="truck-square puzzle-square">
+                                            <div id="truck_piece4" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="truck_square5" class="truck-square puzzle-square">
+                                            <div id="truck_piece5" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="truck_square6" class="truck-square puzzle-square">
+                                            <div id="truck_piece6" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="truck_square7" class="truck-square puzzle-square">
+                                            <div id="truck_piece7" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+                                        <div id="truck_square8" class="truck-square puzzle-square">
+                                            <div id="truck_piece8" class="puzzle-piece">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-left">
+
+                                            </div>
+                                            <div class="rotate-btn rotate-right">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="lit-row">
+                                    <div class="cmn-block puzzle-cnt">
+                                        <div class="puzzle-timer-cnt">
+                                            <div class="cmn-block">
+                                                <div id="thirdTimer" class="chrnmtr-hrdr">
+                                                    <div class="cnt-expand">
+                                                        <div class="vertical-align values topMargin10">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="graphics-cnt-r">
+                                            <div class="buildings">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cmn-block puzzle-cnt">
+                                        <div class="puzzle-restart-cnt">
+                                            <button id="btnStartTruck" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
+                                            <button id="btnRestartTruck" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <footer></footer>
+
+            </section>
+
+            <aside></aside>
+
+        </div>
+    </body>
+</html>
