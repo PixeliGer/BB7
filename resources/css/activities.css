@@ -11,6 +11,12 @@
     width: 100%;
     max-width: 480px;
 }
+.body-bckgr{
+    -webkit-transition: all 500ms ease-out .1s;
+    -moz-transition: all 500ms ease-out .1s;
+    -o-transition: all 500ms ease-out .1s;
+    transition: all 500ms ease-out .1s;
+}
 /*
  ######  ##     ## ######## ##    ##  #######
 ##    ## ##     ## ##       ###   ## ##     ##
@@ -383,6 +389,18 @@
     background: url('../img/backgrounds/Back_Nave_espacial.jpg') no-repeat top fixed;
     background-size: cover;
 }
+.puzzle-plane-bckgr{
+    background: url('../img/backgrounds/Back_Cielo.jpg') no-repeat top fixed;
+    background-size: cover;
+}
+.puzzle-ship-bckgr{
+    background: url('../img/backgrounds/Back_Nave_espacial.jpg') no-repeat top fixed;
+    background-size: cover;
+}
+.puzzle-unicorn-bckgr{
+    background: url('../img/backgrounds/Back_Unicornio.jpg') no-repeat top fixed;
+    background-size: cover;
+}
 .puzzle-cnt{
     max-width: 900px;
     max-height: 800px;
@@ -475,7 +493,7 @@ Puzzle Main Buttons
 }
 .puzzle-btn{
     width: 100%;
-    min-width: 160px;
+    /*min-width: 160px;*/
     max-width: 240px;
     padding: 40%;
     height: auto;
@@ -749,4 +767,35 @@ Unicorn Puzzle
     font-family: "bbva-light-normal", sans-serif;
     font-size: 3.4em;
     color: rgb(0, 86, 151);
+}
+/*
+ ######  ########     ###     ######  ########
+##    ## ##     ##   ## ##   ##    ## ##
+##       ##     ##  ##   ##  ##       ##
+ ######  ########  ##     ## ##       ######
+      ## ##        ######### ##       ##
+##    ## ##        ##     ## ##    ## ##
+ ######  ##        ##     ##  ######  ########
+*/
+.vehicle-cnt{
+    width: 320px;
+    display: inline-block;
+}
+.easy-dif-btn{
+    background: url('../img/activity_space/Btn_Principiante.svg') no-repeat center;
+}
+.easy-dif-btn:hover{
+    background: url('../img/activity_space/Btn_Principiante_on.svg') no-repeat center;
+}
+.medium-dif-btn{
+    background: url('../img/activity_space/Btn_Profesional.svg') no-repeat center;
+}
+.medium-dif-btn:hover{
+    background: url('../img/activity_space/Btn_Profesional_on.svg') no-repeat center;
+}
+.hard-dif-btn{
+    background: url('../img/activity_space/Btn_Experto.svg')no-repeat center;
+}
+.hard-dif-btn:hover{
+    background: url('../img/activity_space/Btn_Experto_on.svg')no-repeat center;
 }

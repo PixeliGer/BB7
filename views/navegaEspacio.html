@@ -14,7 +14,7 @@
         <script type="text/javascript" src="../resources/js/easytimer.min.js"></script>
         <script type="text/javascript" src="../resources/js/navegaEspacio.js" charset="utf-8"></script>
     </head>
-    <body class="puzzles-bckgr">
+    <body class="body-bckgr puzzles-bckgr">
         <!-- Main Content -->
         <div class="content flex-div">
             <nav></nav>
@@ -78,7 +78,7 @@
                         <div class="lit-row">
                             <div class="main-ttl-activity">
                                 <p>
-                                    Para comenzar, elige tu vehículo:
+                                    Elige tu vehículo:
                                 </p>
                             </div>
                         </div>
@@ -106,428 +106,37 @@
                         </div>
                     </div>
 
-                    <div class="bbva-content-fluid">
+                    <div id="mainPuzzle" class="bbva-content-fluid">
                         <div class="lit-row">
-                            <div id="puzzle1" class="cmn-block puzzle-box">
+                            <!-- Difficulty Selection -->
+                            <div class="cmn-block puzzle-box">
                                 <div class="lit-row">
-                                    <div class="cmn-block puzzle-cnt">
-                                        <div class="graphics-cnt-l">
-                                            <div class="spaceship">
-
-                                            </div>
-                                        </div>
-                                        <div class="instructs-cnt">
-                                            <div class="puzzle-dsc-txt">
-                                                <p>
-                                                    Lleva tu nave por el camino de estrellas, gira cada cuadrante hasta que encuentres el camino correcto, tienes 30 segundos para lograrlo.
-                                                </p>
-                                            </div>
-                                        </div>
+                                    <div id="vehicle" class="vehicle-cnt">
+                                        <img src="" alt="your vehicle.png">
                                     </div>
+
                                 </div>
+                                <h3>¿Qué nivel de dificultad quieres?</h3>
+                                <!--  -->
                                 <div class="lit-row">
-                                    <!-- Spaceship Puzzle -->
-                                    <div id="space_puzzle" class="cmn-block puzzle-cnt">
-                                        <div id="space_square1" class="space-square puzzle-square">
-                                            <div id="space_piece1" class="puzzle-piece">
+                                    <div class="thrty-clmn-lwys">
+                                        <div class="puzzle-btn easy-dif-btn">
 
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="space_square2" class="space-square puzzle-square">
-                                            <div id="space_piece2" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="space_square3" class="space-square puzzle-square">
-                                            <div id="space_piece3" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="space_square4" class="space-square puzzle-square">
-                                            <div id="space_piece4" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="space_square5" class="space-square puzzle-square">
-                                            <div id="space_piece5" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="space_square6" class="space-square puzzle-square">
-                                            <div id="space_piece6" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="space_square7" class="space-square puzzle-square">
-                                            <div id="space_piece7" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="space_square8" class="space-square puzzle-square">
-                                            <div id="space_piece8" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="lit-row">
-                                    <div class="cmn-block puzzle-cnt">
-                                        <div class="puzzle-timer-cnt">
-                                            <div class="cmn-block">
-                                                <div id="firstTimer" class="chrnmtr">
-                                                    <div class="cnt-expand">
-                                                        <div class="vertical-align values topMargin10">
+                                    <div class="thrty-clmn-lwys">
+                                        <div class="puzzle-btn medium-dif-btn">
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="graphics-cnt-r">
-                                            <div class="planet">
-
-                                            </div>
                                         </div>
                                     </div>
-                                    <div class="cmn-block puzzle-cnt bottomMargin60">
-                                        <div class="puzzle-restart-cnt">
-                                            <button id="btnStartSpace" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
-                                            <button id="btnRestartSpace" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
+                                    <div class="thrty-clmn-lwys">
+                                        <div class="puzzle-btn hard-dif-btn">
+
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
-                            <div id="puzzle2" class="cmn-block puzzle-box">
-                                <div class="lit-row">
-                                    <div class="cmn-block puzzle-cnt">
-                                        <div class="graphics-cnt-l">
-                                            <div class="plane">
-
-                                            </div>
-                                        </div>
-                                        <div class="instructs-cnt">
-                                            <div class="puzzle-dsc-txt">
-                                                <p>
-                                                    Lleva tu avión por el camino de nubes, gira cada cuadrante hasta que encuentres el camino correcto, tienes 30 segundos para lograrlo.
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="lit-row">
-                                    <!-- Plane Puzzle -->
-                                    <div id="plane_puzzle" class="cmn-block puzzle-cnt">
-                                        <div id="plane_square1" class="plane-square puzzle-square">
-                                            <div id="plane_piece1" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="plane_square2" class="plane-square puzzle-square">
-                                            <div id="plane_piece2" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="plane_square3" class="plane-square puzzle-square">
-                                            <div id="plane_piece3" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="plane_square4" class="plane-square puzzle-square">
-                                            <div id="plane_piece4" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="plane_square5" class="plane-square puzzle-square">
-                                            <div id="plane_piece5" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="plane_square6" class="plane-square puzzle-square">
-                                            <div id="plane_piece6" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="plane_square7" class="plane-square puzzle-square">
-                                            <div id="plane_piece7" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="plane_square8" class="plane-square puzzle-square">
-                                            <div id="plane_piece8" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="lit-row">
-                                    <div class="cmn-block puzzle-cnt">
-                                        <div class="puzzle-timer-cnt">
-                                            <div class="cmn-block">
-                                                <div id="secondTimer" class="chrnmtr">
-                                                    <div class="cnt-expand">
-                                                        <div class="vertical-align values topMargin10">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="graphics-cnt-r">
-                                            <div class="city">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cmn-block">
-                                        <div class="puzzle-restart-cnt">
-                                            <button id="btnStartPlane" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
-                                            <button id="btnRestartPlane" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div id="puzzle3" class="cmn-block puzzle-box">
-                                <div class="lit-row">
-                                    <div class="cmn-block puzzle-cnt">
-                                        <div class="graphics-cnt-l">
-                                            <div class="truck">
-
-                                            </div>
-                                        </div>
-                                        <div class="instructs-cnt">
-                                            <div class="puzzle-dsc-txt-hrdr">
-                                                <p>
-                                                    Lleva tu camioneta por el camino, gira cada cuadrante hasta que encuentres el camino correcto, tienes 30 segundos para lograrlo.
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="lit-row">
-                                    <!-- Truck Puzzle -->
-                                    <div id="truck_puzzle" class="cmn-block puzzle-cnt">
-                                        <div id="truck_square1" class="truck-square puzzle-square">
-                                            <div id="truck_piece1" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="truck_square2" class="truck-square puzzle-square">
-                                            <div id="truck_piece2" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="truck_square3" class="truck-square puzzle-square">
-                                            <div id="truck_piece3" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="truck_square4" class="truck-square puzzle-square">
-                                            <div id="truck_piece4" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="truck_square5" class="truck-square puzzle-square">
-                                            <div id="truck_piece5" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="truck_square6" class="truck-square puzzle-square">
-                                            <div id="truck_piece6" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="truck_square7" class="truck-square puzzle-square">
-                                            <div id="truck_piece7" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-                                        <div id="truck_square8" class="truck-square puzzle-square">
-                                            <div id="truck_piece8" class="puzzle-piece">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-left">
-
-                                            </div>
-                                            <div class="rotate-btn rotate-right">
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="lit-row">
-                                    <div class="cmn-block puzzle-cnt">
-                                        <div class="puzzle-timer-cnt">
-                                            <div class="cmn-block">
-                                                <div id="thirdTimer" class="chrnmtr-hrdr">
-                                                    <div class="cnt-expand">
-                                                        <div class="vertical-align values topMargin10">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="graphics-cnt-r">
-                                            <div class="buildings">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cmn-block puzzle-cnt">
-                                        <div class="puzzle-restart-cnt">
-                                            <button id="btnStartTruck" class="blue-bbva-button-s" type="button" name="button">Empezar juego</button>
-                                            <button id="btnRestartTruck" class="blue-bbva-button-s" type="button" name="button">Volver a empezar</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                            <!-- Puzzle -->
                         </div>
                     </div>
 
