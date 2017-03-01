@@ -1,18 +1,8 @@
-$(document).ready(function() {
-    var instructions       = $('#instructionsContent');
-    var buttons            = $('#btnsContent');
-    // Main Screen Buttons
-    var spaceBtn           = $('#spaceBtn');
-    var planeBtn           = $('#planeBtn');
-    var unicornBtn         = $('#unicornBtn');
-
-});
-
 var degreeArray = [90, 180, 270];
 
 $(document).ready(function() {
-    var _instructions       = $('#instructionsContent');
-    var _buttons            = $('#btnsContent');
+    var instructions       = $('#instructionsContent');
+    var buttons            = $('#btnsContent');
     var btnNext             = $('#btnNext');
     // Main Start/Restart Buttons
     var btnStartSpace       = $('#btnStartSpace');
@@ -24,10 +14,9 @@ $(document).ready(function() {
     var btnStartUnicorn     = $('#btnStartUnicorn');
     var btnRestartUnicorn   = $('#btnRestartUnicorn');
     // Main Screen Buttons
-    var _spaceBtn           = $('#spaceBtn');
-    var _planeBtn           = $('#planeBtn');
-    var _truckBtn           = $('#truckBtn');
-    var _unicornBtn         = $('#unicornBtn');
+    var spaceBtn           = $('#spaceBtn');
+    var planeBtn           = $('#planeBtn');
+    var unicornBtn         = $('#unicornBtn');
     // Main Puzzle Containers
     var _spacePuzzle        = $('#puzzle1');
     var _planePuzzle        = $('#puzzle2');
@@ -39,7 +28,7 @@ $(document).ready(function() {
     var puzzleTruck         = $('#truck_puzzle');
     var puzzleUnicorn       = $('#unicorn_puzzle');
 
-    _buttons.hide();
+    buttons.hide();
     btnRestartSpace.hide();
     btnRestartPlane.hide();
     btnRestartTruck.hide();
@@ -56,42 +45,34 @@ $(document).ready(function() {
     puzzleUnicorn.addClass('bbva-dnt');
 
     btnNext.click(function(event) {
-        _instructions.hide();
+        instructions.hide();
         $(this).hide();
-        _buttons.fadeIn(300).show('fast');
+        buttons.fadeIn(300).show('fast');
         setTimeout(function() {
             $('html, body').animate({
-                scrollTop: _buttons.offset().top
+                scrollTop: buttons.offset().top
             }, 500);
         }, 180);
     });
 
-    _spaceBtn.click(function(event) {
-        _buttons.hide();
+    spaceBtn.click(function(event) {
+        buttons.hide();
         _spacePuzzle.fadeIn(300).show('fast');
         displayPuzzle(_spacePuzzle);
         changeBackground('space');
         randomRotation('space');
     });
 
-    _planeBtn.click(function(event) {
-        _buttons.hide();
+    planeBtn.click(function(event) {
+        buttons.hide();
         _planePuzzle.fadeIn(300).show('fast');
         displayPuzzle(_planePuzzle);
         changeBackground('plane');
         randomRotation('plane')
     });
 
-    _truckBtn.click(function(event) {
-        _buttons.hide();
-        _truckPuzzle.fadeIn(300).show('fast');
-        displayPuzzle(_truckPuzzle);
-        changeBackground('truck');
-        randomRotation('truck');
-    });
-
-    _unicornBtn.click(function(event) {
-        _buttons.hide();
+    unicornBtn.click(function(event) {
+        buttons.hide();
         _unicornPuzzle.fadeIn(300).show('fast');
         displayPuzzle(_unicornPuzzle);
         changeBackground('unicorn');
