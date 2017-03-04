@@ -9,52 +9,38 @@ var vehicles = {
     plane   : '../resources/img/activity_space/Ico_inicio_avion.svg',
     unicorn : '../resources/img/activity_space/Ico_inicio_unicornio.svg'
 }
-
-var degreeArray = [90, 180, 270];
+var difficulty = 0,
+    codes = [],
+    arr = [],
+    degreeArray = [90, 180, 270];
 
 $(document).ready(function() {
-    var instructions       = $('#instructionsContent');
-    var buttons            = $('#btnsContent');
-    var btnNext             = $('#btnNext');
-    // Main Start/Restart Buttons
-    var btnStartSpace       = $('#btnStartSpace');
-    var btnRestartSpace     = $('#btnRestartSpace');
-    var btnStartPlane       = $('#btnStartPlane');
-    var btnRestartPlane     = $('#btnRestartPlane');
-    var btnStartTruck       = $('#btnStartTruck');
-    var btnRestartTruck     = $('#btnRestartTruck');
-    var btnStartUnicorn     = $('#btnStartUnicorn');
-    var btnRestartUnicorn   = $('#btnRestartUnicorn');
-    // Main Screen Buttons
-    var spaceBtn           = $('#spaceBtn');
-    var planeBtn           = $('#planeBtn');
-    var unicornBtn         = $('#unicornBtn');
-    // Main Puzzle Containers
-    var _spacePuzzle        = $('#puzzle1');
-    var _planePuzzle        = $('#puzzle2');
-    var _truckPuzzle        = $('#puzzle3');
-    var _unicornPuzzle      = $('#puzzle4');
-    // Puzzle Grid Boards
-    var puzzleSpace         = $('#space_puzzle');
-    var puzzlePlane         = $('#plane_puzzle');
-    var puzzleTruck         = $('#truck_puzzle');
-    var puzzleUnicorn       = $('#unicorn_puzzle');
+    var instructions        = $('#instructionsContent'),
+        buttons             = $('#btnsContent'),
+        btnNext             = $('#btnNext'),
+        // Main Start/Restart Buttons
+        btnStartSpace       = $('#btnStartSpace'),
+        btnRestartSpace     = $('#btnRestartSpace'),
+        btnStartPlane       = $('#btnStartPlane'),
+        btnRestartPlane     = $('#btnRestartPlane'),
+        btnStartTruck       = $('#btnStartTruck'),
+        btnRestartTruck     = $('#btnRestartTruck'),
+        btnStartUnicorn     = $('#btnStartUnicorn'),
+        btnRestartUnicorn   = $('#btnRestartUnicorn'),
+        // Main Screen Buttons
+        spaceBtn            = $('#spaceBtn'),
+        planeBtn            = $('#planeBtn'),
+        unicornBtn          = $('#unicornBtn');
+        // Difficulty Buttons
+        btnEasy             = $('#btnEasy'),
+        btnMedium           = $('#btnMedium'),
+        btnHard             = $('#btnHard');
 
     buttons.hide();
     btnRestartSpace.hide();
     btnRestartPlane.hide();
     btnRestartTruck.hide();
     btnRestartUnicorn.hide();
-    // Hide Main Puzzle Containers
-    _spacePuzzle.hide();
-    _planePuzzle.hide();
-    _truckPuzzle.hide();
-    _unicornPuzzle.hide();
-    // Disable Puzzle Grid Boards
-    puzzleSpace.addClass('bbva-dnt');
-    puzzlePlane.addClass('bbva-dnt');
-    puzzleTruck.addClass('bbva-dnt');
-    puzzleUnicorn.addClass('bbva-dnt');
 
     btnNext.click(function(event) {
         instructions.hide();
@@ -69,57 +55,93 @@ $(document).ready(function() {
 
     spaceBtn.click(function(event) {
         buttons.hide();
-        _spacePuzzle.fadeIn(300).show('fast');
-        displayPuzzle(_spacePuzzle);
         changeBackground('space');
         changeVehicle('ship');
     });
 
     planeBtn.click(function(event) {
         buttons.hide();
-        _planePuzzle.fadeIn(300).show('fast');
-        displayPuzzle(_planePuzzle);
         changeBackground('plane');
         changeVehicle('plane');
     });
 
     unicornBtn.click(function(event) {
         buttons.hide();
-        _unicornPuzzle.fadeIn(300).show('fast');
-        displayPuzzle(_unicornPuzzle);
         changeBackground('unicorn');
         changeVehicle('unicorn');
     });
 
-    // Display and Animate Puzzle or Container dynamically
-    function displayPuzzle(puzzle){
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: puzzle.offset().top
-            }, 500);
-        }, 180);
+    // #! Difficulty
+    btnEasy.click(function(event) {
+        difficulty = 3;
+        quitInputs();
+        codeInputs(difficulty);
+    });
+    btnMedium.click(function(event) {
+        difficulty = 6;
+        quitInputs();
+        codeInputs(difficulty);
+    });
+    btnHard.click(function(event) {
+        difficulty = 9;
+        quitInputs();
+        codeInputs(difficulty);
+    });
+
+});
+
+function changeBackground(img) {
+    var _img = backgr[img];
+    $('.puzzles-bckgr').css({
+        'background'        : 'url('+_img+') no-repeat top fixed',
+        'background-size'   : 'cover'
+    });
+}
+
+function changeVehicle(img) {
+    var _img = vehicles[img];
+    $('#vehicle > img').attr('src', _img);
+}
+
+function codeInputs(difficulty){
+    for (var i = 1; i <= difficulty; i++) {
+        // Create DOM Object
+        $('<input/>' , {
+            'class': 'code-input',
+            'id': 'code-' + i,
+            'type': 'number',
+            'maxlength': '1',
+            'max': '9',
+            'min': '0',
+            'onkeypress':'return isNumeric(event)',
+            'oninput':'maxLengthCheck(this)',
+            on: {
+                change: function (event) {
+                    console.log(this.value);
+                }
+            }
+        }).appendTo('.codes-row');
     }
+}
 
-    function changeBackground(img) {
-        var _img = backgr[img];
-        $('.puzzles-bckgr').css({
-            'background'        : 'url('+_img+') no-repeat top fixed',
-            'background-size'   : 'cover'
-        });
+function quitInputs() {
+    $('.codes-row .code-input').remove();
+}
+function validateInputs() {
+  $('.code-input').each(function() {
+    if ( $(this).val() === '' ) {
+      return false
     }
-
-    function changeVehicle(img) {
-        var _img = vehicles[img];
-        $('#vehicle > img').attr('src', _img);
+    else {
+      return true;
     }
+  });
+}
 
-    function extractNumber(text) {
-        var txt = text;
-        var numb = txt.match(/\d/g);
-            numb = numb.join("");
-            numb = parseInt(numb);
-        return numb;
-    }
+var arr = $(".code-input").map(function(){
+    return parseInt($(this).val());
+}).toArray();
 
-
+var is_same = codes.length == arr.length && codes.every(function(element, index) {
+    return element === arr[index];
 });

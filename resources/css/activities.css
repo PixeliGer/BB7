@@ -17,8 +17,14 @@
     -o-transition: all 500ms ease-out .1s;
     transition: all 500ms ease-out .1s;
 }
+/*Remove Arrows in Number-Inputs*/
 input[type=number] {
     -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 /*
  ######  ##     ## ######## ##    ##  #######
@@ -809,4 +815,12 @@ Unicorn Puzzle
     display: inline-block;
     -webkit-appearance: none;
     -moz-appearance: none;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    font-family: "bbva-light-normal",sans-serif;
+    font-size: 28px;
+    text-align: center;
+    margin: 0 5px;
 }
