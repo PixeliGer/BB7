@@ -1,0 +1,24 @@
+<svg width="999.37" height="508" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1,.cls-2{fill:none;}.cls-1{stroke:#2ecc71;stroke-miterlimit:10;stroke-width:2px;}.cls-3{fill:#fff;}.cls-4{fill:url(#linear-gradient);}.cls-5{fill:url(#linear-gradient-2);}.cls-6{fill:url(#linear-gradient-3);}.cls-7{fill:url(#linear-gradient-4);}.cls-8{fill:#e6e7e8;}.cls-9{fill:url(#linear-gradient-5);}.cls-10{fill:url(#linear-gradient-6);}.cls-11{fill:#6ac9d4;}.cls-12{fill:#585b57;}</style>
+ </defs>
+ <title>Radar_Avion_1</title>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" d="m153.910004,496.779999c0,-187.910004 155.119995,-340.25 346.459991,-340.25s346.460022,152.339996 346.460022,340.25" class="cls-1"/>
+  <path id="svg_2" d="m233,499.459991c0,-145 119.700012,-262.549988 267.350006,-262.549988s267.369965,117.540009 267.369965,262.549988" class="cls-1"/>
+  <path id="svg_3" d="m317,500.890015c0,-99.440002 82.089996,-180.059998 183.339996,-180.059998s183.339996,80.610016 183.339996,180.059998" class="cls-1"/>
+  <line id="svg_4" y2="499.79" x2="1.37" y1="499.79" x1="500.37" class="cls-1"/>
+  <line id="svg_5" y2="147.01" x2="147.52" y1="499.78" x1="500.36" class="cls-1"/>
+  <line id="svg_6" y2="0.89" x2="500.37" y1="499.79" x1="500.37" class="cls-1"/>
+  <line id="svg_7" y2="147.01" x2="853.22" y1="499.78" x1="500.37" class="cls-1"/>
+  <line id="svg_8" y2="499.79" x2="999.37" y1="499.79" x1="500.37" class="cls-1"/>
+  <rect id="svg_9" height="508" width="998" class="cls-2"/>
+  <rect id="svg_12" ry="10.93" rx="10.93" height="41.27" width="26.9" y="457.389993" x="1819.400024" class="cls-4"/>
+  <rect id="svg_13" ry="10.93" rx="10.93" height="41.27" width="26.9" y="372.439988" x="1645.19001" class="cls-5"/>
+ </g>
+</svg>

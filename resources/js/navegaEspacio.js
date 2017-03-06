@@ -15,74 +15,77 @@ var difficulty = 0,
     degreeArray = [90, 180, 270];
 
 $(document).ready(function() {
-    var instructions        = $('#instructionsContent'),
-        buttons             = $('#btnsContent'),
-        btnNext             = $('#btnNext'),
-        // Main Start/Restart Buttons
-        btnStartSpace       = $('#btnStartSpace'),
-        btnRestartSpace     = $('#btnRestartSpace'),
-        btnStartPlane       = $('#btnStartPlane'),
-        btnRestartPlane     = $('#btnRestartPlane'),
-        btnStartTruck       = $('#btnStartTruck'),
-        btnRestartTruck     = $('#btnRestartTruck'),
-        btnStartUnicorn     = $('#btnStartUnicorn'),
-        btnRestartUnicorn   = $('#btnRestartUnicorn'),
+    var instructions    = $('#instructionsContent'),
+        // Containers
+        btnsContent     = $('#btnsContent'),
+        difContent      = $('#difContent'),
+        codesContent    = $('#codesContent'),
         // Main Screen Buttons
-        spaceBtn            = $('#spaceBtn'),
-        planeBtn            = $('#planeBtn'),
-        unicornBtn          = $('#unicornBtn');
+        spaceBtn        = $('#spaceBtn'),
+        planeBtn        = $('#planeBtn'),
+        unicornBtn      = $('#unicornBtn');
         // Difficulty Buttons
-        btnEasy             = $('#btnEasy'),
-        btnMedium           = $('#btnMedium'),
-        btnHard             = $('#btnHard');
+        btnEasy         = $('#btnEasy'),
+        btnMedium       = $('#btnMedium'),
+        btnHard         = $('#btnHard'),
+        btnNext         = $('#btnNext');
 
-    buttons.hide();
-    btnRestartSpace.hide();
-    btnRestartPlane.hide();
-    btnRestartTruck.hide();
-    btnRestartUnicorn.hide();
+    btnsContent.hide();
+    difContent.hide();
+    codesContent.hide();
 
     btnNext.click(function(event) {
         instructions.hide();
         $(this).hide();
-        buttons.fadeIn(300).show('fast');
-        setTimeout(function() {
-            $('html, body').animate({
-                scrollTop: buttons.offset().top
-            }, 500);
-        }, 180);
+        btnsContent.fadeIn(300).show('fast');
+        displayContainer(btnsContent);
     });
 
     spaceBtn.click(function(event) {
-        buttons.hide();
+        btnsContent.hide();
+        difContent.fadeIn(300).show('fast');
+        displayContainer(difContent);
         changeBackground('space');
         changeVehicle('ship');
     });
 
     planeBtn.click(function(event) {
-        buttons.hide();
+        btnsContent.hide();
+        difContent.fadeIn(300).show('fast');
+        displayContainer(difContent);
         changeBackground('plane');
         changeVehicle('plane');
     });
 
     unicornBtn.click(function(event) {
-        buttons.hide();
+        btnsContent.hide();
+        difContent.fadeIn(300).show('fast');
+        displayContainer(difContent);
         changeBackground('unicorn');
         changeVehicle('unicorn');
     });
 
     // #! Difficulty
     btnEasy.click(function(event) {
+        difContent.hide();
+        codesContent.fadeIn(300).show('fast');
+        displayContainer(codesContent);
         difficulty = 3;
         quitInputs();
         codeInputs(difficulty);
     });
     btnMedium.click(function(event) {
+        difContent.hide();
+        codesContent.fadeIn(300).show('fast');
+        displayContainer(codesContent);
         difficulty = 6;
         quitInputs();
         codeInputs(difficulty);
     });
     btnHard.click(function(event) {
+        difContent.hide();
+        codesContent.fadeIn(300).show('fast');
+        displayContainer(codesContent);
         difficulty = 9;
         quitInputs();
         codeInputs(difficulty);

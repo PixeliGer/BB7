@@ -803,12 +803,34 @@ Unicorn Puzzle
     background: url('../img/activity_space/Btn_Profesional_on.svg') no-repeat center;
 }
 .hard-dif-btn{
-    background: url('../img/activity_space/Btn_Experto.svg')no-repeat center;
+    background: url('../img/activity_space/Btn_Experto.svg') no-repeat center;
 }
 .hard-dif-btn:hover{
-    background: url('../img/activity_space/Btn_Experto_on.svg')no-repeat center;
+    background: url('../img/activity_space/Btn_Experto_on.svg') no-repeat center;
 }
 
+.radar-cnt{
+    width: 30vw;
+    max-width: 420px;
+    min-width: 300px;
+    height: 260px;
+    background: rgba(0, 0, 0, 0.2) url('../img/activity_space/radar.svg') no-repeat center;
+    background-size: 380px auto;
+}
+
+.radar-pointer{
+    height: 225px;
+    width: 100px;
+}
+.rocket-min{
+    background: url('../img/activity_space/Ico_inicio_nave.svg') no-repeat top;
+}
+.unicorn-min{
+    background: url('../img/activity_espacio/Ico_inicio_unicornio.svg') no-repeat top;
+}
+.plane-min{
+    background: url('../img/activity_espacio/Ico_inicio_avion.svg') no-repeat top;
+}
 .code-input{
     width: 60px;
     height: 60px;
@@ -817,7 +839,7 @@ Unicorn Puzzle
     -moz-appearance: none;
     color: #fff;
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     font-family: "bbva-light-normal",sans-serif;
     font-size: 28px;
