@@ -23,6 +23,7 @@ $(document).ready(function() {
         btnsContent     = $('#btnsContent'),
         difContent      = $('#difContent'),
         codesContent    = $('#codesContent'),
+        finalsContent   = $('#finalsContent'),
         // Main Screen Buttons
         spaceBtn        = $('#spaceBtn'),
         planeBtn        = $('#planeBtn'),
@@ -34,6 +35,8 @@ $(document).ready(function() {
         btnNext         = $('#btnNext'),
         btnStart        = $('#btnStart'),
         btnContinue     = $('#btnContinue'),
+        btnRestart      = $('button[id^="btnRestart"]'),
+        btnClose        = $('button[id^="btnClose"]'),
         // Codes
         genCode         = $('#genCode'),
         userCode        = $('#userCode'),
@@ -43,17 +46,23 @@ $(document).ready(function() {
         failFeedA       = $('#failFeedA'),
         winFeedA        = $('#winFeedA'),
         // Radar Pointer
-        pointer         = $('#pointer');
+        pointer         = $('#pointer'),
+        // Final Blocks
+        finalSuccess    = $('#finalSuccess'),
+        finalFail       = $('#finalFail');
 
     btnsContent.hide();
     difContent.hide();
     codesContent.hide();
+    finalsContent.hide();
     btnContinue.hide();
     genCode.hide();
     userCode.hide();
     instFeed.hide();
     failFeedA.hide();
     winFeedA.hide();
+    finalSuccess.hide();
+    finalFail.hide();
 
     btnNext.click(function(event) {
         instructions.hide();
@@ -120,10 +129,15 @@ $(document).ready(function() {
     });
 
     btnContinue.click(function(event) {
+        $(this).addClass('bbva-disable');
         code_step++;
         hideAllFeeds();
         instFeed.fadeIn(300).show('fast');
         switchCodes();
+    });
+
+    btnRestart.click(function(event) {
+        resetActivity();
     });
 
 });
@@ -250,14 +264,18 @@ function userCodes() {
 }
 
 function hideAllFeeds(){
-    $('.fdbck-min').hide();
+    $('#codesContent .fdbck-min').hide();
 }
 
 function incrementPoints() {
     win_points++;
     winFeedA.fadeIn(300).show('fast');
-    if (user_points == 3) {
-        console.log('You win the game');
+    if (win_points >= 3) {
+        btnContinue.addClass('bbva-disable');
+        stopTimer(codeTimer);
+        $('#codesContent').hide();
+        $('#finalsContent').fadeIn(300).show('fast');
+        $('#finalSuccess').fadeIn(300).show('fast');
     }
 }
 
@@ -270,10 +288,35 @@ function decrementPoints() {
         'transform': 'rotate('+degrees+'deg)'
     });
     if (fail_points == 3) {
-        alert('YOU LOSE');
         btnContinue.addClass('bbva-disable');
         stopTimer(codeTimer);
+
+        $('#codesContent').hide();
+        $('#finalsContent').fadeIn(300).show('fast');
+        $('#finalFail').fadeIn(300).show('fast');
     }
+}
+
+function resetActivity() {
+    $('#finalsContent').hide();
+    $('#codesContent').show();
+    $('#codeTimer').text('00:60');
+    // Reset Vars
+    win_points  = 0;
+    fail_points = 0;
+    degrees     = 0;
+    code_step   = 0;
+    //
+    $('#pointer').css({
+        'transform': 'rotate('+degrees+'deg)'
+    });
+    // Hide Stuff
+    hideAllFeeds();
+    // Re-show instructions
+    instFeed.fadeIn(300).show('fast');
+    // Re-show Buttons
+    btnStart.fadeIn(300).show('fast');
+    btnContinue.hide();
 }
 
 // Timer
@@ -284,7 +327,13 @@ codeTimer.addEventListener('secondsUpdated', function(e) {
     $('#codeTimer .values').html(codeTimer.getTimeValues().toString(['minutes', 'seconds']));
 });
 codeTimer.addEventListener('targetAchieved', function(e) {
-
+    if (win_points >= 3) {
+        btnContinue.addClass('bbva-disable');
+        stopTimer(codeTimer);
+        $('#codesContent').hide();
+        $('#finalsContent').fadeIn(300).show('fast');
+        $('#finalSuccess').fadeIn(300).show('fast');
+    }
     btnContinue.addClass('bbva-disable');
 });
 
