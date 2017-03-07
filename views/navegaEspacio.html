@@ -122,7 +122,10 @@
                                     </div>
 
                                 </div>
-                                <h3>¿Qué nivel de dificultad quieres?</h3>
+                                <div class="lit-row">
+                                    <h3 class="dnts-ttl">¿Qué nivel de dificultad quieres?</h3>
+                                </div>
+
                                 <!--  -->
                                 <div class="lit-row">
                                     <div class="thrty-clmn-lwys">
@@ -148,24 +151,63 @@
                     <div id="codesContent"class="bbva-content">
                         <!-- Chronometer -->
                         <div class="lit-row">
-
+                            <div class="cmn-block">
+                                <div class="code-timer-cnt">
+                                    <div class="cmn-block">
+                                        <div id="codeTimer" class="chrnmtr">
+                                            <div class="cnt-expand">
+                                                <div class="vertical-align values topMargin10">
+                                                    00:60
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- Rdar Images -->
                         <div class="lit-row">
+                            <div class="radar-cnt cmn-block cnt-relative center-stuff">
+                                <div id="pointer" class="radar-pointer cmn-block">
 
+                                </div>
+                            </div>
                         </div>
                         <!-- Feedbacks -->
                         <div class="lit-row">
-                            <div class="radar-cnt cmn-block cnt-relative center-stuff">
-                                <div class="radar-pointer cmn-block rocket-min">
-
+                            <div class="cmn-block topMargin40">
+                                <div id="mainFeed" class="fdbck-min bbva-blck-alfa">
+                                    <span class="dnts-ttl">
+                                        Tienes un minuto para memorizar 5 códigos que mantendrán en equilibrio tu vehículo.
+                                    </span>
+                                </div>
+                                <!-- instructions Feed -->
+                                <div id="instructionFeed" class="fdbck-min">
+                                    <span class="dnts-ttl">
+                                        Observa y recuerda el código
+                                    </span>
+                                </div>
+                                <!-- Fail Feed -->
+                                <div id="failFeedA" class="fdbck-min bbva-blck-alfa">
+                                    <span class="dnts-ttl">
+                                        ¡Cuidado! tu vehículo está perdiendo equilibrio, sé más cuidadoso en tus respuestas.
+                                    </span>
+                                </div>
+                                <!-- Win Feed -->
+                                <div id="winFeedA" class="fdbck-min bbva-blck-alfa">
+                                    <span class="dnts-ttl">
+                                        ¡Bien contestado!, continúa así y mantén en equilibrio tu vehículo
+                                    </span>
                                 </div>
                             </div>
                         </div>
                         <!-- Codes -->
                         <div class="lit-row">
-                            <div class="cmn-block">
-                                <div class="lit-row codes-row">
+                            <div class="cmn-block topMargin40">
+                                <div id="genCode" class="lit-row codes-example">
+
+                                </div>
+                                <div id="userCode" class="lit-row codes-row">
                                     <!-- Code Inputs here -->
                                 </div>
                             </div>
@@ -175,6 +217,57 @@
                             <div class="cmn-block topMargin40">
                                 <button id="btnStart" class="blue-bbva-button-s" type="button" name="button">Comenzar</button>
                                 <button id="btnContinue" class="blue-bbva-button-s" type="button" name="button">Continuar</button>
+                            </div>
+                        </div>
+                        <!-- Final Results -->
+                        <div class="lit-row">
+                            <div id="finalSuccess" class="cmn-block topMargin40">
+                                <div class="lit-row">
+
+                                </div>
+                                <div class="lit-row">
+                                    <div class="fdbck-min bbva-blck-alfa">
+                                        <span class="dnts-ttl">
+                                            ¡Felicidades! Tus decisiones acertadas llevaron tu vehículo a su destino.
+                                        </span>
+                                    </div>
+                                    <!-- instructions Feed -->
+                                    <div class="fdbck-min bbva-blck-alfa topMargin20">
+                                        <span class="dnts-ttl">
+                                            Como tú, el Banco Central tiene la responsabilidad de mantener el equilibrio entre el
+                                            crecimiento económico de un país y la inflación, para que se mantenga baja y estable.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="lit-row topMargin20">
+                                    <button  class="blue-bbva-button-s" type="button" name="button">Volver a jugar</button>
+                                    <button  class="blue-bbva-button-s" type="button" name="button">Salir</button>
+                                </div>
+                            </div>
+                            <div id="finalFail" class="cmn-block topMargin40">
+                                <div class="lit-row">
+
+                                </div>
+                                <div class="lit-row">
+                                    <div class="fdbck-min bbva-blck-alfa">
+                                        <span class="dnts-ttl">
+                                            ¡Lo sentimos! Acabas de perder tu vehículo, vuelve a intentarlo y conviértete en experto.
+                                        </span>
+                                    </div>
+                                    <!-- instructions Feed -->
+                                    <div class="fdbck-min bbva-blck-alfa topMargin20">
+                                        <span class="dnts-ttl">
+                                            Como tú, el Banco Central tiene la responsabilidad de mantener el equilibrio entre el
+                                            crecimiento económico de un país y la inflación, para que se mantenga baja y estable.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="lit-row topMargin20">
+                                    <button  class="blue-bbva-button-s" type="button" name="button">Volver a jugar</button>
+                                    <button  class="blue-bbva-button-s" type="button" name="button">Salir</button>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>

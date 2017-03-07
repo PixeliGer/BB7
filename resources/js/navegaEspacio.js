@@ -12,7 +12,10 @@ var vehicles = {
 var difficulty = 0,
     codes = [],
     arr = [],
-    degreeArray = [90, 180, 270];
+    degreeArray = [90, 180, 270],
+    degrees = 0,
+    code_step = 1,
+    win_points = 0, fail_points = 0;
 
 $(document).ready(function() {
     var instructions    = $('#instructionsContent'),
@@ -29,13 +32,28 @@ $(document).ready(function() {
         btnMedium       = $('#btnMedium'),
         btnHard         = $('#btnHard'),
         btnNext         = $('#btnNext'),
-        btnStart        = $('#bntStart'),
-        btnContinue     = $('#btnContinue');
+        btnStart        = $('#btnStart'),
+        btnContinue     = $('#btnContinue'),
+        // Codes
+        genCode         = $('#genCode'),
+        userCode        = $('#userCode'),
+        // Feedbacks
+        mainFeed        = $('#mainFeed'),
+        instFeed        = $('#instructionFeed'),
+        failFeedA       = $('#failFeedA'),
+        winFeedA        = $('#winFeedA'),
+        // Radar Pointer
+        pointer         = $('#pointer');
 
     btnsContent.hide();
     difContent.hide();
     codesContent.hide();
     btnContinue.hide();
+    genCode.hide();
+    userCode.hide();
+    instFeed.hide();
+    failFeedA.hide();
+    winFeedA.hide();
 
     btnNext.click(function(event) {
         instructions.hide();
@@ -50,6 +68,7 @@ $(document).ready(function() {
         displayContainer(difContent);
         changeBackground('space');
         changeVehicle('ship');
+        pointer.addClass('rocket-min');
     });
 
     planeBtn.click(function(event) {
@@ -58,6 +77,7 @@ $(document).ready(function() {
         displayContainer(difContent);
         changeBackground('plane');
         changeVehicle('plane');
+        pointer.addClass('plane-min');
     });
 
     unicornBtn.click(function(event) {
@@ -66,6 +86,7 @@ $(document).ready(function() {
         displayContainer(difContent);
         changeBackground('unicorn');
         changeVehicle('unicorn');
+        pointer.addClass('unicorn-min');
     });
 
     // #! Difficulty
@@ -74,28 +95,35 @@ $(document).ready(function() {
         codesContent.fadeIn(300).show('fast');
         displayContainer(codesContent);
         difficulty = 3;
-        quitInputs();
-        codeInputs(difficulty);
-        sliceInputs();
-        // Generate First Codes
     });
     btnMedium.click(function(event) {
         difContent.hide();
         codesContent.fadeIn(300).show('fast');
         displayContainer(codesContent);
         difficulty = 6;
-        quitInputs();
-        codeInputs(difficulty);
-        sliceInputs();
     });
     btnHard.click(function(event) {
         difContent.hide();
         codesContent.fadeIn(300).show('fast');
         displayContainer(codesContent);
         difficulty = 9;
-        quitInputs();
-        codeInputs(difficulty);
-        sliceInputs();
+    });
+
+    // Start
+    btnStart.click(function(event) {
+        $(this).hide();
+        btnContinue.fadeIn(300).show('fast').addClass('bbva-disable');
+        mainFeed.hide();
+        instFeed.fadeIn(300).show('fast');
+        switchCodes();
+        startTimer(codeTimer);
+    });
+
+    btnContinue.click(function(event) {
+        code_step++;
+        hideAllFeeds();
+        instFeed.fadeIn(300).show('fast');
+        switchCodes();
     });
 
 });
@@ -115,7 +143,14 @@ function changeVehicle(img) {
 
 function showCodes(difficulty) {
     for (var i = 1; i <= difficulty; i++) {
-        $('<input/>')
+        $('<input/>',{
+            'class': 'code-input bbva-dnt',
+            'type': 'number',
+            'maxlength': '1',
+            'max': '9',
+            'min': '0',
+            'value': codes[i-1]
+        }).appendTo('.codes-example');
     }
 }
 
@@ -135,7 +170,10 @@ function codeInputs(difficulty){
                 change: function (event) {
                     let isFilled = validateInputs();
                     if (isFilled) {
-                        compareCodes();
+                        btnContinue.removeClass('bbva-disable');
+                        userCode.hide();
+                        instFeed.hide();
+                        compareCodes() ? incrementPoints() : decrementPoints();
                     }
                 }
             }
@@ -154,6 +192,10 @@ function quitInputs() {
     $('.codes-row .code-input').remove();
 }
 
+function quitExample() {
+    $('.codes-example .code-input').remove();
+}
+
 function validateInputs() {
     var isValid = true;
     $('.code-input').each(function() {
@@ -164,7 +206,7 @@ function validateInputs() {
 }
 
 function compareCodes() {
-    var arr = $(".code-input").map(function(){
+    var arr = $(".codes-row .code-input").map(function(){
         return parseInt($(this).val());
     }).toArray();
 
@@ -173,14 +215,89 @@ function compareCodes() {
     });
 
     console.log(is_same);
+    return is_same;
 }
 
 function generateCodes(difficulty) {
     // Reset Codes Array
     codes = [];
     // Fill Codes Array
-    for (var i = 0; i < codes.length; i++) {
+    for (var i = 0; i < difficulty; i++) {
         codes[i] = Math.floor(Math.random() * 9);
     }
     console.log(codes);
+}
+
+
+function switchCodes() {
+    // Generate and Show Example Codes
+    quitExample();
+    genCode.fadeIn(300).show('fast');
+    generateCodes(difficulty);
+    showCodes(difficulty);
+
+    setTimeout(function() {
+        userCodes();
+        genCode.hide();
+        userCode.fadeIn(300).show('fast');
+    }, 2000);
+}
+
+function userCodes() {
+    quitInputs();
+    codeInputs(difficulty);
+    sliceInputs();
+}
+
+function hideAllFeeds(){
+    $('.fdbck-min').hide();
+}
+
+function incrementPoints() {
+    win_points++;
+    winFeedA.fadeIn(300).show('fast');
+    if (user_points == 3) {
+        console.log('You win the game');
+    }
+}
+
+function decrementPoints() {
+    // :(
+    fail_points++;
+    degrees+=30;
+    failFeedA.fadeIn(300).show('fast');
+    pointer.css({
+        'transform': 'rotate('+degrees+'deg)'
+    });
+    if (fail_points == 3) {
+        alert('YOU LOSE');
+        btnContinue.addClass('bbva-disable');
+        stopTimer(codeTimer);
+    }
+}
+
+// Timer
+var codeTimer = new Timer();
+// #! First Timer => Space Puzzle
+$('#codeTimer .values').html(codeTimer.getTimeValues().toString(['minutes', 'seconds']));
+codeTimer.addEventListener('secondsUpdated', function(e) {
+    $('#codeTimer .values').html(codeTimer.getTimeValues().toString(['minutes', 'seconds']));
+});
+codeTimer.addEventListener('targetAchieved', function(e) {
+
+    btnContinue.addClass('bbva-disable');
+});
+
+// #! Start Timer dynamically
+function startTimer(_timer){
+    _timer.start({
+        countdown: true,
+        startValues: {
+            seconds: 60
+        }
+    });
+}
+// #! Stop Timer dynamically
+function stopTimer(_timer){
+    _timer.stop();
 }

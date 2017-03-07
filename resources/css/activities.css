@@ -821,15 +821,21 @@ Unicorn Puzzle
 .radar-pointer{
     height: 225px;
     width: 100px;
+    /**/
+    -webkit-transition: all 500ms ease-out .1s;
+    -moz-transition: all 500ms ease-out .1s;
+    -o-transition: all 500ms ease-out .1s;
+    transition: all 500ms ease-out .1s;
+    transform-origin: bottom;
 }
 .rocket-min{
     background: url('../img/activity_space/Ico_inicio_nave.svg') no-repeat top;
 }
 .unicorn-min{
-    background: url('../img/activity_espacio/Ico_inicio_unicornio.svg') no-repeat top;
+    background: url('../img/activity_space/Ico_inicio_unicornio.svg') no-repeat top;
 }
 .plane-min{
-    background: url('../img/activity_espacio/Ico_inicio_avion.svg') no-repeat top;
+    background: url('../img/activity_space/Ico_inicio_avion.svg') no-repeat top;
 }
 .code-input{
     width: 60px;
@@ -853,4 +859,14 @@ Unicorn Puzzle
 .codes-flex-block{
     display: inline-flex;
     padding: 5px;
+}
+.fdbck-min{
+    width: 90%;
+    max-width: 600px;
+    padding: 10px;
+    display: inline-block;
+}
+.code-timer-cnt{
+    width: 200px;
+    display: inline-block;
 }
