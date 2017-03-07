@@ -1,0 +1,22 @@
+.btn-scroll-arrowDown {
+    width: 8vw;
+    height: 8vw;
+    top: 85%;
+    left: 90%;
+    position: fixed;
+    /**/
+    background: url('../../resources/img/Icono_bajar.png') no-repeat center;
+    background-size: 99% auto;
+}
+
+.btn-scroll-arrowUp {
+    width: 8vw;
+    height: 8vw;
+    top: 5%;
+    left: 90%;
+    position: fixed;
+    display: none;
+    /**/
+    background: url('../../resources/img/Icono_subir.png') no-repeat center;
+    background-size: 99% auto;
+}

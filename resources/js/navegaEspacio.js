@@ -28,11 +28,14 @@ $(document).ready(function() {
         btnEasy         = $('#btnEasy'),
         btnMedium       = $('#btnMedium'),
         btnHard         = $('#btnHard'),
-        btnNext         = $('#btnNext');
+        btnNext         = $('#btnNext'),
+        btnStart        = $('#bntStart'),
+        btnContinue     = $('#btnContinue');
 
     btnsContent.hide();
     difContent.hide();
     codesContent.hide();
+    btnContinue.hide();
 
     btnNext.click(function(event) {
         instructions.hide();
@@ -73,6 +76,8 @@ $(document).ready(function() {
         difficulty = 3;
         quitInputs();
         codeInputs(difficulty);
+        sliceInputs();
+        // Generate First Codes
     });
     btnMedium.click(function(event) {
         difContent.hide();
@@ -81,6 +86,7 @@ $(document).ready(function() {
         difficulty = 6;
         quitInputs();
         codeInputs(difficulty);
+        sliceInputs();
     });
     btnHard.click(function(event) {
         difContent.hide();
@@ -89,6 +95,7 @@ $(document).ready(function() {
         difficulty = 9;
         quitInputs();
         codeInputs(difficulty);
+        sliceInputs();
     });
 
 });
@@ -106,6 +113,12 @@ function changeVehicle(img) {
     $('#vehicle > img').attr('src', _img);
 }
 
+function showCodes(difficulty) {
+    for (var i = 1; i <= difficulty; i++) {
+        $('<input/>')
+    }
+}
+
 function codeInputs(difficulty){
     for (var i = 1; i <= difficulty; i++) {
         // Create DOM Object
@@ -120,31 +133,54 @@ function codeInputs(difficulty){
             'oninput':'maxLengthCheck(this)',
             on: {
                 change: function (event) {
-                    console.log(this.value);
+                    let isFilled = validateInputs();
+                    if (isFilled) {
+                        compareCodes();
+                    }
                 }
             }
         }).appendTo('.codes-row');
     }
 }
 
+function sliceInputs() {
+    var divs = $('.codes-row > .code-input');
+    for(var i = 0; i < divs.length; i+=3) {
+        divs.slice(i, i+3).wrapAll("<div class='codes-flex-block'></div>");
+    }
+}
+
 function quitInputs() {
     $('.codes-row .code-input').remove();
 }
+
 function validateInputs() {
-  $('.code-input').each(function() {
-    if ( $(this).val() === '' ) {
-      return false
-    }
-    else {
-      return true;
-    }
-  });
+    var isValid = true;
+    $('.code-input').each(function() {
+        if ( $(this).val() === '' )
+        isValid = false;
+    });
+    return isValid;
 }
 
-var arr = $(".code-input").map(function(){
-    return parseInt($(this).val());
-}).toArray();
+function compareCodes() {
+    var arr = $(".code-input").map(function(){
+        return parseInt($(this).val());
+    }).toArray();
 
-var is_same = codes.length == arr.length && codes.every(function(element, index) {
-    return element === arr[index];
-});
+    var is_same = codes.length == arr.length && codes.every(function(element, index) {
+        return element === arr[index];
+    });
+
+    console.log(is_same);
+}
+
+function generateCodes(difficulty) {
+    // Reset Codes Array
+    codes = [];
+    // Fill Codes Array
+    for (var i = 0; i < codes.length; i++) {
+        codes[i] = Math.floor(Math.random() * 9);
+    }
+    console.log(codes);
+}
