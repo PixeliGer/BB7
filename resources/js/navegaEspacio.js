@@ -45,6 +45,8 @@ $(document).ready(function() {
         instFeed        = $('#instructionFeed'),
         failFeedA       = $('#failFeedA'),
         winFeedA        = $('#winFeedA'),
+        // Radar
+        radar           = $('#radar'),
         // Radar Pointer
         pointer         = $('#pointer'),
         // Final Blocks
@@ -77,6 +79,7 @@ $(document).ready(function() {
         displayContainer(difContent);
         changeBackground('space');
         changeVehicle('ship');
+        radar.addClass('radar-rocket');
         pointer.addClass('rocket-min');
     });
 
@@ -86,6 +89,7 @@ $(document).ready(function() {
         displayContainer(difContent);
         changeBackground('plane');
         changeVehicle('plane');
+        radar.addClass('radar-plane');
         pointer.addClass('plane-min');
     });
 
@@ -95,6 +99,7 @@ $(document).ready(function() {
         displayContainer(difContent);
         changeBackground('unicorn');
         changeVehicle('unicorn');
+        radar.addClass('radar-unicorn');
         pointer.addClass('unicorn-min');
     });
 
@@ -203,7 +208,7 @@ function sliceInputs() {
 }
 
 function quitInputs() {
-    $('.codes-row .code-input').remove();
+    $('.codes-flex-block').remove();
 }
 
 function quitExample() {

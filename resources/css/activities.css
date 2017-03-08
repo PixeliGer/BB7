@@ -811,13 +811,21 @@ Unicorn Puzzle
 
 .radar-cnt{
     width: 50vw;
-    max-width: 420px;
-    min-width: 300px;
+    max-width: 480px;
+    min-width: 320px;
     height: 260px;
-    background: rgba(0, 0, 0, 0.2) url('../img/activity_space/radar.svg') no-repeat center;
     background-size: 380px auto;
 }
 
+.radar-plane{
+    background: url('../img/activity_space/Radar_Avion.svg') no-repeat center;
+}
+.radar-rocket{
+    background: url('../img/activity_space/Radar_Nave.svg') no-repeat center;
+}
+.radar-unicorn{
+    background: url('../img/activity_space/Radar_Unicornio.svg') no-repeat center;
+}
 .radar-pointer{
     height: 225px;
     width: 100px;
