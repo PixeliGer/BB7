@@ -1,3 +1,5 @@
+const error_audio = new Audio('../resources/sounds/error.mp3');
+const ok_audio    = new Audio('../resources/sounds/ok.mp3');
 var backgr = {
     space   : '../resources/img/backgrounds/Back_Nave_espacial.jpg',
     plane   : '../resources/img/backgrounds/Back_Cielo.jpg',
@@ -51,7 +53,10 @@ $(document).ready(function() {
         pointer         = $('#pointer'),
         // Final Blocks
         finalSuccess    = $('#finalSuccess'),
-        finalFail       = $('#finalFail');
+        finalFail       = $('#finalFail'),
+        //
+        imgSuccess      = $('#imgSuccess'),
+        imgFail         = $('#imgFail');
 
     btnsContent.hide();
     difContent.hide();
@@ -81,6 +86,8 @@ $(document).ready(function() {
         changeVehicle('ship');
         radar.addClass('radar-rocket');
         pointer.addClass('rocket-min');
+        imgSuccess.addClass('final-result-rocket-ok');
+        imgFail.addClass('final-result-rocket-fail');
     });
 
     planeBtn.click(function(event) {
@@ -91,6 +98,8 @@ $(document).ready(function() {
         changeVehicle('plane');
         radar.addClass('radar-plane');
         pointer.addClass('plane-min');
+        imgSuccess.addClass('final-result-plane-ok');
+        imgFail.addClass('final-result-plane-fail');
     });
 
     unicornBtn.click(function(event) {
@@ -273,6 +282,7 @@ function hideAllFeeds(){
 }
 
 function incrementPoints() {
+    ok_audio.play();
     win_points++;
     winFeedA.fadeIn(300).show('fast');
     if (win_points >= 3) {
@@ -286,6 +296,7 @@ function incrementPoints() {
 
 function decrementPoints() {
     // :(
+    error_audio.play();
     fail_points++;
     degrees+=30;
     failFeedA.fadeIn(300).show('fast');
@@ -304,8 +315,10 @@ function decrementPoints() {
 
 function resetActivity() {
     $('#finalsContent').hide();
+    $('#finalFail').hide();
+    $('#finalSuccess').hide();
     $('#codesContent').show();
-    $('#codeTimer').text('00:60');
+    // $('#codeTimer').text('00:60');
     // Reset Vars
     win_points  = 0;
     fail_points = 0;
@@ -322,6 +335,7 @@ function resetActivity() {
     // Re-show Buttons
     btnStart.fadeIn(300).show('fast');
     btnContinue.hide();
+    stopTimer(codeTimer);
 }
 
 // Timer
@@ -332,6 +346,7 @@ codeTimer.addEventListener('secondsUpdated', function(e) {
     $('#codeTimer .values').html(codeTimer.getTimeValues().toString(['minutes', 'seconds']));
 });
 codeTimer.addEventListener('targetAchieved', function(e) {
+    $('.codes-row').find('.code-input').addClass('bbva-disable');
     if (win_points >= 3) {
         btnContinue.addClass('bbva-disable');
         stopTimer(codeTimer);

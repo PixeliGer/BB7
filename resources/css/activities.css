@@ -845,6 +845,18 @@ Unicorn Puzzle
 .plane-min{
     background: url('../img/activity_space/Ico_inicio_avion.svg') no-repeat top;
 }
+.final-result-rocket-ok{
+    background: url('../img/activity_space/Resultado_nave_ok.svg') no-repeat top;
+}
+.final-result-rocket-fail{
+    background: url('../img/activity_space/Resultado_Nave_crash.svg') no-repeat top;
+}
+.final-result-plane-ok{
+    background: url('../img/activity_space/Resultado_Avion_ok.svg') no-repeat top;
+}
+.final-result-plane-fail{
+    background: url('../img/activity_space/Resultado_avion_crash.svg') no-repeat top;
+}
 .code-input{
     width: 60px;
     height: 60px;
@@ -877,4 +889,11 @@ Unicorn Puzzle
 .code-timer-cnt{
     width: 200px;
     display: inline-block;
+}
+.final-img-cnt{
+    width: 50vw;
+    max-width: 480px;
+    min-width: 320px;
+    height: 260px;
+    background-size: 380px auto;
 }
