@@ -22,6 +22,12 @@ var _budget = {
 }
 var finalItems = [];
 var itemsFirst = new Array();
+// itemsFirst.pizza = {};
+// itemsFirst.agua = {};
+// itemsFirst.globos = {};
+// itemsFirst.platos = {};
+// itemsFirst.musica = {};
+
 var itemsSecond = new Array();
 var itemsThird = new Array();
 
@@ -29,6 +35,7 @@ var CRRNT_RND;
 
 var _prty_item = '';
 var pos_x = 0, item_i = 0;
+
 
 $(document).ready(function() {
     // Auto-numeric
@@ -80,6 +87,7 @@ $(document).ready(function() {
         displayContainer(_secondRound);
         CRRNT_RND = 'round2';
         pos_x = 0;
+        $('.input-fiesta').removeClass('bbva-disable');
     });
 
     btnThirdR.click(function(event) {
@@ -88,6 +96,7 @@ $(document).ready(function() {
         displayContainer(_thirdRound);
         CRRNT_RND = 'round3';
         pos_x = 0;
+        $('.input-fiesta').removeClass('bbva-disable');
     });
 
     btnResults.click(function(event) {
@@ -126,6 +135,7 @@ $(document).ready(function() {
                         firstFeed.fadeIn(300).show('fast');
                         btnSecondR.fadeIn(300).show('fast');
                         displayContainer(firstFeed);
+                        $('.input-fiesta').addClass('bbva-disable');
                     }
                     // Update Budget and all item vars
                     updateResults();
@@ -149,6 +159,7 @@ $(document).ready(function() {
                         secondFeed.fadeIn(300).show('fast');
                         btnThirdR.fadeIn(300).show('fast');
                         displayContainer(secondFeed);
+                        $('.input-fiesta').addClass('bbva-disable');
                     }
                     // Update Budget and all item vars
                     updateResults();
@@ -171,6 +182,7 @@ $(document).ready(function() {
                         thirdFeed.fadeIn(300).show('fast');
                         cntFinals.fadeIn(300).show('fast');
                         displayContainer(thirdFeed);
+                        $('.input-fiesta').addClass('bbva-disable');
                     }
                     // Update Budget and all item vars
                     updateResults();
@@ -314,28 +326,6 @@ function fillItems(_prty_item, _value){
         removeFinalItem(_name, _round);
     }
     else if (_tb[_name][_round] >= 1) {
-        // If Exists Destroy --> Prevent Multiple Items
-        /*if ( $('#mesa-'+ _name + _round).length ) {
-            // Remove Specific DOM Element
-            $('#mesa-'+ _name + _round).remove();
-
-            // Decrease Position Axis-X
-            pos_x-=40;
-            removeFinalItem(_name, _round);
-
-            // Create DOM Object
-            $('<div/>' , {
-                'class': 'mesa-item-cnt item-'+_name,
-                'id': 'mesa-' + _name + _round
-            }).appendTo('#mesa'+_round);
-
-            // Increment Position Axis-X and set
-            pos_x+=40;
-            $('#mesa-'+_name+_round).css('left', pos_x);
-
-            addFinalItem(_name, _round);
-
-        } else {*/
         item_i++;
             // Create DOM Object
             $('<div/>' , {
