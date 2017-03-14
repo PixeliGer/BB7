@@ -195,7 +195,19 @@ function codeInputs(difficulty){
             'onkeypress':'return isNumeric(event)',
             'oninput':'maxLengthCheck(this)',
             on: {
-                change: function (event) {
+                // change: function (event) {
+                //     let isFilled = validateInputs();
+                //     if (isFilled) {
+                //         btnContinue.removeClass('bbva-disable');
+                //         userCode.hide();
+                //         instFeed.hide();
+                //         compareCodes() ? incrementPoints() : decrementPoints();
+                //     }
+                // },
+                keyup: function (event) {
+                    if (this.value.length == this.maxLength) {
+                        $(this).next('.code-input').focus();
+                    }
                     let isFilled = validateInputs();
                     if (isFilled) {
                         btnContinue.removeClass('bbva-disable');

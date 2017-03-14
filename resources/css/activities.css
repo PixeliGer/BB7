@@ -837,13 +837,16 @@ Unicorn Puzzle
     transform-origin: bottom;
 }
 .rocket-min{
-    background: url('../img/activity_space/Ico_inicio_nave.svg') no-repeat top;
+    background: url('../img/activity_space/Nave.svg') no-repeat top;
+    background-size: 40px auto;
 }
 .unicorn-min{
-    background: url('../img/activity_space/Ico_inicio_unicornio.svg') no-repeat top;
+    background: url('../img/activity_space/Unicornio.svg') no-repeat top;
+    background-size: 48px auto;
 }
 .plane-min{
-    background: url('../img/activity_space/Ico_inicio_avion.svg') no-repeat top;
+    background: url('../img/activity_space/Avion.svg') no-repeat top;
+    background-size: 88px auto;
 }
 .final-result-rocket-ok{
     background: url('../img/activity_space/Resultado_nave_ok.svg') no-repeat top;

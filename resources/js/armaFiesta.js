@@ -149,7 +149,8 @@ $(document).ready(function() {
 
                     alert('No tienes suficiente dinero para más artículos');
                 }
-            } else if (CRRNT_RND === 'round2') {
+            }
+            else if (CRRNT_RND === 'round2') {
                 //
                 if ( (_budget._r2_budget) <= _budget._second ) {
                     _tb[_name][_round] = _value;
@@ -172,7 +173,8 @@ $(document).ready(function() {
                     updateResults();
                     alert('No tienes suficiente para más articulos')
                 }
-            } else if (CRRNT_RND === 'round3') {
+            }
+            else if (CRRNT_RND === 'round3') {
                 //
                 if ( (_budget._r3_budget) <= _budget._third ) {
                     _tb[_name][_round] = _value;

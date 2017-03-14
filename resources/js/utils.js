@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    
+    console.log("utils ready");
+
 });
 
 // Display and Animate Puzzle or Container dynamically
