@@ -346,7 +346,7 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     float: right;
     left: 68%;
-    top: 10%;
+    /*top: 18%;*/
 }
 .counter-block-b{
     width: 180px;
@@ -859,6 +859,12 @@ Unicorn Puzzle
 }
 .final-result-plane-fail{
     background: url('../img/activity_space/Resultado_avion_crash.svg') no-repeat top;
+}
+.final-result-unicornio-ok{
+    background: url('../img/activity_space/Resultado_unicornio.svg') no-repeat top;
+}
+.final-result-unicornio-fail{
+    background: url('../img/activity_space/Resultado_unicornio_crash.svg') no-repeat top;
 }
 .code-input{
     width: 60px;
