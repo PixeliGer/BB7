@@ -285,16 +285,16 @@ $(document).ready(function() {
         displayContainer(finalRocketFeed);
     });
 
-    $('.input-sueno').each(function() {
+    $('.sueno_check').each(function() {
         $(this).change(function(event) {
-            if (this.value === undefined || this.value === "" ) {
+            if(!this.checked) {
                 this.value = 0;
             }
             var dream_item  = $(this).attr('id'),       // Get Input Id dynamically
-                item        = dream_item.split('_');    // Split ID
-                _name       = item[0];                  // Element name
-                _year       = '_'+item[1];              // Element Year
-                _value      = parseInt(this.value);     // Current value to Integer
+                item        = dream_item.split('_'),    // Split ID
+                _name       = item[0],                  // Element name
+                _year       = '_'+item[1],              // Element Year
+                _value      = parseInt(this.value),     // Current value to Integer
                 _ammount    = obtainAmmount(dream_item);// F() -> Get Input value and set in array var
 
             if (CRRNT_DRM === 'casa') {
