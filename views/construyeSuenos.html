@@ -13,6 +13,8 @@
         <script type="text/javascript" src="../resources/js/Frameworks/Jquery/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="../resources/js/navArrows.js"></script>
         <script type="text/javascript" src="../resources/js/easytimer.min.js"></script>
+        <script type="text/javascript" src="../resources/js/utils.js"></script>
+        <script type="text/javascript" src="../resources/js/autoNumeric.js"></script>
         <script type="text/javascript" src="../resources/js/construyeSuenos.js" charset="utf-8"></script>
     </head>
     <body class="sueno-bckgr">
@@ -101,10 +103,10 @@
                     </div>
 
                     <!-- House Dream -->
-                    <div id="dream_house" class="bbva-content-fluid">
+                    <div id="mainDream" class="bbva-content-fluid">
                         <div class="lit-row topMargin20">
                             <!-- House Year 1 -->
-                            <div id="house_y1" class="cmn-block cnt-relative year-cnt">
+                            <div class="cmn-block cnt-relative year-cnt">
                                 <!-- Title -->
                                 <div class="lit-row">
                                     <div class="ttl-txt-cont">
@@ -120,14 +122,14 @@
                                     <div class="counter-cnt">
                                         <div class="lit-row">
                                             <span class="counter-ttl">Presupuesto:</span><br>
-                                            <span id="houseBudget" class="counter-qnty"></span>
+                                            <span id="dreamBudget" class="counter-qnty">$1000</span>
                                         </div>
                                         <div class="lit-row topMargin10">
                                             <span class="counter-ttl">Te quedan:</span><br>
-                                            <span id="houseYear1" class="counter-qnty">$0</span>
+                                            <input id="dreamYear" class="bbva-output-alfa auto numeric bbva-dnt counter-qnty" data-v-min="0" data-v-max="1000">
                                         </div>
                                         <div class="lit-row topMargin10">
-                                            <button id="btnNxtCa" class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
+                                            <button id="btnNxtYear" class="blue-bbva-button-full" type="button" name="button">Siguiente año</button>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +170,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-paredes">
+                                                        <div id="ditem_1" class="">
 
                                                         </div>
                                                     </div>
@@ -177,7 +179,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Paredes
+                                                        <span id="dtitle_1"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,7 +190,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $500
+                                                        $<span id="dprice_1"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,10 +198,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="paredes_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_1" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="paredes_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -212,7 +213,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-cama">
+                                                        <div id="ditem_2" class="">
 
                                                         </div>
                                                     </div>
@@ -221,7 +222,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Cama
+                                                        <span id="dtitle_2"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -232,7 +233,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $100
+                                                        $<span id="dprice_2"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -240,10 +241,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="cama_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_2" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="cama_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -256,7 +256,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-comedor">
+                                                        <div id="ditem_3"class="">
 
                                                         </div>
                                                     </div>
@@ -265,7 +265,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Comedor
+                                                        <span id="dtitle_3"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -276,7 +276,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $500
+                                                        $<span id="dprice_3"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -284,10 +284,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="comedor_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_3" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="comedor_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -300,7 +299,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-garage">
+                                                        <div id="ditem_4" class="">
 
                                                         </div>
                                                     </div>
@@ -309,7 +308,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Garage
+                                                        <span id="dtitle_4"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -320,7 +319,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $100
+                                                        $<span id="dprice_4"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -328,10 +327,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="garage_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_4" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="garage_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -344,7 +342,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-puerta">
+                                                        <div id="ditem_5" class="">
 
                                                         </div>
                                                     </div>
@@ -353,7 +351,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Puerta
+                                                        <span id="dtitle_5"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -364,7 +362,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $200
+                                                        $<span id="dprice_5"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -372,10 +370,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="puerta_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_5" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="puerta_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -388,7 +385,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-sillon">
+                                                        <div id="ditem_6" class="">
 
                                                         </div>
                                                     </div>
@@ -397,7 +394,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Sillón Grande
+                                                        <span id="dtitle_6"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -408,7 +405,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $200
+                                                        <span id="dprice_6"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -416,10 +413,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="sillon_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_6" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="sillon_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -432,7 +428,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-techos">
+                                                        <div id="ditem_7" class="">
 
                                                         </div>
                                                     </div>
@@ -441,7 +437,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Techos
+                                                        <span id="dtitle_7"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -452,7 +448,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $200
+                                                        $<span id="dprice_7"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -460,10 +456,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="puerta_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_7" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="pechos_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -476,7 +471,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-television">
+                                                        <div id="ditem_8" class="">
 
                                                         </div>
                                                     </div>
@@ -485,7 +480,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Televisión
+                                                        <span id="dtitle_8"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -496,7 +491,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $200
+                                                        $<span id="dprice_8"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -504,10 +499,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="television_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_8" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="television_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -520,7 +514,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="item-cnt-sueno">
-                                                        <div class="item-ventanas">
+                                                        <div id="ditem_9" class="">
 
                                                         </div>
                                                     </div>
@@ -529,7 +523,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        Ventanas
+                                                        <span id="dtitle_9"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -540,7 +534,7 @@
                                             <div class="mid-clmn-lwys">
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
-                                                        $50
+                                                        $<span id="dprice_9"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -548,10 +542,9 @@
                                                 <div class="bbva-blue-lghtr cnt-h80">
                                                     <div class="sueno-ttl vertical-align">
                                                         <div class="cmn-block">
-                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="ventanas_y1" name="elem">
+                                                            <input type="checkbox" value="1" class="check_box sueno_check" id="dcheck_9" name="elem">
                                                             <label></label>
                                                         </div>
-                                                        <!-- <input id="ventanas_y1" placeholder="0" name="" type="number" max="1" min="0" maxlength="2" class="input-sueno" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -559,6 +552,7 @@
                                     </div>
                                 </div>
                             </div>
+<<<<<<< Updated upstream
                             <!-- House Year 2 -->
                             <div id="house_y2" class="cmn-block cnt-relative year-cnt">
                                 <!-- Title -->
@@ -4509,13 +4503,28 @@
                                     </div>
                                 </div>
                             </div>
+=======
+
+>>>>>>> Stashed changes
                         </div>
                         <!--Feedback -->
                         <div class="lit-row">
-                            <div id="rocketFeed" class="cmn-block topMargin60">
+                            <div id="houseFeed" class="cmn-block topMargin60">
                                 <div class="lit-row">
                                     <!-- Feedback container -->
-                                    <div id="rocketFeed" class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20">
+                                    <div class="fdbk-cnt-mic cmn-block bbva-blue-lghtr cnt-p20">
+                                        <div class="fdbk-txt-cnt-full">
+                                            <div class="fdbk-txt-book">
+                                                <article>
+                                                    <p>
+                                                        ¡Vaya! Compraste cosas útiles para tu casa pero no lograste construirla.
+                                                    </p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fdbk-cnt-medium bbva-blue-lghtr cnt-p20 topMargin20">
                                         <div class="fdbk-img-cnt">
                                             <img class="fdbk-img vertical-align" src="../resources/img/activity_suenos/Feedback_1.svg" alt="" />
                                         </div>
@@ -4543,10 +4552,10 @@
                                     </div>
                                 </div>
                                 <div class="lit-row">
-                                    <button id="btnRocketSecondR" class="blue-bbva-button-s" type="button" name="button">Ir a la Ronda 2</button>
+                                    <button id="btnHouseSecondR" class="blue-bbva-button-s" type="button" name="button">Ir a la Ronda 2</button>
                                 </div>
                             </div>
-                            <div id="rocketSecondFeed" class="cmn-block topMargin60">
+                            <div id="houseSecondFeed" class="cmn-block topMargin60">
                                 <div class="lit-row">
                                     <!-- Feedback container -->
                                     <div class="fdbk-cnt-mic cmn-block bbva-blue-lghtr cnt-p20">
@@ -4590,21 +4599,22 @@
                                 </div>
                                 <div class="lit-row">
                                     <div class="cmn-block topMargin40">
-                                        <button id="btnFRocketFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
+                                        <button id="btnFHouseFeed" class="blue-bbva-button-s" type="button" name="button">Siguiente</button>
                                     </div>
                                 </div>
                                 <!-- <div class="lit-row">
-                                    <button id="btnRocketResults" class="blue-bbva-button-s" type="button" name="button">Ver Resultados</button>
+                                    <button id="btnHouseResults" class="blue-bbva-button-s" type="button" name="button">Ver Resultados</button>
                                 </div> -->
                             </div>
                         </div>
                         <!-- Results -->
+
                         <!-- Final  -->
                         <div class="lit-row">
-                            <div id="finalRocketFeed" class="cmn-block year-cnt">
+                            <div id="finalHouseFeed" class="cmn-block year-cnt">
                                 <div class="lit-row">
                                     <div class="cmn-block img-block">
-                                        <img src="../resources/img/activity_suenos/Nave.svg" alt="">
+                                        <img src="../resources/img/activity_suenos/Casa.svg" alt="">
                                     </div>
                                 </div>
                                 <div class="lit-row">
@@ -4616,7 +4626,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="lit-row">
+                                <div class="lit-row topMargin20">
                                     <div class="cmn-block">
                                         <div class="lit-row">
                                             <!-- Feedback container -->
@@ -4647,7 +4657,6 @@
 
                             </div>
                         </div>
-
                     </div>
 
                 </article>
