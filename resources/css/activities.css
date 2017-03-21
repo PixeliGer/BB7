@@ -100,7 +100,7 @@ input[type=number]::-webkit-outer-spin-button {
     background: url('../img/icons/Boton_Nave_on.svg') no-repeat center;
 }
 .year-cnt{
-    max-width: 700px;
+    max-width: 900px;
 }
 .sueno-ttl{
     font-family: "bbva-light-normal",sans-serif;
@@ -136,6 +136,14 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: "bbva-book-normal";
     font-size: 1.4em;
     color: #fff;
+}
+.dream-item-cnt{
+    width: 240px !important;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    top: 68%;
+    left: 0;
 }
 /*Casa Items*/
 .item-paredes{
@@ -275,6 +283,145 @@ input[type=number]::-webkit-outer-spin-button {
     background-size: 100% auto;
     height: 100%;
 }
+/*Casa Items*/
+.f-item-paredes{
+    background: url('../img/activity_suenos/casa_paredes.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-cama{
+    background: url('../img/activity_suenos/casa_cama.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-comedor{
+    background: url('../img/activity_suenos/casa_comedor.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-garage{
+    background: url('../img/activity_suenos/casa_garage.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-puerta{
+    background: url('../img/activity_suenos/casa_puerta.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-sillon{
+    background: url('../img/activity_suenos/casa_sillon.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-techos{
+    background: url('../img/activity_suenos/casa_techos.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-television{
+    background: url('../img/activity_suenos/casa_tv.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-ventanas{
+    background: url('../img/activity_suenos/casa_ventanas.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+/*Auto Items*/
+.f-item-carroceria{
+    background: url('../img/activity_suenos/auto_carroceria.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-velocimetro{
+    background: url('../img/activity_suenos/auto_velocimetro.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-volante{
+    background: url('../img/activity_suenos/auto_volante.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-cajuela{
+    background: url('../img/activity_suenos/auto_cajuela.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-puertaa{
+    background: url('../img/activity_suenos/auto_puerta.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-asiento{
+    background: url('../img/activity_suenos/auto_asiento.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-llanta{
+    background: url('../img/activity_suenos/auto_llanta.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-estereo{
+    background: url('../img/activity_suenos/auto_estereo_1.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-parabrisas{
+    background: url('../img/activity_suenos/auto_parabrisas.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+/*Nave Items*/
+.f-item-plataforma{
+    background: url('../img/activity_suenos/nave_plataforma.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-caman{
+    background: url('../img/activity_suenos/nave_cama.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-mesa{
+    background: url('../img/activity_suenos/nave_mesa.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-mando{
+    background: url('../img/activity_suenos/nave_mando.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-puertan{
+    background: url('../img/activity_suenos/nave_puerta.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-sillonn{
+    background: url('../img/activity_suenos/nave_sillon.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-casco{
+    background: url('../img/activity_suenos/nave_casco.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-tv{
+    background: url('../img/activity_suenos/nave_tv.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+.f-item-ventana{
+    background: url('../img/activity_suenos/nave_ventana.svg') no-repeat center;
+    background-size: 100% auto;
+    height: 100%;
+}
+/*Final Images*/
 .disable-check{
     pointer-events: none;
     -webkit-filter: opacity(.5);
@@ -393,23 +540,26 @@ input[type=number]::-webkit-outer-spin-button {
     height: auto;
     position: absolute;
     float: right;
-    left: 100%;
-    top: 10%;;
+    left: 68%;
+    z-index: 10;
+    /*top: 10%;*/
 }
 @media screen and (max-width: 1180px) and (min-width: 900px) {
-    .counter-block{
+    .counter-block,
+    .counter-block-b{
         left: 70%;
     }
 }
-@media screen and (max-width: 1220px) {
+/*@media screen and (max-width: 1220px) {
     .counter-block-b{
         position: inherit !important;
         float: none !important;
         left: 0;
     }
-}
+}*/
 @media screen and (max-width: 899px) {
-    .counter-block{
+    .counter-block,
+    .counter-block-b{
         position: inherit !important;
         float: none !important;
         left: 0;
