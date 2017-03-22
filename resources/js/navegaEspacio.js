@@ -1,5 +1,6 @@
 const error_audio = new Audio('../resources/sounds/error.mp3');
 const ok_audio    = new Audio('../resources/sounds/ok.mp3');
+const valores_audio = new Audio('../resources/sounds/valores.mp3');
 var backgr = {
     space   : '../resources/img/backgrounds/Back_Nave_espacial.jpg',
     plane   : '../resources/img/backgrounds/Back_Cielo.jpg',
@@ -142,6 +143,7 @@ $(document).ready(function() {
         instFeed.fadeIn(300).show('fast');
         switchCodes();
         startTimer(codeTimer);
+        valores_audio.play();
     });
 
     btnContinue.click(function(event) {
@@ -149,8 +151,13 @@ $(document).ready(function() {
         code_step++;
         hideAllFeeds();
         instFeed.fadeIn(300).show('fast');
-        switchCodes();
-        code_step > 5 ? checkFinalPoints() : console.log(code_step);
+        if (code_step > 5) {
+            checkFinalPoints();
+            valores_audio.pause();
+            valores_audio.currentTime = 0;
+        } else {
+            switchCodes();
+        }
     });
 
     btnRestart.click(function(event) {
@@ -223,7 +230,7 @@ function sliceInputs() {
 }
 
 function quitInputs() {
-    $('.codes-flex-block').remove();
+    $('.codes-row').children('.codes-flex-block').remove();
 }
 
 function quitExample() {
@@ -247,8 +254,6 @@ function compareCodes() {
     var is_same = codes.length == arr.length && codes.every(function(element, index) {
         return element === arr[index];
     });
-
-    console.log(is_same);
     return is_same;
 }
 
@@ -259,7 +264,6 @@ function generateCodes(difficulty) {
     for (var i = 0; i < difficulty; i++) {
         codes[i] = Math.floor(Math.random() * 9);
     }
-    console.log(codes);
 }
 
 
@@ -290,6 +294,10 @@ function hideAllFeeds(){
 function incrementPoints() {
     ok_audio.play();
     win_points++;
+    degrees != 0 ? degrees -= 30 : degrees = degrees;
+    pointer.css({
+        'transform': 'rotate('+degrees+'deg)'
+    });
     winFeedA.fadeIn(300).show('fast');
 }
 
@@ -330,12 +338,13 @@ function resetActivity() {
     $('#codesContent').show();
     $('#instructionFeed').hide();
     $('#userCode').hide();
+    quitInputs();
     //$('#codeTimer').text('00:60');
     // Reset Vars
     win_points  = 0;
     fail_points = 0;
     degrees     = 0;
-    code_step   = 0;
+    code_step   = 1;
     //
     $('#pointer').css({
         'transform': 'rotate('+degrees+'deg)'
@@ -359,8 +368,13 @@ codeTimer.addEventListener('secondsUpdated', function(e) {
 });
 codeTimer.addEventListener('targetAchieved', function(e) {
     $('.codes-row').find('.code-input').addClass('bbva-disable');
-    checkFinalPoints();
+    // checkFinalPoints();
+    $('#codesContent').hide();
+    $('#finalsContent').fadeIn(300).show('fast');
+    $('#finalFail').fadeIn(300).show('fast');
     btnContinue.addClass('bbva-disable');
+    valores_audio.pause();
+    valores_audio.currentTime = 0;
 });
 
 // #! Start Timer dynamically

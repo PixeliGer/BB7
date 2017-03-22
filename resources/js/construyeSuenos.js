@@ -16,7 +16,7 @@ var _casaStuff = [ // Main Array for Casa
         {name: 'cajuela', text: 'Cajuela', price_y1: 100, price_y2: 120, price_y3: 180, iclass: 'item-cajuela',fclass: 'f-item-cajuela'},
         {name: 'puerta', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-puertaa',fclass: 'f-item-puertaa'},
         {name: 'asiento', text: 'Asiento', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-asiento',fclass: 'f-item-asiento'},
-        {name: 'llanta', text: 'LLanta', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-llanta',fclass: 'f-item-llanta'},
+        {name: 'llanta', text: 'Llantas', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-llanta',fclass: 'f-item-llanta'},
         {name: 'estereo', text: 'Estéreo', price_y1: 200, price_y2: 240, price_y3: 360, iclass: 'item-estereo',fclass: 'f-item-estereo'},
         {name: 'parabrisas', text: 'Parabrisas', price_y1: 50, price_y2: 60, price_y3: 90, iclass: 'item-parabrisas',fclass: 'f-item-parabrisas'}
     ],

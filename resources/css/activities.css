@@ -9,7 +9,7 @@
 */
 .img-block{
     width: 100%;
-    max-width: 480px;
+    max-width: 420px;
 }
 .body-bckgr{
     -webkit-transition: all 500ms ease-out .1s;
@@ -361,7 +361,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
 }
 .f-item-llanta{
-    background: url('../img/activity_suenos/auto_llanta.svg') no-repeat center;
+    background: url('../img/activity_suenos/auto_llantas.svg') no-repeat center;
     background-size: 100% auto;
     height: 100%;
 }
@@ -438,7 +438,7 @@ input[type=number]::-webkit-outer-spin-button {
 ##       #### ########  ######     ##    ##     ##
 */
 .fiesta-bckgr{
-    background: url('../img/backgrounds/Back_Home_blur.jpg') no-repeat top fixed;
+    background: url('../img/backgrounds/Back_Fiesta.jpg') no-repeat top fixed;
     background-size: cover;
 }
 .round-cnt{
