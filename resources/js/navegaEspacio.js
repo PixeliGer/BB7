@@ -132,7 +132,7 @@ $(document).ready(function() {
         difContent.hide();
         codesContent.fadeIn(300).show('fast');
         displayContainer(codesContent);
-        difficulty = 9;
+        difficulty = 7;
     });
 
     // Start
@@ -153,8 +153,7 @@ $(document).ready(function() {
         instFeed.fadeIn(300).show('fast');
         if (code_step > 5) {
             checkFinalPoints();
-            valores_audio.pause();
-            valores_audio.currentTime = 0;
+            stopMusic();
         } else {
             switchCodes();
         }
@@ -313,6 +312,7 @@ function decrementPoints() {
     if (fail_points == 3) {
         btnContinue.addClass('bbva-disable');
         stopTimer(codeTimer);
+        stopMusic();
 
         $('#codesContent').hide();
         $('#finalsContent').fadeIn(300).show('fast');
@@ -373,8 +373,7 @@ codeTimer.addEventListener('targetAchieved', function(e) {
     $('#finalsContent').fadeIn(300).show('fast');
     $('#finalFail').fadeIn(300).show('fast');
     btnContinue.addClass('bbva-disable');
-    valores_audio.pause();
-    valores_audio.currentTime = 0;
+    stopMusic();
 });
 
 // #! Start Timer dynamically
@@ -389,4 +388,9 @@ function startTimer(_timer){
 // #! Stop Timer dynamically
 function stopTimer(_timer){
     _timer.stop();
+}
+// Stop Music
+function stopMusic() {
+    valores_audio.pause();
+    valores_audio.currentTime = 0;
 }

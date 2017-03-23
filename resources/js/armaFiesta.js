@@ -22,12 +22,11 @@ var _budget = {
 }
 var finalItems = [];
 var itemsFirst = new Array();
-// itemsFirst.pizza = {};
-// itemsFirst.agua = {};
-// itemsFirst.globos = {};
-// itemsFirst.platos = {};
-// itemsFirst.musica = {};
-
+itemsFirst.pizza = {};
+itemsFirst.agua = {};
+itemsFirst.globos = {};
+itemsFirst.platos = {};
+itemsFirst.musica = {};
 var itemsSecond = new Array();
 var itemsThird = new Array();
 
