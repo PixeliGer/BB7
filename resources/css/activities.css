@@ -76,9 +76,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .btn-suenos{
     display: inline-block;
-    width: 70%;
-    max-height: 230px;
-    padding-top: 65%;
+    width: 100%;
+    height: auto;
+    max-width: 240px;
+    padding: 40%;
+    /*padding-top: 65%;*/
     cursor: pointer;
 }
 .btn-sueno-casa{

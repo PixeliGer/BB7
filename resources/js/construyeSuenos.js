@@ -59,7 +59,9 @@ $(document).ready(function() {
         btnAuto     = $('#btnAuto'),
         btnCohete   = $('#btnCohete'),
         buttons     = $('#btns_cnt'),
+        btnStart    = $('#btnStart'),
         btnNxtYear  = $('#btnNxtYear'),
+        instructions= $('#instructionsContent'),
         checkSueno  = $('.sueno_check'),
 
         firstFeed   = $('#firstFeed'),
@@ -74,6 +76,7 @@ $(document).ready(function() {
         dreamTable  = $('#dreamTable'),
         yearTitle   = $('#yearTitle');
 
+    buttons.hide();
     mainDream.hide();
     firstFeed.hide();
     secondFeed.hide();
@@ -110,6 +113,13 @@ $(document).ready(function() {
             }
 
         });
+    });
+
+    btnStart.click(function(event) {
+        $(this).hide();
+        instructions.hide();
+        buttons.fadeIn(300).show('fast');
+        displayContainer(buttons);
     });
 
     btnCasa.click(function(event) {
