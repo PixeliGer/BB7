@@ -70,6 +70,8 @@ $(document).ready(function() {
 
         btnSecondR  = $('#btnSecondR'),
         btnFinalFeed= $('#btnFinalFeed'),
+        btnRestart  = $('#btnRestart'),
+        btnClose    = $('#btnClose'),
 
         counterBlock = $('#counterBlock'),
         mainDream   = $('#mainDream'),
@@ -77,6 +79,10 @@ $(document).ready(function() {
         yearTitle   = $('#yearTitle');
 
     buttons.hide();
+    btnSecondR.hide();
+    btnFinalFeed.hide();
+    btnRestart.hide();
+    btnClose.hide();    
     mainDream.hide();
     firstFeed.hide();
     secondFeed.hide();
@@ -175,6 +181,7 @@ $(document).ready(function() {
             aSign: '$'
         });
         removeAllDOMItems();
+        $(this).hide();
     });
 
     btnFinalFeed.click(function(event) {
@@ -183,6 +190,7 @@ $(document).ready(function() {
         secondFeed.hide();
         finalFeed.fadeIn(300).show('fast');
         displayContainer(finalFeed);
+        $(this).hide();
     });
 
 });
@@ -194,21 +202,21 @@ function setPrices(d_array, year) {
     for (var item in d_array) {
         $('#ditem_'+_index).addClass(d_array[item].iclass);
         $('#dtitle_'+_index).text(d_array[item].text);
-        $('#dcheck_'+_index).attr('name', d_array[item].name);
+        $('#dcheck_'+_index).prop('name', d_array[item].name);
         if (year == 1) {
             $('#dprice_'+_index).text(d_array[item].price_y1);
-            $('#dcheck_'+_index).attr('value', d_array[item].price_y1);
+            $('#dcheck_'+_index).prop('value', d_array[item].price_y1);
         } else if (year == 2) {
             if (CRRNT_ROUND == 1) {
                 $('#dprice_'+_index).text(d_array[item].price_y2);
-                $('#dcheck_'+_index).attr('value', d_array[item].price_y2);
+                $('#dcheck_'+_index).prop('value', d_array[item].price_y2);
             } else {
                 $('#dprice_'+_index).text(d_array[item].price_y2a);
-                $('#dcheck_'+_index).attr('value', d_array[item].price_y2a);
+                $('#dcheck_'+_index).prop('value', d_array[item].price_y2a);
             }
         } else if (year == 3) {
             $('#dprice_'+_index).text(d_array[item].price_y3);
-            $('#dcheck_'+_index).attr('value', d_array[item].price_y3);
+            $('#dcheck_'+_index).prop('value', d_array[item].price_y3);
         }
         _index++;
     }
@@ -287,18 +295,16 @@ function notAvaiable() {
 }
 
 function roundCompleted() {
-    let firstFeed = $('#firstFeed'),
-        secondFeed = $('#secondFeed'),
-        btnNxtYear = $('#btnNxtYear');
-
-    if (CRRNT_ROUND == 1 ) {
-        checkDream();
-        firstFeed.fadeIn(300).show('fast');
-        displayContainer(firstFeed);
+    let btnNxtYear = $('#btnNxtYear'),
+        btnSecondR = $('#btnSecondR'),
+        btnFinalFeed = $('#btnFinalFeed');
+    if (CRRNT_ROUND == 1) {
+        btnSecondR.show();
     } else if (CRRNT_ROUND == 2) {
-        secondFeed.fadeIn(300).show('fast');
-        displayContainer(secondFeed);
+        btnFinalFeed.show();
     }
+    checkDream();
+
     btnNxtYear.addClass('bbva-disable');
 }
 
@@ -394,14 +400,19 @@ function removeAllDOMItems() {
 }
 
 function checkDream() {
-    if (DREAM === 'casa') {
-        if($('.sueno_check').attr('name', 'llanta').is(':checked')){
-            console.log($('.sueno_check').attr('name') )
-        }
+    let firstFeed = $('#firstFeed'),
+        secondFeed = $('#secondFeed');
+    $('[id="spanDream"]').text(DREAM);
 
-    } else if (DREAM === 'auto') {
+    if( $('#dcheck_1').is(':checked') &&
+        $('#dcheck_5').is(':checked') &&
+        $('#dcheck_7').is(':checked') ){
+        secondFeed.fadeIn(300).show('fast');
+        displayContainer(secondFeed);
 
-    } else if (DREAM === 'nave') {
-
+    } else {
+        firstFeed.fadeIn(300).show('fast');
+        displayContainer(firstFeed);
     }
+
 }

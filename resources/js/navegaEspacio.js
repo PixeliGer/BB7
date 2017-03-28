@@ -283,7 +283,7 @@ function switchCodes() {
 function userCodes() {
     quitInputs();
     codeInputs(difficulty);
-    sliceInputs();
+    // sliceInputs();
 }
 
 function hideAllFeeds(){
