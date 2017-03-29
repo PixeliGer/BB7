@@ -146,7 +146,7 @@ $(document).ready(function() {
                     // Update Budget and all item vars
                     updateResults();
 
-                    alert('No tienes suficiente dinero para más artículos');
+                    alertify.error('No tienes suficiente dinero para comprar más artículos');
                 }
             }
             else if (CRRNT_RND === 'round2') {
@@ -170,7 +170,7 @@ $(document).ready(function() {
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
-                    alert('No tienes suficiente para más articulos')
+                    alertify.error('No tienes suficiente dinero para comprar más artículos');
                 }
             }
             else if (CRRNT_RND === 'round3') {
@@ -194,7 +194,7 @@ $(document).ready(function() {
                     $(this).val(_tb[_name][_round]);
                     // Update Budget and all item vars
                     updateResults();
-                    alert('No tienes suficiente para más articulos')
+                    alertify.error('No tienes suficiente dinero para comprar más artículos');
                 }
             }
 
@@ -251,9 +251,9 @@ function updateResults() {
     _budget._r3_budget = results.res3;
 
     // Print Budget Results
-    $('#firstRound').text( (_budget._first - _budget._r1_budget) );
-    $('#secondRound').text( (_budget._second - _budget._r2_budget) );
-    $('#thirdRound').text( (_budget._third - _budget._r3_budget) );
+    $('#firstRound').text('$'+ (_budget._first - _budget._r1_budget) );
+    $('#secondRound').text('$'+ (_budget._second - _budget._r2_budget) );
+    $('#thirdRound').text('$'+ (_budget._third - _budget._r3_budget) );
 
 }
 

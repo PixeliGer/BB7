@@ -229,7 +229,8 @@ function sliceInputs() {
 }
 
 function quitInputs() {
-    $('.codes-row').children('.codes-flex-block').remove();
+    $('.codes-row > .code-input').remove();
+    // $('.codes-row').children('.codes-flex-block').remove();
 }
 
 function quitExample() {

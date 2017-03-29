@@ -17,6 +17,10 @@
     -o-transition: all 500ms ease-out .1s;
     transition: all 500ms ease-out .1s;
 }
+/*Alertify Override Styles*/
+.alertify-notifier .ajs-message.ajs-error {
+  background: #E48A0D !important;
+}
 /*Remove Arrows in Number-Inputs*/
 input[type=number] {
     -moz-appearance: textfield;

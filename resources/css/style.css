@@ -16,6 +16,9 @@
     font-family: "bbva-light-normal";
     src: url(../data/FontsBBVA/bbvaoffice-light.ttf) format("truetype");
 }
+body{
+    font-family: "bbba-book-normal", "Droid Sans", Arial, sans-serif;
+}
 html, body {
     height: 100%;
     margin: 0;

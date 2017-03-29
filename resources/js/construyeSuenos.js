@@ -82,7 +82,7 @@ $(document).ready(function() {
     btnSecondR.hide();
     btnFinalFeed.hide();
     btnRestart.hide();
-    btnClose.hide();    
+    btnClose.hide();
     mainDream.hide();
     firstFeed.hide();
     secondFeed.hide();
@@ -246,7 +246,8 @@ function updateResults(value, _check, crrnt_stuff) {
             refreshBudget(valor_dream.first);
             valor_dream.first == money_limit ? roundCompleted() : console.log('');
         } else {
-            alert('Ya no tienes dinero para adquirir mas artículos');
+            alertify.error("Ya no tienes dinero para adquirir mas artículos");
+            // alert('Ya no tienes dinero para adquirir mas artículos');
             _check.prop('checked', false);
             c_counter--;
             removeDOMItem(crrnt_stuff, _check);
@@ -262,7 +263,8 @@ function updateResults(value, _check, crrnt_stuff) {
             refreshBudget(valor_dream.second);
             valor_dream.second == money_limit ? roundCompleted() : console.log('');
         } else {
-            alert('Ya no tienes dinero para adquirir mas artículos');
+            alertify.error("Ya no tienes dinero para adquirir mas artículos");
+            // alert('Ya no tienes dinero para adquirir mas artículos');
             _check.prop('checked', false);
             c_counter--;
             removeDOMItem(crrnt_stuff, _check);
