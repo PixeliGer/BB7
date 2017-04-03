@@ -22,7 +22,7 @@ var _budget = {
 }
 var finalItems = [];
 var itemsFirst = new Array();
-itemsFirst.pizza = {};
+itemsFirst.pizza = [];
 itemsFirst.agua = {};
 itemsFirst.globos = {};
 itemsFirst.platos = {};
@@ -110,13 +110,13 @@ $(document).ready(function() {
             if (this.value === undefined || this.value === "" ) {
                 this.value = 0;
             }
-            var _prty_item  = $(this).attr('id');
-            var item        = _prty_item.split('_');
-            var _name       = item[0];
-            var _round      = "_"+item[1];
-            var _value      = parseInt(this.value);
-            var _ammount    = obtainAmmount(_prty_item)
-            var _pitem      = (_value * _ammount);
+            var _prty_item  = $(this).attr('id'),
+                item        = _prty_item.split('_'),
+                _name       = item[0],
+                _round      = "_"+item[1],
+                _value      = parseInt(this.value),
+                _ammount    = obtainAmmount(_prty_item),
+                _pitem      = (_value * _ammount);
             console.log(_pitem);
             //
 
@@ -319,27 +319,67 @@ function fillItems(_prty_item, _value){
         _round  = "_"+$item[1];
     //
     if (_tb[_name][_round] < 1) {
-        $('item-'+_name).last().remove();
-        $('#mesa-'+ _name + _round + item_i).remove();
+        $('#mesa'+_round).find( $('[id*="'+_name+'"]') ).remove();
         // Initial position in Table
         pos_x == 0 ? pos_x = 0 : pos_x-=40;
 
         removeFinalItem(_name, _round);
     }
     else if (_tb[_name][_round] >= 1) {
-        item_i++;
-            // Create DOM Object
-            $('<div/>' , {
-                'class': 'mesa-item-cnt item-'+_name,
-                'id': 'mesa-' + _name + _round + item_i
-            }).appendTo('#mesa'+_round);
-
             // Increment Position Axis-X and set
-            pos_x+=40;
-
-            $('#mesa-'+_name+_round + item_i).css('left', pos_x);
-
             addFinalItem(_name, _round);
+
+            if (CRRNT_RND == 'round1') {
+                // Reset number of items and Position
+                $('#mesa'+_round).children().remove();
+                pos_x = 0;
+                // Explore added First Items and populate  Party Table
+                for (var item in itemsFirst) {
+                    let partyitem = itemsFirst[item];
+                    for (var element in partyitem) {
+                        pos_x+=40;
+                        $('<div/>' , {
+                            'class': 'mesa-item-cnt item-'+partyitem[element].name,
+                            'id': 'mesa-'+partyitem[element].id,
+                            css: {
+                                'left': pos_x
+                            }
+                        }).appendTo('#mesa'+_round);
+                    }
+                }
+            } else if (CRRNT_RND == 'round2') {
+                // Reset number of items and Position
+                $('#mesa'+_round).children().remove();
+                pos_x = 0;
+                // Explore added First Items and populate  Party Table
+                for (var item in itemsSecond) {
+                    let partyitem = itemsSecond[item];
+                    for (var element in partyitem) {
+                        $('<div/>' , {
+                            'class': 'mesa-item-cnt item-'+partyitem[element].name,
+                            'id': 'mesa-'+partyitem[element].id
+                        }).appendTo('#mesa'+_round);
+                    }
+                }
+            } else if (CRRNT_RND == 'round3') {
+                // Reset number of items and Position
+                $('#mesa'+_round).children().remove();
+                pos_x = 0;
+                // Explore added First Items and populate  Party Table
+                for (var item in itemsThird) {
+                    let partyitem = itemsThird[item];
+                    for (var element in partyitem) {
+                        $('<div/>' , {
+                            'class': 'mesa-item-cnt item-'+partyitem[element].name,
+                            'id': 'mesa-'+partyitem[element].id
+                        }).appendTo('#mesa'+_round);
+                    }
+                }
+            }
+
+            // Create DOM Object
+
+
         //}
     }
 }
@@ -354,36 +394,45 @@ function addFinalItem(name, round) {
         // Obtaining Item Quantity
         _cant = _tb[_name][_round];
         // Populate Final Array
-        itemsFirst.push({
-            name: _name,
-            price: _price,
-            cant: _cant,
-            iclass: 'item-'+_name
-        });
+        itemsFirst[_name] = [];
+        for (var i = 1; i <= _cant; i++) {
+            itemsFirst[_name].push({
+                name: _name,
+                price: _price,
+                iclass: 'item-'+_name,
+                id: _name + i
+            });
+        }
     } else if (_round === '_r2') {
         // Obtaining price from Main Table
         _price = exploreStuffArray(_name).price_s;
         // Obtaining Item Quantity
         _cant = _tb[_name][_round];
         // Populate Final Array
-        itemsSecond.push({
-            name: _name,
-            price: _price,
-            cant: _cant,
-            iclass: 'item-'+_name
-        });
+        itemsSecond[_name] = [];
+        for (var i = 1; i <= _cant; i++) {
+            itemsSecond[_name].push({
+                name: _name,
+                price: _price,
+                iclass: 'item-'+_name,
+                id: _name + i
+            });
+        }
     } else if (_round === '_r3') {
         // Obtaining price from Main Table
         _price = exploreStuffArray(_name).price_t;
         // Obtaining Item Quantity
         _cant = _tb[_name][_round];
         // Populate Final Array
-        itemsThird.push({
-            name: _name,
-            price: _price,
-            cant: _cant,
-            iclass: 'item-'+_name
-        });
+        itemsThird[_name] = [];
+        for (var i = 1; i <= _cant; i++) {
+            itemsThird[_name].push({
+                name: _name,
+                price: _price,
+                iclass: 'item-'+_name,
+                id: _name + i
+            });
+        }
     }
 }
 
@@ -391,23 +440,26 @@ function removeFinalItem(name, round) {
     _name = name;
     _round = round;
     if (_round === '_r1') {
-        for (var element in itemsFirst) {
-            if (itemsFirst[element].name === _name) {
-                itemsFirst.splice(itemsFirst[element], 1);
-            }
-        }
+        itemsFirst[_name] = [];
+        // for (var element in itemsFirst) {
+        //     if (itemsFirst[element].name === _name) {
+        //         itemsFirst.splice(itemsFirst[element], 1);
+        //     }
+        // }
     } else if (_round === '_r2') {
-        for (var element in itemsSecond) {
-            if (itemsSecond[element].name === _name) {
-                itemsSecond.splice(itemsSecond[element], 1);
-            }
-        }
+        itemsSecond[_name] = [];
+        // for (var element in itemsSecond) {
+        //     if (itemsSecond[element].name === _name) {
+        //         itemsSecond.splice(itemsSecond[element], 1);
+        //     }
+        // }
     } else if (_round === '_r3') {
-        for (var element in itemsThird) {
-            if (itemsThird[element].name === _name) {
-                itemsThird.splice(itemsThird[element], 1);
-            }
-        }
+        itemsThird[_name] = [];
+        // for (var element in itemsThird) {
+        //     if (itemsThird[element].name === _name) {
+        //         itemsThird.splice(itemsThird[element], 1);
+        //     }
+        // }
     }
 }
 
