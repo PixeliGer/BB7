@@ -337,7 +337,7 @@ function fillItems(_prty_item, _value){
                 for (var item in itemsFirst) {
                     let partyitem = itemsFirst[item];
                     for (var element in partyitem) {
-                        pos_x+=40;
+                        pos_x >= 240 ? pos_x = 0 : pos_x+=40;
                         $('<div/>' , {
                             'class': 'mesa-item-cnt item-'+partyitem[element].name,
                             'id': 'mesa-'+partyitem[element].id,
@@ -355,9 +355,13 @@ function fillItems(_prty_item, _value){
                 for (var item in itemsSecond) {
                     let partyitem = itemsSecond[item];
                     for (var element in partyitem) {
+                        pos_x >= 240 ? pos_x = 0 : pos_x+=40;
                         $('<div/>' , {
                             'class': 'mesa-item-cnt item-'+partyitem[element].name,
-                            'id': 'mesa-'+partyitem[element].id
+                            'id': 'mesa-'+partyitem[element].id,
+                            css: {
+                                'left': pos_x
+                            }
                         }).appendTo('#mesa'+_round);
                     }
                 }
@@ -369,9 +373,13 @@ function fillItems(_prty_item, _value){
                 for (var item in itemsThird) {
                     let partyitem = itemsThird[item];
                     for (var element in partyitem) {
+                        pos_x >= 240 ? pos_x = 0 : pos_x+=40;
                         $('<div/>' , {
                             'class': 'mesa-item-cnt item-'+partyitem[element].name,
-                            'id': 'mesa-'+partyitem[element].id
+                            'id': 'mesa-'+partyitem[element].id,
+                            css: {
+                                'left': pos_x
+                            }
                         }).appendTo('#mesa'+_round);
                     }
                 }
@@ -470,81 +478,93 @@ function setFinalItems() {
 
     // Creating Rows for first Table Results
     for (var item in itemsFirst) {
-        $f_row = '<div class="lit-row">'+'\n'+
-                    '<div class="cmn-block">'+'\n'+
-                        '<div class="mid-clmn-lwys">'+'\n'+
-                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<div class="item-cnt">'+'\n'+
-                                        '<div class="'+itemsFirst[item].iclass+'"></div>'+'\n'+
+        let party_items = itemsFirst[item];
+        for (var element in party_items) {
+            $f_row = '<div class="lit-row">'+'\n'+
+                        '<div class="cmn-block">'+'\n'+
+                            '<div class="mid-clmn-lwys">'+'\n'+
+                                '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                    '<div class="prty-ttl vertical-align">'+'\n'+
+                                        '<div class="item-cnt">'+'\n'+
+                                            '<div class="'+party_items[element].iclass+'"></div>'+'\n'+
+                                        '</div>'+'\n'+
+                                    '</div>'+'\n'+
+                                '</div>'+'\n'+
+                            '</div>'+'\n'+
+                            '<div class="mid-clmn-lwys">'+'\n'+
+                                '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                    '<div class="prty-ttl vertical-align">'+'\n'+
+                                        '<span> $'+party_items[element].price+'</span>'+'\n'+
                                     '</div>'+'\n'+
                                 '</div>'+'\n'+
                             '</div>'+'\n'+
                         '</div>'+'\n'+
-                        '<div class="mid-clmn-lwys">'+'\n'+
-                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<span> $'+itemsFirst[item].price+'</span>'+'\n'+
-                                '</div>'+'\n'+
-                            '</div>'+'\n'+
-                        '</div>'+'\n'+
-                    '</div>'+'\n'+
-                '</div>'+'\n';
-        $frows += $f_row;
+                    '</div>'+'\n';
+            $frows += $f_row;
+        }
     }
     // Creating Rows for second Table Results
     for (var item in itemsSecond) {
-        $s_row = '<div class="lit-row">'+'\n'+
-                    '<div class="cmn-block">'+'\n'+
-                        '<div class="mid-clmn-lwys">'+'\n'+
-                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<div class="item-cnt">'+'\n'+
-                                        '<div class="'+itemsSecond[item].iclass+'"></div>'+'\n'+
+        let party_items = itemsSecond[item];
+        for (var element in party_items) {
+            $s_row = '<div class="lit-row">'+'\n'+
+                        '<div class="cmn-block">'+'\n'+
+                            '<div class="mid-clmn-lwys">'+'\n'+
+                                '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                    '<div class="prty-ttl vertical-align">'+'\n'+
+                                        '<div class="item-cnt">'+'\n'+
+                                            '<div class="'+party_items[element].iclass+'"></div>'+'\n'+
+                                        '</div>'+'\n'+
+                                    '</div>'+'\n'+
+                                '</div>'+'\n'+
+                            '</div>'+'\n'+
+                            '<div class="mid-clmn-lwys">'+'\n'+
+                                '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                    '<div class="prty-ttl vertical-align">'+'\n'+
+                                        '<span> $'+party_items[element].price+'</span>'+'\n'+
                                     '</div>'+'\n'+
                                 '</div>'+'\n'+
                             '</div>'+'\n'+
                         '</div>'+'\n'+
-                        '<div class="mid-clmn-lwys">'+'\n'+
-                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<span> $'+itemsSecond[item].price+'</span>'+'\n'+
-                                '</div>'+'\n'+
-                            '</div>'+'\n'+
-                        '</div>'+'\n'+
-                    '</div>'+'\n'+
-                '</div>'+'\n';
-        $srows += $s_row;
+                    '</div>'+'\n';
+            $srows += $s_row;
+        }
     }
     // Creating Rows for third Table Results
     for (var item in itemsThird) {
-        $t_row = '<div class="lit-row">'+'\n'+
-                    '<div class="cmn-block">'+'\n'+
-                        '<div class="mid-clmn-lwys">'+'\n'+
-                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<div class="item-cnt">'+'\n'+
-                                        '<div class="'+itemsThird[item].iclass+'"></div>'+'\n'+
+        let party_items = itemsThird[item];
+        for (var element in party_items) {
+            $t_row = '<div class="lit-row">'+'\n'+
+                        '<div class="cmn-block">'+'\n'+
+                            '<div class="mid-clmn-lwys">'+'\n'+
+                                '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                    '<div class="prty-ttl vertical-align">'+'\n'+
+                                        '<div class="item-cnt">'+'\n'+
+                                            '<div class="'+party_items[element].iclass+'"></div>'+'\n'+
+                                        '</div>'+'\n'+
+                                    '</div>'+'\n'+
+                                '</div>'+'\n'+
+                            '</div>'+'\n'+
+                            '<div class="mid-clmn-lwys">'+'\n'+
+                                '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
+                                    '<div class="prty-ttl vertical-align">'+'\n'+
+                                        '<span> $'+party_items[element].price+'</span>'+'\n'+
                                     '</div>'+'\n'+
                                 '</div>'+'\n'+
                             '</div>'+'\n'+
                         '</div>'+'\n'+
-                        '<div class="mid-clmn-lwys">'+'\n'+
-                            '<div class="bbva-blue-lghtr cnt-h80">'+'\n'+
-                                '<div class="prty-ttl vertical-align">'+'\n'+
-                                    '<span> $'+itemsThird[item].price+'</span>'+'\n'+
-                                '</div>'+'\n'+
-                            '</div>'+'\n'+
-                        '</div>'+'\n'+
-                    '</div>'+'\n'+
-                '</div>'+'\n';
-        $trows += $t_row;
+                    '</div>'+'\n';
+            $trows += $t_row;
+        }
     }
 
     //
-    $('#firstResults .total-results').prepend($frows);
-    $('#secondResults .total-results').prepend($srows);
-    $('#thirdResults .total-results').prepend($trows);
+    $($frows).appendTo('#firstResults .rows-results');
+    $($srows).appendTo('#secondResults .rows-results');
+    $($trows).appendTo('#thirdResults .rows-results');
+    // $('#firstResults .total-results').prepend($frows);
+    // $('#secondResults .total-results').prepend($srows);
+    // $('#thirdResults .total-results').prepend($trows);
 
     // Totals
     $('#firstTotal').text('$'+_budget._r1_budget);
