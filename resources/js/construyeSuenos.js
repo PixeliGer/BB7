@@ -447,7 +447,7 @@ function removeAllDOMItems() {
 function checkDream() {
     let firstFeed = $('#firstFeed'),
         secondFeed = $('#secondFeed');
-    $('[id="spanDream"]').text(DREAM);
+    DREAM === 'auto' ? $('[id="spanDream"]').text('camioneta') : $('[id="spanDream"]').text(DREAM);
 
     if( $('#dcheck_1').is(':checked') &&
         $('#dcheck_5').is(':checked') &&
