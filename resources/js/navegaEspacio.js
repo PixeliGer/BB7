@@ -266,7 +266,6 @@ function generateCodes(difficulty) {
     }
 }
 
-
 function switchCodes() {
     // Generate and Show Example Codes
     quitExample();

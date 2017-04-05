@@ -22,11 +22,6 @@ var _budget = {
 }
 var finalItems = [];
 var itemsFirst = new Array();
-itemsFirst.pizza = [];
-itemsFirst.agua = {};
-itemsFirst.globos = {};
-itemsFirst.platos = {};
-itemsFirst.musica = {};
 var itemsSecond = new Array();
 var itemsThird = new Array();
 
@@ -55,7 +50,8 @@ $(document).ready(function() {
         cntFinals       = $('#cntFinals'),
         firstBudget     = $('#firstBudget'),
         secondBudget    = $('#secondBudget'),
-        thirdBudget     = $('#thirdBudget');
+        thirdBudget     = $('#thirdBudget'),
+        btnRestart      = $('#btnRestart');
     //
     _firstRound.hide();
     _secondRound.hide();
@@ -103,6 +99,10 @@ $(document).ready(function() {
         _resultsCnt.fadeIn(300).show('fast');
         displayContainer(_resultsCnt);
         setFinalItems();
+    });
+
+    btnRestart.click(function(event) {
+        restarParty();
     });
 
     $('.input-fiesta').each(function() {
@@ -202,22 +202,6 @@ $(document).ready(function() {
     });
 });
 
-function maxLengthCheck(object) {
-    if (object.value.length > object.maxLength)
-    object.value = object.value.slice(0, object.maxLength);
-}
-
-function isNumeric (evt) {
-    var theEvent = evt || window.event;
-    var key = theEvent.keyCode || theEvent.which;
-    key = String.fromCharCode (key);
-    var regex = /[0-9]|\./;
-    if ( !regex.test(key) ) {
-        theEvent.returnValue = false;
-        if(theEvent.preventDefault) theEvent.preventDefault();
-    }
-}
-
 function obtainAmmount(_prty_item) {
     var item = _prty_item.split('_');
     var _name = item[0];
@@ -264,29 +248,29 @@ function AddResults(){
         _res2 = 0,
         _res3 = 0;
     //#! First Round Values
-    $pizza_1 = (_tb.pizza._r1 * _partyStuff[0].price_first);
-    $agua_1   = (_tb.agua._r1 * _partyStuff[1].price_first);
-    $globos_1 = (_tb.globos._r1 * _partyStuff[2].price_first);
-    $platos_1 = (_tb.platos._r1 * _partyStuff[3].price_first);
-    $musica_1 = (_tb.musica._r1 * _partyStuff[4].price_first);
+    let $pizza_1  = (_tb.pizza._r1 * _partyStuff[0].price_first),
+        $agua_1   = (_tb.agua._r1 * _partyStuff[1].price_first),
+        $globos_1 = (_tb.globos._r1 * _partyStuff[2].price_first),
+        $platos_1 = (_tb.platos._r1 * _partyStuff[3].price_first),
+        $musica_1 = (_tb.musica._r1 * _partyStuff[4].price_first);
     //
     _res1 = $pizza_1 + $agua_1 + $globos_1 + $platos_1 + $musica_1;
 
     // #! Second Round Values
-    $pizza_2  = (_tb.pizza._r2 * _partyStuff[0].price_second);
-    $agua_2   = (_tb.agua._r2 * _partyStuff[1].price_second);
-    $globos_2 = (_tb.globos._r2 * _partyStuff[2].price_second);
-    $platos_2 = (_tb.platos._r2 * _partyStuff[3].price_second);
-    $musica_2 = (_tb.musica._r2 * _partyStuff[4].price_second);
+    let $pizza_2  = (_tb.pizza._r2 * _partyStuff[0].price_second),
+        $agua_2   = (_tb.agua._r2 * _partyStuff[1].price_second),
+        $globos_2 = (_tb.globos._r2 * _partyStuff[2].price_second),
+        $platos_2 = (_tb.platos._r2 * _partyStuff[3].price_second),
+        $musica_2 = (_tb.musica._r2 * _partyStuff[4].price_second);
 
     _res2 = $pizza_2 + $agua_2 + $globos_2 + $platos_2 + $musica_2;
 
     // #! Third Round Values
-    $pizza_3 = (_tb.pizza._r3 * _partyStuff[0].price_third);
-    $agua_3 = (_tb.agua._r3 * _partyStuff[1].price_third);
-    $globos_3 = (_tb.globos._r3 * _partyStuff[2].price_third);
-    $platos_3 = (_tb.platos._r3 * _partyStuff[3].price_third);
-    $musica_3 = (_tb.musica._r3 * _partyStuff[4].price_third);
+    let $pizza_3  = (_tb.pizza._r3 * _partyStuff[0].price_third),
+        $agua_3   = (_tb.agua._r3 * _partyStuff[1].price_third),
+        $globos_3 = (_tb.globos._r3 * _partyStuff[2].price_third),
+        $platos_3 = (_tb.platos._r3 * _partyStuff[3].price_third),
+        $musica_3 = (_tb.musica._r3 * _partyStuff[4].price_third);
 
     _res3 = $pizza_3  + $agua_3 + $globos_3 + $platos_3 + $musica_3
 
@@ -326,69 +310,64 @@ function fillItems(_prty_item, _value){
         removeFinalItem(_name, _round);
     }
     else if (_tb[_name][_round] >= 1) {
-            // Increment Position Axis-X and set
-            addFinalItem(_name, _round);
+        // Increment Position Axis-X and set
+        addFinalItem(_name, _round);
 
-            if (CRRNT_RND == 'round1') {
-                // Reset number of items and Position
-                $('#mesa'+_round).children().remove();
-                pos_x = 0;
-                // Explore added First Items and populate  Party Table
-                for (var item in itemsFirst) {
-                    let partyitem = itemsFirst[item];
-                    for (var element in partyitem) {
-                        pos_x >= 240 ? pos_x = 0 : pos_x+=40;
-                        $('<div/>' , {
-                            'class': 'mesa-item-cnt item-'+partyitem[element].name,
-                            'id': 'mesa-'+partyitem[element].id,
-                            css: {
-                                'left': pos_x
-                            }
-                        }).appendTo('#mesa'+_round);
-                    }
-                }
-            } else if (CRRNT_RND == 'round2') {
-                // Reset number of items and Position
-                $('#mesa'+_round).children().remove();
-                pos_x = 0;
-                // Explore added First Items and populate  Party Table
-                for (var item in itemsSecond) {
-                    let partyitem = itemsSecond[item];
-                    for (var element in partyitem) {
-                        pos_x >= 240 ? pos_x = 0 : pos_x+=40;
-                        $('<div/>' , {
-                            'class': 'mesa-item-cnt item-'+partyitem[element].name,
-                            'id': 'mesa-'+partyitem[element].id,
-                            css: {
-                                'left': pos_x
-                            }
-                        }).appendTo('#mesa'+_round);
-                    }
-                }
-            } else if (CRRNT_RND == 'round3') {
-                // Reset number of items and Position
-                $('#mesa'+_round).children().remove();
-                pos_x = 0;
-                // Explore added First Items and populate  Party Table
-                for (var item in itemsThird) {
-                    let partyitem = itemsThird[item];
-                    for (var element in partyitem) {
-                        pos_x >= 240 ? pos_x = 0 : pos_x+=40;
-                        $('<div/>' , {
-                            'class': 'mesa-item-cnt item-'+partyitem[element].name,
-                            'id': 'mesa-'+partyitem[element].id,
-                            css: {
-                                'left': pos_x
-                            }
-                        }).appendTo('#mesa'+_round);
-                    }
+        if (CRRNT_RND == 'round1') {
+            // Reset number of items and Position
+            $('#mesa'+_round).children().remove();
+            pos_x = 0;
+            // Explore added First Items and populate  Party Table
+            for (var item in itemsFirst) {
+                let partyitem = itemsFirst[item];
+                for (var element in partyitem) {
+                    $('<div/>' , {
+                        'class': 'mesa-item-cnt item-'+partyitem[element].name,
+                        'id': 'mesa-'+partyitem[element].id,
+                        css: {
+                            'left': pos_x
+                        }
+                    }).appendTo('#mesa'+_round);
+                    pos_x >= 220 ? pos_x = 0 : pos_x+=40;
                 }
             }
-
-            // Create DOM Object
-
-
-        //}
+        } else if (CRRNT_RND == 'round2') {
+            // Reset number of items and Position
+            $('#mesa'+_round).children().remove();
+            pos_x = 0;
+            // Explore added First Items and populate  Party Table
+            for (var item in itemsSecond) {
+                let partyitem = itemsSecond[item];
+                for (var element in partyitem) {
+                    $('<div/>' , {
+                        'class': 'mesa-item-cnt item-'+partyitem[element].name,
+                        'id': 'mesa-'+partyitem[element].id,
+                        css: {
+                            'left': pos_x
+                        }
+                    }).appendTo('#mesa'+_round);
+                    pos_x >= 220 ? pos_x = 0 : pos_x+=40;
+                }
+            }
+        } else if (CRRNT_RND == 'round3') {
+            // Reset number of items and Position
+            $('#mesa'+_round).children().remove();
+            pos_x = 0;
+            // Explore added First Items and populate  Party Table
+            for (var item in itemsThird) {
+                let partyitem = itemsThird[item];
+                for (var element in partyitem) {
+                    $('<div/>' , {
+                        'class': 'mesa-item-cnt item-'+partyitem[element].name,
+                        'id': 'mesa-'+partyitem[element].id,
+                        css: {
+                            'left': pos_x
+                        }
+                    }).appendTo('#mesa'+_round);
+                    pos_x >= 220 ? pos_x = 0 : pos_x+=40;
+                }
+            }
+        }
     }
 }
 
@@ -401,7 +380,7 @@ function addFinalItem(name, round) {
         _price = exploreStuffArray(_name).price_f;
         // Obtaining Item Quantity
         _cant = _tb[_name][_round];
-        // Populate Final Array
+        // Populate First Final Array
         itemsFirst[_name] = [];
         for (var i = 1; i <= _cant; i++) {
             itemsFirst[_name].push({
@@ -416,7 +395,7 @@ function addFinalItem(name, round) {
         _price = exploreStuffArray(_name).price_s;
         // Obtaining Item Quantity
         _cant = _tb[_name][_round];
-        // Populate Final Array
+        // Populate Second Final Array
         itemsSecond[_name] = [];
         for (var i = 1; i <= _cant; i++) {
             itemsSecond[_name].push({
@@ -431,7 +410,7 @@ function addFinalItem(name, round) {
         _price = exploreStuffArray(_name).price_t;
         // Obtaining Item Quantity
         _cant = _tb[_name][_round];
-        // Populate Final Array
+        // Populate Third Final Array
         itemsThird[_name] = [];
         for (var i = 1; i <= _cant; i++) {
             itemsThird[_name].push({
@@ -449,25 +428,10 @@ function removeFinalItem(name, round) {
     _round = round;
     if (_round === '_r1') {
         itemsFirst[_name] = [];
-        // for (var element in itemsFirst) {
-        //     if (itemsFirst[element].name === _name) {
-        //         itemsFirst.splice(itemsFirst[element], 1);
-        //     }
-        // }
     } else if (_round === '_r2') {
         itemsSecond[_name] = [];
-        // for (var element in itemsSecond) {
-        //     if (itemsSecond[element].name === _name) {
-        //         itemsSecond.splice(itemsSecond[element], 1);
-        //     }
-        // }
     } else if (_round === '_r3') {
         itemsThird[_name] = [];
-        // for (var element in itemsThird) {
-        //     if (itemsThird[element].name === _name) {
-        //         itemsThird.splice(itemsThird[element], 1);
-        //     }
-        // }
     }
 }
 
@@ -562,9 +526,6 @@ function setFinalItems() {
     $($frows).appendTo('#firstResults .rows-results');
     $($srows).appendTo('#secondResults .rows-results');
     $($trows).appendTo('#thirdResults .rows-results');
-    // $('#firstResults .total-results').prepend($frows);
-    // $('#secondResults .total-results').prepend($srows);
-    // $('#thirdResults .total-results').prepend($trows);
 
     // Totals
     $('#firstTotal').text('$'+_budget._r1_budget);
@@ -594,13 +555,65 @@ function exploreStuffArray(name){
         price_s : price_s,
         price_t : price_t
     }
-
 }
-// Display and Animate Puzzle or Container dynamically
-function displayContainer(container){
-    setTimeout(function() {
-        $('html, body').animate({
-            scrollTop: container.offset().top
-        }, 500);
-    }, 180);
+
+// Restart the whole game
+function restarParty(){
+    // Hide Results Cotainer
+    $('#resultsCnt').hide();
+    //
+    $('#firstCnt').fadeIn(300).show('fast');
+    // Reset all input values
+    resetInputs();
+    // Enable all inputs
+    enableInputs();
+    // Remove all elements from Container in Rounds
+    $('[id*="mesa_"]').children().remove();
+    // Remove all elements in Final Tables
+    $('.rows-results.lit-row').children().remove()
+    // Hide all Feedbacks (again)
+    $('#firstFeed').hide();
+    $('#secondFeed').hide();
+    $('#thirdFeed').hide();
+    // Reset all vars
+    resetValues();
+}
+
+function enableInputs(){
+    $('.input-fiesta').each(function() {
+        $(this).removeClass('bbva-disable');
+    });
+}
+
+function resetInputs(){
+    $('.input-fiesta').each(function(){
+         $(this).val('');
+     });
+}
+
+function resetValues() {
+    _tb = {
+        pizza  : { _r1: 0,_r2: 0,_r3: 0 },
+        agua   : { _r1: 0,_r2: 0,_r3: 0 },
+        globos : { _r1: 0,_r2: 0,_r3: 0 },
+        platos : { _r1: 0,_r2: 0,_r3: 0 },
+        musica : { _r1: 0,_r2: 0,_r3: 0 }
+    }
+    _budget = {
+        _first  : 100,
+        _second : 300,
+        _third  : 500,
+        _r1_budget : 0,
+        _r2_budget : 0,
+        _r3_budget : 0
+    }
+    finalItems = [];
+    itemsFirst = new Array();
+    itemsSecond = new Array();
+    itemsThird = new Array();
+
+    CRRNT_RND;
+
+    _prty_item = '';
+    pos_x = 0, item_i = 0;
 }

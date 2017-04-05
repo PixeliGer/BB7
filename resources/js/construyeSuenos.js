@@ -1,10 +1,10 @@
 var _casaStuff = [ // Main Array for Casa
         {name: 'paredes', text: 'Paredes', price_y1: 500, price_y2: 600, price_y3: 900, price_y2a: 625, iclass: 'item-paredes',fclass: 'f-item-paredes'},
         {name: 'cama', text: 'Cama', price_y1: 100, price_y2: 120, price_y3: 180, price_y2a: 125, iclass: 'item-cama',fclass: 'f-item-cama'},
-        {name: 'comedor', text: 'Comedor', price_y1: 500, price_y2: 600, price_y3: 900, price_y2a: 625, iclass: 'item-comedor',fclass: 'item-comedor'},
+        {name: 'comedor', text: 'Comedor', price_y1: 500, price_y2: 600, price_y3: 900, price_y2a: 625, iclass: 'item-comedor',fclass: 'f-item-comedor'},
         {name: 'garage', text: 'Garage', price_y1: 100, price_y2: 120, price_y3: 180, price_y2a: 125, iclass: 'item-garage',fclass: 'f-item-garage'},
         {name: 'puerta', text: 'Puerta', price_y1: 200, price_y2: 240, price_y3: 360, price_y2a: 250, iclass: 'item-puerta',fclass: 'f-item-puerta'},
-        {name: 'sillon', text: 'Sillón grande', price_y1: 200, price_y2: 240, price_y3: 360, price_y2a: 250, iclass: 'f-item-sillon',fclass: 'item-sillon'},
+        {name: 'sillon', text: 'Sillón grande', price_y1: 200, price_y2: 240, price_y3: 360, price_y2a: 250, iclass: 'item-sillon',fclass: 'f-item-sillon'},
         {name: 'techos', text: 'Techos', price_y1: 200, price_y2: 240, price_y3: 360, price_y2a: 250, iclass: 'item-techos',fclass: 'f-item-techos'},
         {name: 'television', text: 'Televisión', price_y1: 200, price_y2: 240, price_y3: 360, price_y2a: 250, iclass: 'item-television',fclass: 'f-item-television'},
         {name: 'ventanas', text: 'Ventanas', price_y1: 50, price_y2: 60, price_y3: 90, price_y2a: 63, iclass: 'item-ventanas',fclass: 'f-item-ventanas'}
@@ -185,12 +185,15 @@ $(document).ready(function() {
     });
 
     btnFinalFeed.click(function(event) {
-        dreamTable.hide();
-        firstFeed.hide();
-        secondFeed.hide();
-        finalFeed.fadeIn(300).show('fast');
-        displayContainer(finalFeed);
+        // If Game Completed show Final Feed
+        gameCompleted();
+        // Hide this button
         $(this).hide();
+    });
+
+    // [!] Restart Game
+    btnRestart.click(function(event) {
+        restartDream();
     });
 
 });
@@ -200,7 +203,7 @@ function setPrices(d_array, year) {
     let _index = 1;
 
     for (var item in d_array) {
-        $('#ditem_'+_index).addClass(d_array[item].iclass);
+        $('#ditem_'+_index).attr('class', d_array[item].iclass);
         $('#dtitle_'+_index).text(d_array[item].text);
         $('#dcheck_'+_index).prop('name', d_array[item].name);
         if (year == 1) {
@@ -318,6 +321,9 @@ function gameCompleted() {
 
     finalFeed.fadeIn(300).show('fast');
     displayContainer(finalFeed);
+
+    $('#btnRestart').show();
+    $('#btnClose').show();
 }
 
 function refreshBudget(v_dream) {
@@ -371,6 +377,43 @@ function resetDream() {
     displayContainer(mainDream);
 }
 
+function restartDream() {
+    let btnsContent = $('#btns_cnt'),
+        mainDream   = $('#mainDream'),
+        dreamTable  = $('#dreamTable'),
+        firstFeed   = $('#firstFeed'),
+        secondFeed  = $('#secondFeed'),
+        finalFeed   = $('#finalFeed'),
+        btnRestart  = $('#btnRestart'),
+        btnClose    = $('#btnClose');
+    // [!] Reset Counters and values
+    c_counter   = 0;
+    _year       = 1;
+    CRRNT_ROUND = 1;
+    valor_dream = { first: 0, second: 0};
+    //
+    refreshBudget(valor_dream.first);
+    // Hide all the Feedbacks
+    firstFeed.hide();
+    secondFeed.hide();
+    finalFeed.hide();
+    // Hide Final Buttons
+    btnRestart.hide();
+    btnClose.hide();
+    // Uncheck elements in Table
+    uncheckChecks();
+    // Enable elements in Table
+    enableChecks();
+    // [!] Remove all Items
+    removeAllDOMItems();
+    // Main Dream Container disappear
+    mainDream.hide();
+    // Show main Dream Table
+    dreamTable.show();
+    // Show Main Dream Buttons
+    btnsContent.fadeIn(300).show('fast');
+    displayContainer(btnsContent);
+}
 
 function addDomItem(crrnt_stuff, _check) {
     let name = _check.attr('name');
@@ -416,5 +459,4 @@ function checkDream() {
         firstFeed.fadeIn(300).show('fast');
         displayContainer(firstFeed);
     }
-
 }

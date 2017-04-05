@@ -294,6 +294,7 @@ input[type=number]::-webkit-outer-spin-button {
     background: url('../img/activity_suenos/casa_paredes.svg') no-repeat center;
     background-size: 100% auto;
     height: 100%;
+    z-index: -1;
 }
 .f-item-cama{
     background: url('../img/activity_suenos/casa_cama.svg') no-repeat center;
@@ -386,6 +387,7 @@ input[type=number]::-webkit-outer-spin-button {
     background: url('../img/activity_suenos/nave_plataforma.svg') no-repeat center;
     background-size: 100% auto;
     height: 100%;
+    z-index: -1;
 }
 .f-item-caman{
     background: url('../img/activity_suenos/nave_cama.svg') no-repeat center;
@@ -539,7 +541,7 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     float: right;
     left: 68%;
-    /*top: 18%;*/
+    top: 138px;
 }
 .counter-block-b{
     width: 180px;
@@ -548,7 +550,7 @@ input[type=number]::-webkit-outer-spin-button {
     float: right;
     left: 68%;
     z-index: 10;
-    /*top: 10%;*/
+    top: 136px;
 }
 @media screen and (max-width: 1180px) and (min-width: 900px) {
     .counter-block,
@@ -569,6 +571,7 @@ input[type=number]::-webkit-outer-spin-button {
         position: inherit !important;
         float: none !important;
         left: 0;
+        top: auto !important;
     }
 }
 .counter-ttl{
@@ -583,8 +586,21 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
 }
 .rows-results{
-    max-height: 400px;
+    height: 400px;
     overflow: auto;
+}
+/**/
+.mesa-item-cnt.item-globos {
+    width: 100px !important;
+    height: 105px !important;
+    top: 56%;
+}
+.mesa-item-cnt.item-musica {
+    width: 120px !important;
+    height: 60px !important;
+    top: 68%;
+    /*Background*/
+    background-size: 85% auto;
 }
 /*
 ########  ######  ########     ###     ######  ####  #######
