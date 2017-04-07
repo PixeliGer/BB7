@@ -208,7 +208,7 @@ function codeInputs(difficulty){
                     if (this.value.length == this.maxLength) {
                         $(this).next('.code-input').focus();
                     }
-                    let isFilled = validateInputs();
+                    var isFilled = validateInputs();
                     if (isFilled) {
                         btnContinue.removeClass('bbva-disable');
                         userCode.hide();

@@ -248,31 +248,31 @@ function AddResults(){
         _res2 = 0,
         _res3 = 0;
     //#! First Round Values
-    let $pizza_1  = (_tb.pizza._r1 * _partyStuff[0].price_first),
-        $agua_1   = (_tb.agua._r1 * _partyStuff[1].price_first),
-        $globos_1 = (_tb.globos._r1 * _partyStuff[2].price_first),
-        $platos_1 = (_tb.platos._r1 * _partyStuff[3].price_first),
-        $musica_1 = (_tb.musica._r1 * _partyStuff[4].price_first);
+    var pizza_1  = (_tb.pizza._r1 * _partyStuff[0].price_first),
+        agua_1   = (_tb.agua._r1 * _partyStuff[1].price_first),
+        globos_1 = (_tb.globos._r1 * _partyStuff[2].price_first),
+        platos_1 = (_tb.platos._r1 * _partyStuff[3].price_first),
+        musica_1 = (_tb.musica._r1 * _partyStuff[4].price_first);
     //
-    _res1 = $pizza_1 + $agua_1 + $globos_1 + $platos_1 + $musica_1;
+    _res1 = pizza_1 + agua_1 + globos_1 + platos_1 + musica_1;
 
     // #! Second Round Values
-    let $pizza_2  = (_tb.pizza._r2 * _partyStuff[0].price_second),
-        $agua_2   = (_tb.agua._r2 * _partyStuff[1].price_second),
-        $globos_2 = (_tb.globos._r2 * _partyStuff[2].price_second),
-        $platos_2 = (_tb.platos._r2 * _partyStuff[3].price_second),
-        $musica_2 = (_tb.musica._r2 * _partyStuff[4].price_second);
+    var pizza_2  = (_tb.pizza._r2 * _partyStuff[0].price_second),
+        agua_2   = (_tb.agua._r2 * _partyStuff[1].price_second),
+        globos_2 = (_tb.globos._r2 * _partyStuff[2].price_second),
+        platos_2 = (_tb.platos._r2 * _partyStuff[3].price_second),
+        musica_2 = (_tb.musica._r2 * _partyStuff[4].price_second);
 
-    _res2 = $pizza_2 + $agua_2 + $globos_2 + $platos_2 + $musica_2;
+    _res2 = pizza_2 + agua_2 + globos_2 + platos_2 + musica_2;
 
     // #! Third Round Values
-    let $pizza_3  = (_tb.pizza._r3 * _partyStuff[0].price_third),
-        $agua_3   = (_tb.agua._r3 * _partyStuff[1].price_third),
-        $globos_3 = (_tb.globos._r3 * _partyStuff[2].price_third),
-        $platos_3 = (_tb.platos._r3 * _partyStuff[3].price_third),
-        $musica_3 = (_tb.musica._r3 * _partyStuff[4].price_third);
+    var pizza_3  = (_tb.pizza._r3 * _partyStuff[0].price_third),
+        agua_3   = (_tb.agua._r3 * _partyStuff[1].price_third),
+        globos_3 = (_tb.globos._r3 * _partyStuff[2].price_third),
+        platos_3 = (_tb.platos._r3 * _partyStuff[3].price_third),
+        musica_3 = (_tb.musica._r3 * _partyStuff[4].price_third);
 
-    _res3 = $pizza_3  + $agua_3 + $globos_3 + $platos_3 + $musica_3
+    _res3 = pizza_3  + agua_3 + globos_3 + platos_3 + musica_3
 
     return {
         res1: _res1,
@@ -319,7 +319,7 @@ function fillItems(_prty_item, _value){
             pos_x = 0;
             // Explore added First Items and populate  Party Table
             for (var item in itemsFirst) {
-                let partyitem = itemsFirst[item];
+                var partyitem = itemsFirst[item];
                 for (var element in partyitem) {
                     $('<div/>' , {
                         'class': 'mesa-item-cnt item-'+partyitem[element].name,
@@ -337,7 +337,7 @@ function fillItems(_prty_item, _value){
             pos_x = 0;
             // Explore added First Items and populate  Party Table
             for (var item in itemsSecond) {
-                let partyitem = itemsSecond[item];
+                var partyitem = itemsSecond[item];
                 for (var element in partyitem) {
                     $('<div/>' , {
                         'class': 'mesa-item-cnt item-'+partyitem[element].name,
@@ -355,7 +355,7 @@ function fillItems(_prty_item, _value){
             pos_x = 0;
             // Explore added First Items and populate  Party Table
             for (var item in itemsThird) {
-                let partyitem = itemsThird[item];
+                var partyitem = itemsThird[item];
                 for (var element in partyitem) {
                     $('<div/>' , {
                         'class': 'mesa-item-cnt item-'+partyitem[element].name,
@@ -442,7 +442,7 @@ function setFinalItems() {
 
     // Creating Rows for first Table Results
     for (var item in itemsFirst) {
-        let party_items = itemsFirst[item];
+        var party_items = itemsFirst[item];
         for (var element in party_items) {
             $f_row = '<div class="lit-row">'+'\n'+
                         '<div class="cmn-block">'+'\n'+
@@ -469,7 +469,7 @@ function setFinalItems() {
     }
     // Creating Rows for second Table Results
     for (var item in itemsSecond) {
-        let party_items = itemsSecond[item];
+        var party_items = itemsSecond[item];
         for (var element in party_items) {
             $s_row = '<div class="lit-row">'+'\n'+
                         '<div class="cmn-block">'+'\n'+
@@ -496,7 +496,7 @@ function setFinalItems() {
     }
     // Creating Rows for third Table Results
     for (var item in itemsThird) {
-        let party_items = itemsThird[item];
+        var party_items = itemsThird[item];
         for (var element in party_items) {
             $t_row = '<div class="lit-row">'+'\n'+
                         '<div class="cmn-block">'+'\n'+

@@ -91,7 +91,7 @@ $(document).ready(function() {
 
     checkSueno.each(function() {
         $(this).change(function(event) {
-            let dream_item  = $(this).attr('id'),       // Get Input Id dynamically
+            var dream_item  = $(this).attr('id'),       // Get Input Id dynamically
                 item        = dream_item.split('_'),    // Split ID
                 _name       = $(this).attr('name'),     // Element name
                 _year       = '_'+item[1],              // Element Year
@@ -200,7 +200,7 @@ $(document).ready(function() {
 
 // Set and Update Prices and Texts in Table
 function setPrices(d_array, year) {
-    let _index = 1;
+    var _index = 1;
 
     for (var item in d_array) {
         $('#ditem_'+_index).attr('class', d_array[item].iclass);
@@ -277,7 +277,7 @@ function updateResults(value, _check, crrnt_stuff) {
 }
 
 function notAvaiable() {
-    let t_count = 0,
+    var t_count = 0,
         f_count = 0,
         not_avaiable = false;
 
@@ -300,7 +300,7 @@ function notAvaiable() {
 }
 
 function roundCompleted() {
-    let btnNxtYear = $('#btnNxtYear'),
+    var btnNxtYear = $('#btnNxtYear'),
         btnSecondR = $('#btnSecondR'),
         btnFinalFeed = $('#btnFinalFeed');
     if (CRRNT_ROUND == 1) {
@@ -317,7 +317,7 @@ function gameCompleted() {
     $('#dreamTable').hide();
     $('#firstFeed').hide();
     $('#secondFeed').hide();
-    let finalFeed = $('#finalFeed');
+    var finalFeed = $('#finalFeed');
 
     finalFeed.fadeIn(300).show('fast');
     displayContainer(finalFeed);
@@ -362,7 +362,7 @@ function uncheckChecks() {
 }
 
 function resetDream() {
-    let firstFeed = $('#firstFeed'),
+    var firstFeed = $('#firstFeed'),
         secondFeed = $('#secondFeed'),
         mainDream = $('#mainDream');
 
@@ -378,7 +378,7 @@ function resetDream() {
 }
 
 function restartDream() {
-    let btnsContent = $('#btns_cnt'),
+    var btnsContent = $('#btns_cnt'),
         mainDream   = $('#mainDream'),
         dreamTable  = $('#dreamTable'),
         firstFeed   = $('#firstFeed'),
@@ -416,7 +416,7 @@ function restartDream() {
 }
 
 function addDomItem(crrnt_stuff, _check) {
-    let name = _check.attr('name');
+    var name = _check.attr('name');
     for (var item in crrnt_stuff) {
         if (crrnt_stuff[item].name === name) {
             console.log(crrnt_stuff[item].fclass);
@@ -430,10 +430,10 @@ function addDomItem(crrnt_stuff, _check) {
 }
 
 function removeDOMItem(crrnt_stuff, _check) {
-    let name = _check.attr('name');
+    var name = _check.attr('name');
     for (var item in crrnt_stuff) {
         if (crrnt_stuff[item].name === name) {
-            let fclass = crrnt_stuff[item].fclass;
+            var fclass = crrnt_stuff[item].fclass;
             console.log(fclass);
             $('#dreamR').find('.'+fclass).remove();
         }
@@ -445,7 +445,7 @@ function removeAllDOMItems() {
 }
 
 function checkDream() {
-    let firstFeed = $('#firstFeed'),
+    var firstFeed = $('#firstFeed'),
         secondFeed = $('#secondFeed');
     DREAM === 'auto' ? $('[id="spanDream"]').text('camioneta') : $('[id="spanDream"]').text(DREAM);
 
